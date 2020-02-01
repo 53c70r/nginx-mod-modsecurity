@@ -216,7 +216,7 @@ XSUBPP = "$(XSUBPPDIR)$(DFSEP)xsubpp"
 XSUBPPRUN = $(PERLRUN) $(XSUBPP)
 XSPROTOARG = 
 XSUBPPDEPS = /usr/share/perl5/ExtUtils/typemap typemap /usr/share/perl5/vendor_perl/ExtUtils$(DFSEP)xsubpp
-XSUBPPARGS = -typemap '/usr/share/perl5/ExtUtils/typemap' -typemap '/home/user/Documents/nginx-mod-modsecurity/nginx-mod-modsecurity-v1.0.1/nginx-1.16.1/objs/src/http/modules/perl/typemap'
+XSUBPPARGS = -typemap '/usr/share/perl5/ExtUtils/typemap' -typemap '/home/user/git/nginx-mod-modsecurity/nginx-mod-modsecurity-v1.0.1/nginx-1.16.1/objs/src/http/modules/perl/typemap'
 XSUBPP_EXTRA_ARGS =
 
 

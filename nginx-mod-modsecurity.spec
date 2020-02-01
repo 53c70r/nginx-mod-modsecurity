@@ -29,6 +29,7 @@ Source0:        https://nginx.org/download/nginx-%{nginx_version}.tar.gz
 Source1:        https://nginx.org/download/nginx-%{nginx_version}.tar.gz.asc
 Source2:        https://github.com/SpiderLabs/ModSecurity-nginx/releases/download/%{version}/modsecurity-nginx-%{version}.tar.gz
 Source3:        https://github.com/SpiderLabs/ModSecurity-nginx/releases/download/%{version}/modsecurity-nginx-%{version}.tar.gz.asc
+Source4:        mod-modsecurity.conf
 Patch0:         nginx-auto-cc-gcc.patch
 
 %if 0%{?with_gperftools}
@@ -132,7 +133,7 @@ make modules %{?_smp_mflags}
 %install
 [ "$RPM_BUILD_ROOT" != "/" ] && rm -rf $RPM_BUILD_ROOT
 %{__install} -p -D -m 0755 ./nginx-%{nginx_version}/objs/ngx_http_modsecurity_module.so %{buildroot}%{_libdir}/nginx/modules/ngx_http_modsecurity_module.so
-%{__install} -p -D -m 0644 ./mod-modsecurity.conf %{buildroot}%{_datadir}/nginx/modules/mod-modsecurity.conf
+%{__install} -p -D -m 0644 %{SOURCE4} %{buildroot}%{_datadir}/nginx/modules/mod-modsecurity.conf
 
 
 %files
