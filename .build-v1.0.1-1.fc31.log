@@ -1,5 +1,5 @@
 
-Executing(%prep): /bin/sh -e /var/tmp/rpm-tmp.5mNHOA
+Executing(%prep): /bin/sh -e /var/tmp/rpm-tmp.DtbXIo
 drwxrwxr-x zimmerle/zimmerle 0 2019-12-12 14:19 modsecurity-nginx-v1.0.1/
 -rw-rw-r-- zimmerle/zimmerle 11357 2015-07-06 21:06 modsecurity-nginx-v1.0.1/LICENSE
 -rwxr-xr-x zimmerle/zimmerle   734 2018-02-19 18:50 modsecurity-nginx-v1.0.1/ngx-modsec.stp
@@ -37,7 +37,7 @@ drwxrwxr-x zimmerle/zimmerle     0 2019-12-12 14:19 modsecurity-nginx-v1.0.1/tes
 Patch #0 (nginx-auto-cc-gcc.patch):
 patching file auto/cc/gcc
 Hunk #1 succeeded at 166 (offset -6 lines).
-Executing(%build): /bin/sh -e /var/tmp/rpm-tmp.HKrJZw
+Executing(%build): /bin/sh -e /var/tmp/rpm-tmp.hCdijq
 checking for OS
  + Linux 5.4.13-201.fc31.x86_64 x86_64
 checking for C compiler ... found
@@ -443,7 +443,7 @@ objs/ngx_http_perl_module_modules.o \
 -Wl,-z,relro -Wl,--as-needed -Wl,-z,now -specs=/usr/lib/rpm/redhat/redhat-hardened-ld -Wl,-E -Wl,--enable-new-dtags -Wl,-z,relro -Wl,--as-needed -Wl,-z,now -specs=/usr/lib/rpm/redhat/redhat-hardened-ld -Wl,-z,relro -Wl,--as-needed -Wl,-z,now -specs=/usr/lib/rpm/redhat/redhat-hardened-ld -fstack-protector-strong -L/usr/local/lib -L/usr/lib64/perl5/CORE -lperl -lpthread -lresolv -ldl -lm -lcrypt -lutil -lc \
 -shared
 make[1]: Leaving directory '/home/user/git/nginx-mod-modsecurity/nginx-mod-modsecurity-v1.0.1/nginx-1.16.1'
-Executing(%install): /bin/sh -e /var/tmp/rpm-tmp.d7P9Yw
+Executing(%install): /bin/sh -e /var/tmp/rpm-tmp.9TRiMn
 Processing files: nginx-mod-modsecurity-v1.0.1-1.fc31.x86_64
 Provides: nginx-mod-modsecurity = 1:v1.0.1-1.fc31 nginx-mod-modsecurity(x86-64) = 1:v1.0.1-1.fc31
 Requires(rpmlib): rpmlib(CompressedFileNames) <= 3.0.4-1 rpmlib(FileDigests) <= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) <= 4.0-1
@@ -451,4 +451,4 @@ Requires: libc.so.6()(64bit) libc.so.6(GLIBC_2.14)(64bit) libc.so.6(GLIBC_2.2.5)
 Checking for unpackaged file(s): /usr/lib/rpm/check-files /home/user/rpmbuild/BUILDROOT/nginx-mod-modsecurity-v1.0.1-1.fc31.x86_64
 Wrote: /home/user/git/nginx-mod-modsecurity/nginx-mod-modsecurity-v1.0.1-1.fc31.src.rpm
 Wrote: /home/user/git/nginx-mod-modsecurity/x86_64/nginx-mod-modsecurity-v1.0.1-1.fc31.x86_64.rpm
-Executing(%clean): /bin/sh -e /var/tmp/rpm-tmp.8F40JA
+Executing(%clean): /bin/sh -e /var/tmp/rpm-tmp.FkTvFo

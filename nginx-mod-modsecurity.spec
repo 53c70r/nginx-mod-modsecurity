@@ -49,7 +49,7 @@ BuildRequires:  automake
 BuildRequires:  libtool
 BuildRequires:  perl-ExtUtils-Embed
 BuildRequires:  libmodsecurity
-Requires:       nginx = %{epoch}:%{nginx_version}-%{release}
+Requires:       nginx >= %{nginx_version}
 Requires:       GeoIP
 Requires:       libmodsecurity
 
