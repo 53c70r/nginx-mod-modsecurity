@@ -5,10 +5,10 @@
 %if 0%{?fedora} >= 31
 %global nginx_version 1.16.1
 %endif
-%if 0%{?rhel} >= 8
+%if 0%{?epel} >= 8
 %global nginx_version 1.14.1
 %endif
-%if 0%{?fedora} > 22 || 0%{?rhel} >= 8
+%if 0%{?fedora} > 22 || 0%{?epel} >= 8
 %global with_mailcap_mimetypes 1
 %endif
 %ifnarch s390 s390x ppc64 ppc64le
