@@ -4,9 +4,10 @@
 %global with_aio 1
 %if 0%{?fedora} >= 31
 %global nginx_version 1.16.1
-%elif 0%{?rhel} >= 8
+%else
 %global nginx_version 1.14.1
 %endif
+
 %if 0%{?fedora} > 22 || 0%{?rhel} >= 8
 %global with_mailcap_mimetypes 1
 %endif
