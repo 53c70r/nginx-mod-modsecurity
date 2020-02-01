@@ -132,7 +132,7 @@ make modules %{?_smp_mflags}
 %install
 [ "$RPM_BUILD_ROOT" != "/" ] && rm -rf $RPM_BUILD_ROOT
 %{__install} -p -D -m 0755 ./nginx-%{nginx_version}/objs/ngx_http_modsecurity_module.so %{buildroot}%{_libdir}/nginx/modules/ngx_http_modsecurity_module.so
-%{__install} -p -D -m 0644 ../mod-modsecurity.conf %{buildroot}%{_datadir}/nginx/modules/mod-modsecurity.conf
+%{__install} -p -D -m 0644 ./mod-modsecurity.conf %{buildroot}%{_datadir}/nginx/modules/mod-modsecurity.conf
 
 
 %files
