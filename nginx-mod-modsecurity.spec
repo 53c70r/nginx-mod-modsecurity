@@ -1,21 +1,22 @@
 %global _hardened_build 1
 %global nginx_user nginx
-%global nginx_version 1.16.1
 %global debug_package %{nil}
-
-%undefine _strict_symbol_defs_build
-
-%bcond_with geoip
-
+%global with_aio 1
+%if 0%{?fedora} >= 31
+%global nginx_version 1.16.1
+%endif
+%if 0%{?rhel} >= 8
+%global nginx_version 1.14.1
+%endif
+%if 0%{?fedora} > 22 || 0%{?rhel} >= 8
+%global with_mailcap_mimetypes 1
+%endif
 %ifnarch s390 s390x ppc64 ppc64le
 %global with_gperftools 1
 %endif
 
-%global with_aio 1
-
-%if 0%{?fedora} > 22 || 0%{?rhel} >= 8
-%global with_mailcap_mimetypes 1
-%endif
+%undefine _strict_symbol_defs_build
+%bcond_with geoip
 
 Name:           nginx-mod-modsecurity
 Epoch:          1
@@ -23,6 +24,7 @@ Version:        v1.0.1
 Release:        1%{?dist}
 Summary:        ModSecurity v3 Nginx Connector
 License:        Apache License 2.0
+BuildArch:      x86_64
 URL:            https://www.modsecurity.org/
 
 Source0:        https://nginx.org/download/nginx-%{nginx_version}.tar.gz
@@ -130,7 +132,6 @@ fi
 make modules %{?_smp_mflags}
 
 %install
-[ "$RPM_BUILD_ROOT" != "/" ] && rm -rf $RPM_BUILD_ROOT
 %{__install} -p -D -m 0755 ./nginx-%{nginx_version}/objs/ngx_http_modsecurity_module.so %{buildroot}%{_libdir}/nginx/modules/ngx_http_modsecurity_module.so
 %{__install} -p -D -m 0644 %{SOURCE4} %{buildroot}%{_datadir}/nginx/modules/mod-modsecurity.conf
 
