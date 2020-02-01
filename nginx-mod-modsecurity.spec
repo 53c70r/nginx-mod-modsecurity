@@ -122,7 +122,6 @@ if ! ./configure \
     --with-debug \
     --with-cc-opt="%{optflags} $(pcre-config --cflags)" \
     --with-ld-opt="$nginx_ldopts" \
-    --with-compat \
     --add-dynamic-module=$connector_path; then
   : configure failed
   cat objs/autoconf.err
