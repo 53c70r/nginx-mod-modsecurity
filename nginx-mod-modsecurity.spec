@@ -33,7 +33,6 @@ Source4:        mod-modsecurity.conf
 Source5:        https://nginx.org/download/nginx-%{rhel_nginx_version}.tar.gz
 Source6:        https://nginx.org/download/nginx-%{rhel_nginx_version}.tar.gz.asc
 Patch0:         nginx-auto-cc-gcc.patch
-Patch5:         nginx-auto-cc-gcc.patch
 
 %if 0%{?with_gperftools}
 BuildRequires:  gperftools-devel
@@ -67,32 +66,31 @@ Requires:       libmodsecurity
 ModSecurity is an open source, cross platform web application firewall (WAF) engine for Apache, IIS and Nginx that is developed by Trustwave's SpiderLabs. It has a robust event-based programming language which provides protection from a range of attacks against web applications and allows for HTTP traffic monitoring, logging and real-time analys...
 
 %prep
-
 %if 0%{?fedora} >= 31
-%setup -q -c
-%setup -q -T -D -a 2
+%setup -c -q
+%setup -T -D -a 2 -q
 cd nginx-%{fedora_nginx_version}
-%patch0 -p0
 %elif 0%{?rhel} >= 8
-%setup -q -c -a 5
-%setup -q -T -D -a 2
+%setup -c -q -a 5
+%setup -T -D -a 2 -q
 cd nginx-%{rhel_nginx_version}
-%patch5 -p0
 %endif
-
-%clean
-[ "$RPM_BUILD_ROOT" != "/" ] && rm -rf $RPM_BUILD_ROOT
+%patch0 -p0
 
 %build
+
 %if 0%{?fedora} >= 31
-connector_path=$(realpath modsecurity-nginx-%{version})
+#connector_path=$(realpath modsecurity-nginx-%{version})
 cd nginx-%{fedora_nginx_version}
 %elif 0%{?rhel} >= 8
-cd nginx-mod-modsecurity-%{version}
-connector_path=$(realpath modsecurity-nginx-%{version})
+#connector_path=$(realpath modsecurity-nginx-%{version})
 cd nginx-%{rhel_nginx_version}
 %endif
+
+export DESTDIR=%{buildroot}	
+
 nginx_ldopts="$RPM_LD_FLAGS -Wl,-E"
+
 if ! ./configure \
     --prefix=%{_datadir}/nginx \
     --sbin-path=%{_sbindir}/nginx \
@@ -148,7 +146,7 @@ if ! ./configure \
     --with-debug \
     --with-cc-opt="%{optflags} $(pcre-config --cflags)" \
     --with-ld-opt="$nginx_ldopts" \
-    --add-dynamic-module=$connector_path; then
+    --add-dynamic-module=../modsecurity-nginx-%{version}; then
   : configure failed
   cat objs/autoconf.err
   exit 1
@@ -162,6 +160,7 @@ make modules %{?_smp_mflags}
 %{__install} -p -D -m 0755 ./nginx-%{rhel_nginx_version}/objs/ngx_http_modsecurity_module.so %{buildroot}%{_libdir}/nginx/modules/ngx_http_modsecurity_module.so
 %endif
 %{__install} -p -D -m 0644 %{SOURCE4} %{buildroot}%{_datadir}/nginx/modules/mod-modsecurity.conf
+
 
 %files
 %defattr (-,root,root)
