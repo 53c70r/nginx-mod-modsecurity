@@ -73,29 +73,25 @@ ModSecurity is an open source, cross platform web application firewall (WAF) eng
 %setup -c -q
 %setup -T -D -a 2 -q
 cd nginx-%{fedora_nginx_version}
-%patch0 -p0
 %endif
 
 %if 0%{?rhel} >= 8
 %setup -c -q -a 5
 %setup -T -D -a 2 -q
 cd nginx-%{rhel_nginx_version}
-%patch5 -p0
 %endif
+%patch0 -p0
 
 %build
 %if 0%{?fedora} >= 31
-#connector_path=$(realpath modsecurity-nginx-%{version})
 cd nginx-%{fedora_nginx_version}
 %endif
 
 %if 0%{?rhel} >= 8
-#connector_path=$(realpath modsecurity-nginx-%{version})
 cd nginx-%{rhel_nginx_version}
 %endif
 
 export DESTDIR=%{buildroot}	
-
 nginx_ldopts="$RPM_LD_FLAGS -Wl,-E"
 
 if ! ./configure \
