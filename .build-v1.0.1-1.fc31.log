@@ -1,9 +1,9 @@
 
-Executing(%prep): /bin/sh -e /var/tmp/rpm-tmp.MFqxGX
+Executing(%prep): /bin/sh -e /var/tmp/rpm-tmp.325okL
 Patch #0 (nginx-auto-cc-gcc.patch):
 patching file auto/cc/gcc
 Hunk #1 succeeded at 166 (offset -6 lines).
-Executing(%build): /bin/sh -e /var/tmp/rpm-tmp.NpBjqV
+Executing(%build): /bin/sh -e /var/tmp/rpm-tmp.N0sUTM
 checking for OS
  + Linux 5.4.14-200.fc31.x86_64 x86_64
 checking for C compiler ... found
@@ -168,12 +168,12 @@ cc -c -fPIC -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -g -O2 -g -
 grep 'define NGINX_VERSION' src/core/nginx.h \
 	| sed -e 's/^.*"\(.*\)".*/\1/' > \
 	objs/src/http/modules/perl/version
-cc -c -fPIC -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -g -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -m64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection  -I src/core -I src/event -I src/event/modules -I src/os/unix -I src/http/modules/perl -I /usr/local/modsecurity/include -I /usr/include/libxml2 -I objs -I src/http -I src/http/modules -I src/http/v2 -I src/mail -I src/stream \
-	-o objs/ngx_http_perl_module_modules.o \
-	objs/ngx_http_perl_module_modules.c
 sed "s/%%VERSION%%/`cat objs/src/http/modules/perl/version`/" \
 	src/http/modules/perl/nginx.pm > \
 	objs/src/http/modules/perl/nginx.pm
+cc -c -fPIC -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -g -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -m64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection  -I src/core -I src/event -I src/event/modules -I src/os/unix -I src/http/modules/perl -I /usr/local/modsecurity/include -I /usr/include/libxml2 -I objs -I src/http -I src/http/modules -I src/http/v2 -I src/mail -I src/stream \
+	-o objs/ngx_http_perl_module_modules.o \
+	objs/ngx_http_perl_module_modules.c
 cp -p src/http/modules/perl/nginx.xs objs/src/http/modules/perl/
 cp -p src/http/modules/perl/typemap objs/src/http/modules/perl/
 cp -p src/http/modules/perl/Makefile.PL objs/src/http/modules/perl/
@@ -331,7 +331,6 @@ objs/ngx_http_image_filter_module_modules.o \
 -Wl,-z,relro -Wl,--as-needed -Wl,-z,now -specs=/usr/lib/rpm/redhat/redhat-hardened-ld -Wl,-E -lgd \
 -shared
 cd objs/src/http/modules/perl && make
-make[2]: Entering directory '/home/user/git/nginx-mod-modsecurity/nginx-mod-modsecurity-v1.0.1/nginx-1.16.1/objs/src/http/modules/perl'
 cc -o objs/ngx_http_modsecurity_module.so \
 objs/addon/src/ngx_http_modsecurity_module.o \
 objs/addon/src/ngx_http_modsecurity_pre_access.o \
@@ -342,6 +341,7 @@ objs/addon/src/ngx_http_modsecurity_rewrite.o \
 objs/ngx_http_modsecurity_module_modules.o \
 -Wl,-z,relro -Wl,--as-needed -Wl,-z,now -specs=/usr/lib/rpm/redhat/redhat-hardened-ld -Wl,-E -Wl,-rpath,/usr/local/modsecurity/lib -L/usr/local/modsecurity/lib -lmodsecurity \
 -shared
+make[2]: Entering directory '/home/user/git/nginx-mod-modsecurity/nginx-mod-modsecurity-v1.0.1/nginx-1.16.1/objs/src/http/modules/perl'
 cc -o objs/ngx_mail_module.so \
 objs/src/mail/ngx_mail.o \
 objs/src/mail/ngx_mail_core_module.o \
@@ -409,7 +409,7 @@ objs/ngx_http_perl_module_modules.o \
 -Wl,-z,relro -Wl,--as-needed -Wl,-z,now -specs=/usr/lib/rpm/redhat/redhat-hardened-ld -Wl,-E -Wl,--enable-new-dtags -Wl,-z,relro -Wl,--as-needed -Wl,-z,now -specs=/usr/lib/rpm/redhat/redhat-hardened-ld -Wl,-z,relro -Wl,--as-needed -Wl,-z,now -specs=/usr/lib/rpm/redhat/redhat-hardened-ld -fstack-protector-strong -L/usr/local/lib -L/usr/lib64/perl5/CORE -lperl -lpthread -lresolv -ldl -lm -lcrypt -lutil -lc \
 -shared
 make[1]: Leaving directory '/home/user/git/nginx-mod-modsecurity/nginx-mod-modsecurity-v1.0.1/nginx-1.16.1'
-Executing(%install): /bin/sh -e /var/tmp/rpm-tmp.yNpOyW
+Executing(%install): /bin/sh -e /var/tmp/rpm-tmp.OAIsQK
 Processing files: nginx-mod-modsecurity-v1.0.1-1.fc31.x86_64
 Provides: nginx-mod-modsecurity = 1:v1.0.1-1.fc31 nginx-mod-modsecurity(x86-64) = 1:v1.0.1-1.fc31
 Requires(rpmlib): rpmlib(CompressedFileNames) <= 3.0.4-1 rpmlib(FileDigests) <= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) <= 4.0-1
@@ -417,4 +417,4 @@ Requires: libc.so.6()(64bit) libc.so.6(GLIBC_2.14)(64bit) libc.so.6(GLIBC_2.2.5)
 Checking for unpackaged file(s): /usr/lib/rpm/check-files /home/user/rpmbuild/BUILDROOT/nginx-mod-modsecurity-v1.0.1-1.fc31.x86_64
 Wrote: /home/user/git/nginx-mod-modsecurity/nginx-mod-modsecurity-v1.0.1-1.fc31.src.rpm
 Wrote: /home/user/git/nginx-mod-modsecurity/x86_64/nginx-mod-modsecurity-v1.0.1-1.fc31.x86_64.rpm
-Executing(%clean): /bin/sh -e /var/tmp/rpm-tmp.tFxwfY
+Executing(%clean): /bin/sh -e /var/tmp/rpm-tmp.LacyXK

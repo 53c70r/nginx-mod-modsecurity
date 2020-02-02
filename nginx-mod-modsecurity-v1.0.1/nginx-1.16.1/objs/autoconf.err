@@ -185,7 +185,7 @@ cc -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLI
 ----------------------------------------
 checking for crypt()
 
-/usr/bin/ld: /tmp/ccmeF7Mx.o: in function `main':
+/usr/bin/ld: /tmp/ccPtlEuH.o: in function `main':
 /home/user/git/nginx-mod-modsecurity/nginx-mod-modsecurity-v1.0.1/nginx-1.16.1/objs/autotest.c:7: undefined reference to `crypt'
 collect2: error: ld returned 1 exit status
 ----------
@@ -299,7 +299,7 @@ checking for statvfs()
 ----------------------------------------
 checking for dlopen()
 
-/usr/bin/ld: /tmp/cc6RtPT3.o: in function `main':
+/usr/bin/ld: /tmp/ccTPnNL8.o: in function `main':
 /home/user/git/nginx-mod-modsecurity/nginx-mod-modsecurity-v1.0.1/nginx-1.16.1/objs/autotest.c:7: undefined reference to `dlopen'
 /usr/bin/ld: /home/user/git/nginx-mod-modsecurity/nginx-mod-modsecurity-v1.0.1/nginx-1.16.1/objs/autotest.c:7: undefined reference to `dlsym'
 collect2: error: ld returned 1 exit status
@@ -621,7 +621,7 @@ objs/autotest.c: In function 'main':
 objs/autotest.c:7:5: warning: implicit declaration of function 'setproctitle' [-Wimplicit-function-declaration]
     7 |     setproctitle("test");;
       |     ^~~~~~~~~~~~
-/usr/bin/ld: /tmp/ccmIrBQN.o: in function `main':
+/usr/bin/ld: /tmp/ccN0smgW.o: in function `main':
 /home/user/git/nginx-mod-modsecurity/nginx-mod-modsecurity-v1.0.1/nginx-1.16.1/objs/autotest.c:7: undefined reference to `setproctitle'
 collect2: error: ld returned 1 exit status
 ----------
@@ -654,7 +654,7 @@ checking for pwritev()
 ----------------------------------------
 checking for sys_nerr
 
-/usr/bin/ld: /tmp/cc12l44q.o: in function `printf':
+/usr/bin/ld: /tmp/ccQKc0Nw.o: in function `printf':
 /usr/include/bits/stdio2.h:107: warning: `sys_nerr' is deprecated; use `strerror' or `strerror_r' instead
 135
 ----------------------------------------
@@ -688,7 +688,7 @@ checking for System V shared memory
 ----------------------------------------
 checking for POSIX semaphores
 
-/usr/bin/ld: /tmp/ccIcwPx3.o: in function `main':
+/usr/bin/ld: /tmp/ccuDVeg9.o: in function `main':
 /home/user/git/nginx-mod-modsecurity/nginx-mod-modsecurity-v1.0.1/nginx-1.16.1/objs/autotest.c:8: undefined reference to `sem_init'
 /usr/bin/ld: /home/user/git/nginx-mod-modsecurity/nginx-mod-modsecurity-v1.0.1/nginx-1.16.1/objs/autotest.c:9: undefined reference to `sem_destroy'
 collect2: error: ld returned 1 exit status
