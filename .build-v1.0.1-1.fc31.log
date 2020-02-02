@@ -1,9 +1,9 @@
 
-Executing(%prep): /bin/sh -e /var/tmp/rpm-tmp.80UumE
+Executing(%prep): /bin/sh -e /var/tmp/rpm-tmp.MFqxGX
 Patch #0 (nginx-auto-cc-gcc.patch):
 patching file auto/cc/gcc
 Hunk #1 succeeded at 166 (offset -6 lines).
-Executing(%build): /bin/sh -e /var/tmp/rpm-tmp.bsmXiD
+Executing(%build): /bin/sh -e /var/tmp/rpm-tmp.NpBjqV
 checking for OS
  + Linux 5.4.14-200.fc31.x86_64 x86_64
 checking for C compiler ... found
@@ -113,7 +113,7 @@ checking for sysconf(_SC_LEVEL1_DCACHE_LINESIZE) ... found
 checking for openat(), fstatat() ... found
 checking for getaddrinfo() ... found
 configuring additional dynamic modules
-adding module in ../modsecurity-nginx-v1.0.1
+adding module in /home/user/git/nginx-mod-modsecurity/nginx-mod-modsecurity-v1.0.1/modsecurity-nginx-v1.0.1
 checking for ModSecurity library ... not found
 checking for ModSecurity library in /usr/local/modsecurity ... found
  + ngx_http_modsecurity_module was configured
@@ -187,25 +187,25 @@ cd objs/src/http/modules/perl \
 		INSTALLSITEMAN3DIR=
 cc -c -fPIC -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -g -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -m64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection  -I src/core -I src/event -I src/event/modules -I src/os/unix -I src/http/modules/perl -I /usr/local/modsecurity/include -I /usr/include/libxml2 -I objs -I src/http -I src/http/modules -I src/http/v2 -I src/mail -I src/stream \
 	-o objs/addon/src/ngx_http_modsecurity_module.o \
-	../modsecurity-nginx-v1.0.1/src/ngx_http_modsecurity_module.c
+	/home/user/git/nginx-mod-modsecurity/nginx-mod-modsecurity-v1.0.1/modsecurity-nginx-v1.0.1/src/ngx_http_modsecurity_module.c
 Generating a Unix-style Makefile
 Writing Makefile for nginx
 Writing MYMETA.yml and MYMETA.json
 cc -c -fPIC -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -g -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -m64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection  -I src/core -I src/event -I src/event/modules -I src/os/unix -I src/http/modules/perl -I /usr/local/modsecurity/include -I /usr/include/libxml2 -I objs -I src/http -I src/http/modules -I src/http/v2 -I src/mail -I src/stream \
 	-o objs/addon/src/ngx_http_modsecurity_pre_access.o \
-	../modsecurity-nginx-v1.0.1/src/ngx_http_modsecurity_pre_access.c
+	/home/user/git/nginx-mod-modsecurity/nginx-mod-modsecurity-v1.0.1/modsecurity-nginx-v1.0.1/src/ngx_http_modsecurity_pre_access.c
 cc -c -fPIC -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -g -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -m64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection  -I src/core -I src/event -I src/event/modules -I src/os/unix -I src/http/modules/perl -I /usr/local/modsecurity/include -I /usr/include/libxml2 -I objs -I src/http -I src/http/modules -I src/http/v2 -I src/mail -I src/stream \
 	-o objs/addon/src/ngx_http_modsecurity_header_filter.o \
-	../modsecurity-nginx-v1.0.1/src/ngx_http_modsecurity_header_filter.c
+	/home/user/git/nginx-mod-modsecurity/nginx-mod-modsecurity-v1.0.1/modsecurity-nginx-v1.0.1/src/ngx_http_modsecurity_header_filter.c
 cc -c -fPIC -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -g -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -m64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection  -I src/core -I src/event -I src/event/modules -I src/os/unix -I src/http/modules/perl -I /usr/local/modsecurity/include -I /usr/include/libxml2 -I objs -I src/http -I src/http/modules -I src/http/v2 -I src/mail -I src/stream \
 	-o objs/addon/src/ngx_http_modsecurity_body_filter.o \
-	../modsecurity-nginx-v1.0.1/src/ngx_http_modsecurity_body_filter.c
+	/home/user/git/nginx-mod-modsecurity/nginx-mod-modsecurity-v1.0.1/modsecurity-nginx-v1.0.1/src/ngx_http_modsecurity_body_filter.c
 cc -c -fPIC -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -g -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -m64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection  -I src/core -I src/event -I src/event/modules -I src/os/unix -I src/http/modules/perl -I /usr/local/modsecurity/include -I /usr/include/libxml2 -I objs -I src/http -I src/http/modules -I src/http/v2 -I src/mail -I src/stream \
 	-o objs/addon/src/ngx_http_modsecurity_log.o \
-	../modsecurity-nginx-v1.0.1/src/ngx_http_modsecurity_log.c
+	/home/user/git/nginx-mod-modsecurity/nginx-mod-modsecurity-v1.0.1/modsecurity-nginx-v1.0.1/src/ngx_http_modsecurity_log.c
 cc -c -fPIC -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -g -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -m64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection  -I src/core -I src/event -I src/event/modules -I src/os/unix -I src/http/modules/perl -I /usr/local/modsecurity/include -I /usr/include/libxml2 -I objs -I src/http -I src/http/modules -I src/http/v2 -I src/mail -I src/stream \
 	-o objs/addon/src/ngx_http_modsecurity_rewrite.o \
-	../modsecurity-nginx-v1.0.1/src/ngx_http_modsecurity_rewrite.c
+	/home/user/git/nginx-mod-modsecurity/nginx-mod-modsecurity-v1.0.1/modsecurity-nginx-v1.0.1/src/ngx_http_modsecurity_rewrite.c
 cc -c -fPIC -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -g -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -m64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection  -I src/core -I src/event -I src/event/modules -I src/os/unix -I src/http/modules/perl -I /usr/local/modsecurity/include -I /usr/include/libxml2 -I objs -I src/http -I src/http/modules -I src/http/v2 -I src/mail -I src/stream \
 	-o objs/ngx_http_modsecurity_module_modules.o \
 	objs/ngx_http_modsecurity_module_modules.c
@@ -359,8 +359,8 @@ objs/src/mail/ngx_mail_proxy_module.o \
 objs/ngx_mail_module_modules.o \
 -Wl,-z,relro -Wl,--as-needed -Wl,-z,now -specs=/usr/lib/rpm/redhat/redhat-hardened-ld -Wl,-E \
 -shared
-"/usr/bin/perl" "/usr/share/perl5/vendor_perl/ExtUtils/xsubpp"  -typemap '/usr/share/perl5/ExtUtils/typemap' -typemap '/home/user/git/nginx-mod-modsecurity/nginx-mod-modsecurity-v1.0.1/nginx-1.16.1/objs/src/http/modules/perl/typemap'  nginx.xs > nginx.xsc
 Running Mkbootstrap for nginx ()
+"/usr/bin/perl" "/usr/share/perl5/vendor_perl/ExtUtils/xsubpp"  -typemap '/usr/share/perl5/ExtUtils/typemap' -typemap '/home/user/git/nginx-mod-modsecurity/nginx-mod-modsecurity-v1.0.1/nginx-1.16.1/objs/src/http/modules/perl/typemap'  nginx.xs > nginx.xsc
 chmod 644 "nginx.bs"
 "/usr/bin/perl" -MExtUtils::Command::MM -e 'cp_nonempty' -- nginx.bs blib/arch/auto/nginx/nginx.bs 644
 cp nginx.pm blib/lib/nginx.pm
@@ -409,7 +409,7 @@ objs/ngx_http_perl_module_modules.o \
 -Wl,-z,relro -Wl,--as-needed -Wl,-z,now -specs=/usr/lib/rpm/redhat/redhat-hardened-ld -Wl,-E -Wl,--enable-new-dtags -Wl,-z,relro -Wl,--as-needed -Wl,-z,now -specs=/usr/lib/rpm/redhat/redhat-hardened-ld -Wl,-z,relro -Wl,--as-needed -Wl,-z,now -specs=/usr/lib/rpm/redhat/redhat-hardened-ld -fstack-protector-strong -L/usr/local/lib -L/usr/lib64/perl5/CORE -lperl -lpthread -lresolv -ldl -lm -lcrypt -lutil -lc \
 -shared
 make[1]: Leaving directory '/home/user/git/nginx-mod-modsecurity/nginx-mod-modsecurity-v1.0.1/nginx-1.16.1'
-Executing(%install): /bin/sh -e /var/tmp/rpm-tmp.JTzHSG
+Executing(%install): /bin/sh -e /var/tmp/rpm-tmp.yNpOyW
 Processing files: nginx-mod-modsecurity-v1.0.1-1.fc31.x86_64
 Provides: nginx-mod-modsecurity = 1:v1.0.1-1.fc31 nginx-mod-modsecurity(x86-64) = 1:v1.0.1-1.fc31
 Requires(rpmlib): rpmlib(CompressedFileNames) <= 3.0.4-1 rpmlib(FileDigests) <= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) <= 4.0-1
@@ -417,4 +417,4 @@ Requires: libc.so.6()(64bit) libc.so.6(GLIBC_2.14)(64bit) libc.so.6(GLIBC_2.2.5)
 Checking for unpackaged file(s): /usr/lib/rpm/check-files /home/user/rpmbuild/BUILDROOT/nginx-mod-modsecurity-v1.0.1-1.fc31.x86_64
 Wrote: /home/user/git/nginx-mod-modsecurity/nginx-mod-modsecurity-v1.0.1-1.fc31.src.rpm
 Wrote: /home/user/git/nginx-mod-modsecurity/x86_64/nginx-mod-modsecurity-v1.0.1-1.fc31.x86_64.rpm
-Executing(%clean): /bin/sh -e /var/tmp/rpm-tmp.Cqt4iE
+Executing(%clean): /bin/sh -e /var/tmp/rpm-tmp.tFxwfY

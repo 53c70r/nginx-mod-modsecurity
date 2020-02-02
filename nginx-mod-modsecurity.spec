@@ -84,6 +84,9 @@ cd nginx-%{rhel_nginx_version}
 %patch0 -p0
 
 %build
+
+connector_path=$(realpath modsecurity-nginx-%{version})
+
 %if 0%{?fedora} >= 31
 cd nginx-%{fedora_nginx_version}
 %elif 0%{?rhel} >= 8
@@ -146,7 +149,7 @@ if ! ./configure \
     --with-debug \
     --with-cc-opt="%{optflags} $(pcre-config --cflags)" \
     --with-ld-opt="$nginx_ldopts" \
-    --add-dynamic-module=../modsecurity-nginx-%{version}; then
+    --add-dynamic-module=$connector_path; then
   : configure failed
   cat objs/autoconf.err
   exit 1
