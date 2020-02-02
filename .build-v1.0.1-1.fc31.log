@@ -1,9 +1,9 @@
 
-Executing(%prep): /bin/sh -e /var/tmp/rpm-tmp.3wh4ch
+Executing(%prep): /bin/sh -e /var/tmp/rpm-tmp.s9SAwb
 Patch #0 (nginx-auto-cc-gcc.patch):
 patching file auto/cc/gcc
 Hunk #1 succeeded at 166 (offset -6 lines).
-Executing(%build): /bin/sh -e /var/tmp/rpm-tmp.nk38ui
+Executing(%build): /bin/sh -e /var/tmp/rpm-tmp.3YLqf9
 checking for OS
  + Linux 5.4.14-200.fc31.x86_64 x86_64
 checking for C compiler ... found
@@ -360,8 +360,8 @@ objs/ngx_mail_module_modules.o \
 -Wl,-z,relro -Wl,--as-needed -Wl,-z,now -specs=/usr/lib/rpm/redhat/redhat-hardened-ld -Wl,-E \
 -shared
 Running Mkbootstrap for nginx ()
-chmod 644 "nginx.bs"
 "/usr/bin/perl" "/usr/share/perl5/vendor_perl/ExtUtils/xsubpp"  -typemap '/usr/share/perl5/ExtUtils/typemap' -typemap '/home/user/git/nginx-mod-modsecurity/nginx-mod-modsecurity-v1.0.1/nginx-1.16.1/objs/src/http/modules/perl/typemap'  nginx.xs > nginx.xsc
+chmod 644 "nginx.bs"
 "/usr/bin/perl" -MExtUtils::Command::MM -e 'cp_nonempty' -- nginx.bs blib/arch/auto/nginx/nginx.bs 644
 cp nginx.pm blib/lib/nginx.pm
 mv nginx.xsc nginx.c
@@ -409,7 +409,7 @@ objs/ngx_http_perl_module_modules.o \
 -Wl,-z,relro -Wl,--as-needed -Wl,-z,now -specs=/usr/lib/rpm/redhat/redhat-hardened-ld -Wl,-E -Wl,--enable-new-dtags -Wl,-z,relro -Wl,--as-needed -Wl,-z,now -specs=/usr/lib/rpm/redhat/redhat-hardened-ld -Wl,-z,relro -Wl,--as-needed -Wl,-z,now -specs=/usr/lib/rpm/redhat/redhat-hardened-ld -fstack-protector-strong -L/usr/local/lib -L/usr/lib64/perl5/CORE -lperl -lpthread -lresolv -ldl -lm -lcrypt -lutil -lc \
 -shared
 make[1]: Leaving directory '/home/user/git/nginx-mod-modsecurity/nginx-mod-modsecurity-v1.0.1/nginx-1.16.1'
-Executing(%install): /bin/sh -e /var/tmp/rpm-tmp.b43qzj
+Executing(%install): /bin/sh -e /var/tmp/rpm-tmp.4F1Jxd
 Processing files: nginx-mod-modsecurity-v1.0.1-1.fc31.x86_64
 Provides: nginx-mod-modsecurity = 1:v1.0.1-1.fc31 nginx-mod-modsecurity(x86-64) = 1:v1.0.1-1.fc31
 Requires(rpmlib): rpmlib(CompressedFileNames) <= 3.0.4-1 rpmlib(FileDigests) <= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) <= 4.0-1
@@ -417,4 +417,4 @@ Requires: libc.so.6()(64bit) libc.so.6(GLIBC_2.14)(64bit) libc.so.6(GLIBC_2.2.5)
 Checking for unpackaged file(s): /usr/lib/rpm/check-files /home/user/rpmbuild/BUILDROOT/nginx-mod-modsecurity-v1.0.1-1.fc31.x86_64
 Wrote: /home/user/git/nginx-mod-modsecurity/nginx-mod-modsecurity-v1.0.1-1.fc31.src.rpm
 Wrote: /home/user/git/nginx-mod-modsecurity/x86_64/nginx-mod-modsecurity-v1.0.1-1.fc31.x86_64.rpm
-Executing(%clean): /bin/sh -e /var/tmp/rpm-tmp.cWRimi
+Executing(%clean): /bin/sh -e /var/tmp/rpm-tmp.9D00Db
