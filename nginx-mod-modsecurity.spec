@@ -66,25 +66,30 @@ Requires:       libmodsecurity
 %description
 ModSecurity is an open source, cross platform web application firewall (WAF) engine for Apache, IIS and Nginx that is developed by Trustwave's SpiderLabs. It has a robust event-based programming language which provides protection from a range of attacks against web applications and allows for HTTP traffic monitoring, logging and real-time analys...
 
-%if 0%{?fedora} >= 31
 %prep
+
+%if 0%{?fedora} >= 31
 %setup -q -c
 %setup -q -T -D -a 2
 cd nginx-%{fedora_nginx_version}
 %patch0 -p0
 %elif 0%{?rhel} >= 8
-%prep
 %setup -q -c -a 5
 %setup -q -T -D -a 2
 cd nginx-%{rhel_nginx_version}
 %patch5 -p0
 %endif
 
+%clean
+[ "$RPM_BUILD_ROOT" != "/" ] && rm -rf $RPM_BUILD_ROOT
+
 %build
-connector_path=$(realpath modsecurity-nginx-%{version})
 %if 0%{?fedora} >= 31
+connector_path=$(realpath modsecurity-nginx-%{version})
 cd nginx-%{fedora_nginx_version}
 %elif 0%{?rhel} >= 8
+cd nginx-mod-modsecurity-%{version}
+connector_path=$(realpath modsecurity-nginx-%{version})
 cd nginx-%{rhel_nginx_version}
 %endif
 nginx_ldopts="$RPM_LD_FLAGS -Wl,-E"
@@ -151,17 +156,14 @@ fi
 make modules %{?_smp_mflags}
 
 %install
-
 %if 0%{?fedora} >= 31
 %{__install} -p -D -m 0755 ./nginx-%{fedora_nginx_version}/objs/ngx_http_modsecurity_module.so %{buildroot}%{_libdir}/nginx/modules/ngx_http_modsecurity_module.so
 %elif 0%{?rhel} >= 8
 %{__install} -p -D -m 0755 ./nginx-%{rhel_nginx_version}/objs/ngx_http_modsecurity_module.so %{buildroot}%{_libdir}/nginx/modules/ngx_http_modsecurity_module.so
 %endif
-
 %{__install} -p -D -m 0644 %{SOURCE4} %{buildroot}%{_datadir}/nginx/modules/mod-modsecurity.conf
 
 %files
 %defattr (-,root,root)
 %{_libdir}/nginx/modules/ngx_http_modsecurity_module.so
 %{_datadir}/nginx/modules/mod-modsecurity.conf
-
