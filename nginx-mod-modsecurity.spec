@@ -2,11 +2,8 @@
 %global nginx_user nginx
 %global debug_package %{nil}
 %global with_aio 1
-%if 0%{?fedora} >= 31
-%global nginx_version 1.16.1
-%else
-%global nginx_version 1.14.1
-%endif
+%global fedora_nginx_version 1.16.1
+%global rhel_nginx_version 1.14.1
 
 %if 0%{?fedora} > 22 || 0%{?rhel} >= 8
 %global with_mailcap_mimetypes 1
@@ -27,12 +24,18 @@ License:        Apache License 2.0
 BuildArch:      x86_64
 URL:            https://www.modsecurity.org/
 
-Source0:        https://nginx.org/download/nginx-%{nginx_version}.tar.gz
-Source1:        https://nginx.org/download/nginx-%{nginx_version}.tar.gz.asc
+Source0:        https://nginx.org/download/nginx-%{fedora_nginx_version}.tar.gz
+Source1:        https://nginx.org/download/nginx-%{fedora_nginx_version}.tar.gz.asc
 Source2:        https://github.com/SpiderLabs/ModSecurity-nginx/releases/download/%{version}/modsecurity-nginx-%{version}.tar.gz
 Source3:        https://github.com/SpiderLabs/ModSecurity-nginx/releases/download/%{version}/modsecurity-nginx-%{version}.tar.gz.asc
 Source4:        mod-modsecurity.conf
+Source5:        https://nginx.org/download/nginx-%{rhel_nginx_version}.tar.gz
+Source6:        https://nginx.org/download/nginx-%{rhel_nginx_version}.tar.gz.asc
+%if 0%{?fedora} >= 31
 Patch0:         nginx-auto-cc-gcc.patch
+%else
+Patch5:         nginx-auto-cc-gcc.patch
+%endif
 
 %if 0%{?with_gperftools}
 BuildRequires:  gperftools-devel
@@ -51,7 +54,11 @@ BuildRequires:  automake
 BuildRequires:  libtool
 BuildRequires:  perl-ExtUtils-Embed
 BuildRequires:  libmodsecurity
-Requires:       nginx >= %{nginx_version}
+%if 0%{?fedora} >= 31
+Requires:       nginx >= %{fedora_nginx_version}
+%else
+Requires:       nginx >= %{rhel_nginx_version}
+%endif
 Requires:       GeoIP
 Requires:       libmodsecurity
 
@@ -59,14 +66,27 @@ Requires:       libmodsecurity
 ModSecurity is an open source, cross platform web application firewall (WAF) engine for Apache, IIS and Nginx that is developed by Trustwave's SpiderLabs. It has a robust event-based programming language which provides protection from a range of attacks against web applications and allows for HTTP traffic monitoring, logging and real-time analys...
 
 %prep
+%if 0%{?fedora} >= 31
 %setup -c -q
+%else
+%setup -T -D -a 5 -c
+%endif
 %setup -T -D -a 2
-cd nginx-%{nginx_version}
+%if 0%{?fedora} >= 31
+cd nginx-%{fedora_nginx_version}
 %patch0 -p0
+%else
+cd nginx-%{rhel_nginx_version}
+%patch5 -p0
+%endif
 
 %build
 connector_path=$(realpath modsecurity-nginx-%{version})
-cd nginx-%{nginx_version}
+%if 0%{?fedora} >= 31
+cd nginx-%{fedora_nginx_version}
+%else
+cd nginx-%{rhel_nginx_version}
+%endif
 #export DESTDIR=%{buildroot}
 nginx_ldopts="$RPM_LD_FLAGS -Wl,-E"
 if ! ./configure \
@@ -132,7 +152,11 @@ fi
 make modules %{?_smp_mflags}
 
 %install
-%{__install} -p -D -m 0755 ./nginx-%{nginx_version}/objs/ngx_http_modsecurity_module.so %{buildroot}%{_libdir}/nginx/modules/ngx_http_modsecurity_module.so
+%if 0%{?fedora} >= 31
+%{__install} -p -D -m 0755 ./nginx-%{fedora_nginx_version}/objs/ngx_http_modsecurity_module.so %{buildroot}%{_libdir}/nginx/modules/ngx_http_modsecurity_module.so
+%else
+%{__install} -p -D -m 0755 ./nginx-%{rhel_nginx_version}/objs/ngx_http_modsecurity_module.so %{buildroot}%{_libdir}/nginx/modules/ngx_http_modsecurity_module.so
+%endif
 %{__install} -p -D -m 0644 %{SOURCE4} %{buildroot}%{_datadir}/nginx/modules/mod-modsecurity.conf
 
 

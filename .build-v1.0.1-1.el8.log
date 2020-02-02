@@ -1,2 +1,886 @@
 
 
+Executing(%prep): /bin/sh -e /var/tmp/rpm-tmp.D0GTX5
+drwxr-xr-x mdounin/mdounin   0 2018-11-06 14:52 nginx-1.14.1/
+drwxr-xr-x mdounin/mdounin   0 2018-11-06 14:52 nginx-1.14.1/auto/
+drwxr-xr-x mdounin/mdounin   0 2018-11-06 14:52 nginx-1.14.1/conf/
+drwxr-xr-x mdounin/mdounin   0 2018-11-06 14:52 nginx-1.14.1/contrib/
+drwxr-xr-x mdounin/mdounin   0 2018-11-06 14:52 nginx-1.14.1/src/
+-rwxr-xr-x mdounin/mdounin 2502 2018-11-06 14:52 nginx-1.14.1/configure
+-rw-r--r-- mdounin/mdounin 1397 2018-11-06 14:52 nginx-1.14.1/LICENSE
+-rw-r--r-- mdounin/mdounin   49 2018-11-06 14:52 nginx-1.14.1/README
+drwxr-xr-x mdounin/mdounin    0 2018-11-06 14:52 nginx-1.14.1/html/
+drwxr-xr-x mdounin/mdounin    0 2018-11-06 14:52 nginx-1.14.1/man/
+-rw-r--r-- mdounin/mdounin 438114 2018-11-06 14:52 nginx-1.14.1/CHANGES.ru
+-rw-r--r-- mdounin/mdounin 287441 2018-11-06 14:52 nginx-1.14.1/CHANGES
+-rw-r--r-- mdounin/mdounin   5284 2018-11-06 14:52 nginx-1.14.1/man/nginx.8
+-rw-r--r-- mdounin/mdounin    537 2018-11-06 14:52 nginx-1.14.1/html/50x.html
+-rw-r--r-- mdounin/mdounin    612 2018-11-06 14:52 nginx-1.14.1/html/index.html
+drwxr-xr-x mdounin/mdounin      0 2018-11-06 14:52 nginx-1.14.1/src/core/
+drwxr-xr-x mdounin/mdounin      0 2018-11-06 14:52 nginx-1.14.1/src/event/
+drwxr-xr-x mdounin/mdounin      0 2018-11-06 14:52 nginx-1.14.1/src/http/
+drwxr-xr-x mdounin/mdounin      0 2018-11-06 14:52 nginx-1.14.1/src/mail/
+drwxr-xr-x mdounin/mdounin      0 2018-11-06 14:52 nginx-1.14.1/src/misc/
+drwxr-xr-x mdounin/mdounin      0 2018-11-06 14:52 nginx-1.14.1/src/os/
+drwxr-xr-x mdounin/mdounin      0 2018-11-06 14:52 nginx-1.14.1/src/stream/
+-rw-r--r-- mdounin/mdounin  17661 2018-11-06 14:52 nginx-1.14.1/src/stream/ngx_stream.c
+-rw-r--r-- mdounin/mdounin   9205 2018-11-06 14:52 nginx-1.14.1/src/stream/ngx_stream.h
+-rw-r--r-- mdounin/mdounin  11609 2018-11-06 14:52 nginx-1.14.1/src/stream/ngx_stream_access_module.c
+-rw-r--r-- mdounin/mdounin  24012 2018-11-06 14:52 nginx-1.14.1/src/stream/ngx_stream_core_module.c
+-rw-r--r-- mdounin/mdounin  42260 2018-11-06 14:52 nginx-1.14.1/src/stream/ngx_stream_geo_module.c
+-rw-r--r-- mdounin/mdounin  19733 2018-11-06 14:52 nginx-1.14.1/src/stream/ngx_stream_geoip_module.c
+-rw-r--r-- mdounin/mdounin   9400 2018-11-06 14:52 nginx-1.14.1/src/stream/ngx_stream_handler.c
+-rw-r--r-- mdounin/mdounin  17368 2018-11-06 14:52 nginx-1.14.1/src/stream/ngx_stream_limit_conn_module.c
+-rw-r--r-- mdounin/mdounin  41632 2018-11-06 14:52 nginx-1.14.1/src/stream/ngx_stream_log_module.c
+-rw-r--r-- mdounin/mdounin  15075 2018-11-06 14:52 nginx-1.14.1/src/stream/ngx_stream_map_module.c
+-rw-r--r-- mdounin/mdounin  61117 2018-11-06 14:52 nginx-1.14.1/src/stream/ngx_stream_proxy_module.c
+-rw-r--r-- mdounin/mdounin  10006 2018-11-06 14:52 nginx-1.14.1/src/stream/ngx_stream_realip_module.c
+-rw-r--r-- mdounin/mdounin   5692 2018-11-06 14:52 nginx-1.14.1/src/stream/ngx_stream_return_module.c
+-rw-r--r-- mdounin/mdounin  22443 2018-11-06 14:52 nginx-1.14.1/src/stream/ngx_stream_script.c
+-rw-r--r-- mdounin/mdounin   3858 2018-11-06 14:52 nginx-1.14.1/src/stream/ngx_stream_script.h
+-rw-r--r-- mdounin/mdounin   6576 2018-11-06 14:52 nginx-1.14.1/src/stream/ngx_stream_split_clients_module.c
+-rw-r--r-- mdounin/mdounin  24789 2018-11-06 14:52 nginx-1.14.1/src/stream/ngx_stream_ssl_module.c
+-rw-r--r-- mdounin/mdounin   1064 2018-11-06 14:52 nginx-1.14.1/src/stream/ngx_stream_ssl_module.h
+-rw-r--r-- mdounin/mdounin  14808 2018-11-06 14:52 nginx-1.14.1/src/stream/ngx_stream_ssl_preread_module.c
+-rw-r--r-- mdounin/mdounin  18322 2018-11-06 14:52 nginx-1.14.1/src/stream/ngx_stream_upstream.c
+-rw-r--r-- mdounin/mdounin   4687 2018-11-06 14:52 nginx-1.14.1/src/stream/ngx_stream_upstream.h
+-rw-r--r-- mdounin/mdounin  18631 2018-11-06 14:52 nginx-1.14.1/src/stream/ngx_stream_upstream_hash_module.c
+-rw-r--r-- mdounin/mdounin   8160 2018-11-06 14:52 nginx-1.14.1/src/stream/ngx_stream_upstream_least_conn_module.c
+-rw-r--r-- mdounin/mdounin  22874 2018-11-06 14:52 nginx-1.14.1/src/stream/ngx_stream_upstream_round_robin.c
+-rw-r--r-- mdounin/mdounin   4914 2018-11-06 14:52 nginx-1.14.1/src/stream/ngx_stream_upstream_round_robin.h
+-rw-r--r-- mdounin/mdounin   8598 2018-11-06 14:52 nginx-1.14.1/src/stream/ngx_stream_upstream_zone_module.c
+-rw-r--r-- mdounin/mdounin  30586 2018-11-06 14:52 nginx-1.14.1/src/stream/ngx_stream_variables.c
+-rw-r--r-- mdounin/mdounin   3163 2018-11-06 14:52 nginx-1.14.1/src/stream/ngx_stream_variables.h
+-rw-r--r-- mdounin/mdounin   7650 2018-11-06 14:52 nginx-1.14.1/src/stream/ngx_stream_write_filter_module.c
+drwxr-xr-x mdounin/mdounin      0 2018-11-06 14:52 nginx-1.14.1/src/os/unix/
+-rw-r--r-- mdounin/mdounin   1595 2018-11-06 14:52 nginx-1.14.1/src/os/unix/ngx_alloc.c
+-rw-r--r-- mdounin/mdounin    872 2018-11-06 14:52 nginx-1.14.1/src/os/unix/ngx_alloc.h
+-rw-r--r-- mdounin/mdounin   7274 2018-11-06 14:52 nginx-1.14.1/src/os/unix/ngx_atomic.h
+-rw-r--r-- mdounin/mdounin   5832 2018-11-06 14:52 nginx-1.14.1/src/os/unix/ngx_channel.c
+-rw-r--r-- mdounin/mdounin    735 2018-11-06 14:52 nginx-1.14.1/src/os/unix/ngx_channel.h
+-rw-r--r-- mdounin/mdounin   1433 2018-11-06 14:52 nginx-1.14.1/src/os/unix/ngx_daemon.c
+-rw-r--r-- mdounin/mdounin    467 2018-11-06 14:52 nginx-1.14.1/src/os/unix/ngx_darwin.h
+-rw-r--r-- mdounin/mdounin   1631 2018-11-06 14:52 nginx-1.14.1/src/os/unix/ngx_darwin_config.h
+-rw-r--r-- mdounin/mdounin   4355 2018-11-06 14:52 nginx-1.14.1/src/os/unix/ngx_darwin_init.c
+-rw-r--r-- mdounin/mdounin   5668 2018-11-06 14:52 nginx-1.14.1/src/os/unix/ngx_darwin_sendfile_chain.c
+-rw-r--r-- mdounin/mdounin    290 2018-11-06 14:52 nginx-1.14.1/src/os/unix/ngx_dlopen.c
+-rw-r--r-- mdounin/mdounin    607 2018-11-06 14:52 nginx-1.14.1/src/os/unix/ngx_dlopen.h
+-rw-r--r-- mdounin/mdounin   1926 2018-11-06 14:52 nginx-1.14.1/src/os/unix/ngx_errno.c
+-rw-r--r-- mdounin/mdounin   2039 2018-11-06 14:52 nginx-1.14.1/src/os/unix/ngx_errno.h
+-rw-r--r-- mdounin/mdounin   5074 2018-11-06 14:52 nginx-1.14.1/src/os/unix/ngx_file_aio_read.c
+-rw-r--r-- mdounin/mdounin  18017 2018-11-06 14:52 nginx-1.14.1/src/os/unix/ngx_files.c
+-rw-r--r-- mdounin/mdounin  10549 2018-11-06 14:52 nginx-1.14.1/src/os/unix/ngx_files.h
+-rw-r--r-- mdounin/mdounin    579 2018-11-06 14:52 nginx-1.14.1/src/os/unix/ngx_freebsd.h
+-rw-r--r-- mdounin/mdounin   2187 2018-11-06 14:52 nginx-1.14.1/src/os/unix/ngx_freebsd_config.h
+-rw-r--r-- mdounin/mdounin    264 2018-11-06 14:52 nginx-1.14.1/src/os/unix/ngx_linux.h
+-rw-r--r-- mdounin/mdounin   6358 2018-11-06 14:52 nginx-1.14.1/src/os/unix/ngx_freebsd_init.c
+-rw-r--r-- mdounin/mdounin   9301 2018-11-06 14:52 nginx-1.14.1/src/os/unix/ngx_freebsd_sendfile_chain.c
+-rw-r--r-- mdounin/mdounin   1567 2018-11-06 14:52 nginx-1.14.1/src/os/unix/ngx_gcc_atomic_amd64.h
+-rw-r--r-- mdounin/mdounin   5632 2018-11-06 14:52 nginx-1.14.1/src/os/unix/ngx_gcc_atomic_ppc.h
+-rw-r--r-- mdounin/mdounin   1599 2018-11-06 14:52 nginx-1.14.1/src/os/unix/ngx_gcc_atomic_sparc64.h
+-rw-r--r-- mdounin/mdounin   2638 2018-11-06 14:52 nginx-1.14.1/src/os/unix/ngx_gcc_atomic_x86.h
+-rw-r--r-- mdounin/mdounin   3194 2018-11-06 14:52 nginx-1.14.1/src/os/unix/ngx_linux_aio_read.c
+-rw-r--r-- mdounin/mdounin   2277 2018-11-06 14:52 nginx-1.14.1/src/os/unix/ngx_linux_config.h
+-rw-r--r-- mdounin/mdounin   1168 2018-11-06 14:52 nginx-1.14.1/src/os/unix/ngx_linux_init.c
+-rw-r--r-- mdounin/mdounin  11195 2018-11-06 14:52 nginx-1.14.1/src/os/unix/ngx_linux_sendfile_chain.c
+-rw-r--r-- mdounin/mdounin   2522 2018-11-06 14:52 nginx-1.14.1/src/os/unix/ngx_os.h
+-rw-r--r-- mdounin/mdounin   2489 2018-11-06 14:52 nginx-1.14.1/src/os/unix/ngx_posix_config.h
+-rw-r--r-- mdounin/mdounin   2828 2018-11-06 14:52 nginx-1.14.1/src/os/unix/ngx_posix_init.c
+-rw-r--r-- mdounin/mdounin  17089 2018-11-06 14:52 nginx-1.14.1/src/os/unix/ngx_process.c
+-rw-r--r-- mdounin/mdounin   1960 2018-11-06 14:52 nginx-1.14.1/src/os/unix/ngx_process.h
+-rw-r--r-- mdounin/mdounin  34006 2018-11-06 14:52 nginx-1.14.1/src/os/unix/ngx_process_cycle.c
+-rw-r--r-- mdounin/mdounin   1464 2018-11-06 14:52 nginx-1.14.1/src/os/unix/ngx_process_cycle.h
+-rw-r--r-- mdounin/mdounin   4776 2018-11-06 14:52 nginx-1.14.1/src/os/unix/ngx_readv_chain.c
+-rw-r--r-- mdounin/mdounin   3721 2018-11-06 14:52 nginx-1.14.1/src/os/unix/ngx_recv.c
+-rw-r--r-- mdounin/mdounin   1569 2018-11-06 14:52 nginx-1.14.1/src/os/unix/ngx_send.c
+-rw-r--r-- mdounin/mdounin   1213 2018-11-06 14:52 nginx-1.14.1/src/os/unix/ngx_setaffinity.c
+-rw-r--r-- mdounin/mdounin    585 2018-11-06 14:52 nginx-1.14.1/src/os/unix/ngx_setaffinity.h
+-rw-r--r-- mdounin/mdounin   3262 2018-11-06 14:52 nginx-1.14.1/src/os/unix/ngx_setproctitle.c
+-rw-r--r-- mdounin/mdounin    990 2018-11-06 14:52 nginx-1.14.1/src/os/unix/ngx_setproctitle.h
+-rw-r--r-- mdounin/mdounin   2845 2018-11-06 14:52 nginx-1.14.1/src/os/unix/ngx_shmem.c
+-rw-r--r-- mdounin/mdounin    471 2018-11-06 14:52 nginx-1.14.1/src/os/unix/ngx_shmem.h
+-rw-r--r-- mdounin/mdounin   1603 2018-11-06 14:52 nginx-1.14.1/src/os/unix/ngx_socket.c
+-rw-r--r-- mdounin/mdounin   1274 2018-11-06 14:52 nginx-1.14.1/src/os/unix/ngx_socket.h
+-rw-r--r-- mdounin/mdounin    273 2018-11-06 14:52 nginx-1.14.1/src/os/unix/ngx_solaris.h
+-rw-r--r-- mdounin/mdounin   1905 2018-11-06 14:52 nginx-1.14.1/src/os/unix/ngx_solaris_config.h
+-rw-r--r-- mdounin/mdounin   1589 2018-11-06 14:52 nginx-1.14.1/src/os/unix/ngx_solaris_init.c
+-rw-r--r-- mdounin/mdounin   5643 2018-11-06 14:52 nginx-1.14.1/src/os/unix/ngx_solaris_sendfilev_chain.c
+-rw-r--r-- mdounin/mdounin   1046 2018-11-06 14:52 nginx-1.14.1/src/os/unix/ngx_sunpro_amd64.il
+-rw-r--r-- mdounin/mdounin   1226 2018-11-06 14:52 nginx-1.14.1/src/os/unix/ngx_sunpro_atomic_sparc64.h
+-rw-r--r-- mdounin/mdounin    804 2018-11-06 14:52 nginx-1.14.1/src/os/unix/ngx_sunpro_sparc64.il
+-rw-r--r-- mdounin/mdounin   1490 2018-11-06 14:52 nginx-1.14.1/src/os/unix/ngx_thread.h
+-rw-r--r-- mdounin/mdounin   1097 2018-11-06 14:52 nginx-1.14.1/src/os/unix/ngx_sunpro_x86.il
+-rw-r--r-- mdounin/mdounin   1330 2018-11-06 14:52 nginx-1.14.1/src/os/unix/ngx_thread_cond.c
+-rw-r--r-- mdounin/mdounin   1143 2018-11-06 14:52 nginx-1.14.1/src/os/unix/ngx_thread_id.c
+-rw-r--r-- mdounin/mdounin   4582 2018-11-06 14:52 nginx-1.14.1/src/os/unix/ngx_thread_mutex.c
+-rw-r--r-- mdounin/mdounin   1505 2018-11-06 14:52 nginx-1.14.1/src/os/unix/ngx_time.c
+-rw-r--r-- mdounin/mdounin   1510 2018-11-06 14:52 nginx-1.14.1/src/os/unix/ngx_time.h
+-rw-r--r-- mdounin/mdounin   1455 2018-11-06 14:52 nginx-1.14.1/src/os/unix/ngx_udp_recv.c
+-rw-r--r-- mdounin/mdounin   1262 2018-11-06 14:52 nginx-1.14.1/src/os/unix/ngx_udp_send.c
+-rw-r--r-- mdounin/mdounin   8327 2018-11-06 14:52 nginx-1.14.1/src/os/unix/ngx_udp_sendmsg_chain.c
+-rw-r--r-- mdounin/mdounin   1477 2018-11-06 14:52 nginx-1.14.1/src/os/unix/ngx_user.c
+-rw-r--r-- mdounin/mdounin    364 2018-11-06 14:52 nginx-1.14.1/src/os/unix/ngx_user.h
+-rw-r--r-- mdounin/mdounin   4984 2018-11-06 14:52 nginx-1.14.1/src/os/unix/ngx_writev_chain.c
+-rw-r--r-- mdounin/mdounin    565 2018-11-06 14:52 nginx-1.14.1/src/misc/ngx_cpp_test_module.cpp
+-rw-r--r-- mdounin/mdounin   3046 2018-11-06 14:52 nginx-1.14.1/src/misc/ngx_google_perftools_module.c
+-rw-r--r-- mdounin/mdounin  12957 2018-11-06 14:52 nginx-1.14.1/src/mail/ngx_mail.c
+-rw-r--r-- mdounin/mdounin  11236 2018-11-06 14:52 nginx-1.14.1/src/mail/ngx_mail.h
+-rw-r--r-- mdounin/mdounin  45461 2018-11-06 14:52 nginx-1.14.1/src/mail/ngx_mail_auth_http_module.c
+-rw-r--r-- mdounin/mdounin  18085 2018-11-06 14:52 nginx-1.14.1/src/mail/ngx_mail_core_module.c
+-rw-r--r-- mdounin/mdounin  20536 2018-11-06 14:52 nginx-1.14.1/src/mail/ngx_mail_handler.c
+-rw-r--r-- mdounin/mdounin  11401 2018-11-06 14:52 nginx-1.14.1/src/mail/ngx_mail_imap_handler.c
+-rw-r--r-- mdounin/mdounin   7048 2018-11-06 14:52 nginx-1.14.1/src/mail/ngx_mail_imap_module.c
+-rw-r--r-- mdounin/mdounin    817 2018-11-06 14:52 nginx-1.14.1/src/mail/ngx_mail_imap_module.h
+-rw-r--r-- mdounin/mdounin  25063 2018-11-06 14:52 nginx-1.14.1/src/mail/ngx_mail_parse.c
+-rw-r--r-- mdounin/mdounin  12052 2018-11-06 14:52 nginx-1.14.1/src/mail/ngx_mail_pop3_handler.c
+-rw-r--r-- mdounin/mdounin   8742 2018-11-06 14:52 nginx-1.14.1/src/mail/ngx_mail_pop3_module.c
+-rw-r--r-- mdounin/mdounin    813 2018-11-06 14:52 nginx-1.14.1/src/mail/ngx_mail_pop3_module.h
+-rw-r--r-- mdounin/mdounin  30948 2018-11-06 14:52 nginx-1.14.1/src/mail/ngx_mail_proxy_module.c
+-rw-r--r-- mdounin/mdounin  21031 2018-11-06 14:52 nginx-1.14.1/src/mail/ngx_mail_smtp_handler.c
+-rw-r--r-- mdounin/mdounin   8813 2018-11-06 14:52 nginx-1.14.1/src/mail/ngx_mail_smtp_module.c
+-rw-r--r-- mdounin/mdounin    943 2018-11-06 14:52 nginx-1.14.1/src/mail/ngx_mail_smtp_module.h
+-rw-r--r-- mdounin/mdounin  19366 2018-11-06 14:52 nginx-1.14.1/src/mail/ngx_mail_ssl_module.c
+-rw-r--r-- mdounin/mdounin   1230 2018-11-06 14:52 nginx-1.14.1/src/mail/ngx_mail_ssl_module.h
+drwxr-xr-x mdounin/mdounin      0 2018-11-06 14:52 nginx-1.14.1/src/http/modules/
+-rw-r--r-- mdounin/mdounin  52438 2018-11-06 14:52 nginx-1.14.1/src/http/ngx_http.c
+-rw-r--r-- mdounin/mdounin   5821 2018-11-06 14:52 nginx-1.14.1/src/http/ngx_http.h
+-rw-r--r-- mdounin/mdounin   7099 2018-11-06 14:52 nginx-1.14.1/src/http/ngx_http_cache.h
+-rw-r--r-- mdounin/mdounin   2565 2018-11-06 14:52 nginx-1.14.1/src/http/ngx_http_config.h
+-rw-r--r-- mdounin/mdounin   9451 2018-11-06 14:52 nginx-1.14.1/src/http/ngx_http_copy_filter_module.c
+-rw-r--r-- mdounin/mdounin 139966 2018-11-06 14:52 nginx-1.14.1/src/http/ngx_http_core_module.c
+-rw-r--r-- mdounin/mdounin  18898 2018-11-06 14:52 nginx-1.14.1/src/http/ngx_http_core_module.h
+-rw-r--r-- mdounin/mdounin  69023 2018-11-06 14:52 nginx-1.14.1/src/http/ngx_http_file_cache.c
+-rw-r--r-- mdounin/mdounin  19498 2018-11-06 14:52 nginx-1.14.1/src/http/ngx_http_header_filter_module.c
+-rw-r--r-- mdounin/mdounin  59240 2018-11-06 14:52 nginx-1.14.1/src/http/ngx_http_parse.c
+-rw-r--r-- mdounin/mdounin   6662 2018-11-06 14:52 nginx-1.14.1/src/http/ngx_http_postpone_filter_module.c
+-rw-r--r-- mdounin/mdounin  93948 2018-11-06 14:52 nginx-1.14.1/src/http/ngx_http_request.c
+-rw-r--r-- mdounin/mdounin  20641 2018-11-06 14:52 nginx-1.14.1/src/http/ngx_http_request.h
+-rw-r--r-- mdounin/mdounin  29482 2018-11-06 14:52 nginx-1.14.1/src/http/ngx_http_request_body.c
+-rw-r--r-- mdounin/mdounin  42713 2018-11-06 14:52 nginx-1.14.1/src/http/ngx_http_script.c
+drwxr-xr-x mdounin/mdounin      0 2018-11-06 14:52 nginx-1.14.1/src/http/v2/
+-rw-r--r-- mdounin/mdounin   7745 2018-11-06 14:52 nginx-1.14.1/src/http/ngx_http_script.h
+-rw-r--r-- mdounin/mdounin  22499 2018-11-06 14:52 nginx-1.14.1/src/http/ngx_http_special_response.c
+-rw-r--r-- mdounin/mdounin 164080 2018-11-06 14:52 nginx-1.14.1/src/http/ngx_http_upstream.c
+-rw-r--r-- mdounin/mdounin  15275 2018-11-06 14:52 nginx-1.14.1/src/http/ngx_http_upstream.h
+-rw-r--r-- mdounin/mdounin  21433 2018-11-06 14:52 nginx-1.14.1/src/http/ngx_http_upstream_round_robin.c
+-rw-r--r-- mdounin/mdounin   5089 2018-11-06 14:52 nginx-1.14.1/src/http/ngx_http_upstream_round_robin.h
+-rw-r--r-- mdounin/mdounin  65966 2018-11-06 14:52 nginx-1.14.1/src/http/ngx_http_variables.c
+-rw-r--r-- mdounin/mdounin   3188 2018-11-06 14:52 nginx-1.14.1/src/http/ngx_http_variables.h
+-rw-r--r-- mdounin/mdounin   8966 2018-11-06 14:52 nginx-1.14.1/src/http/ngx_http_write_filter_module.c
+-rw-r--r-- mdounin/mdounin 132113 2018-11-06 14:52 nginx-1.14.1/src/http/v2/ngx_http_v2.c
+-rw-r--r-- mdounin/mdounin  13351 2018-11-06 14:52 nginx-1.14.1/src/http/v2/ngx_http_v2.h
+-rw-r--r-- mdounin/mdounin   1191 2018-11-06 14:52 nginx-1.14.1/src/http/v2/ngx_http_v2_encode.c
+-rw-r--r-- mdounin/mdounin  57008 2018-11-06 14:52 nginx-1.14.1/src/http/v2/ngx_http_v2_filter_module.c
+-rw-r--r-- mdounin/mdounin 128803 2018-11-06 14:52 nginx-1.14.1/src/http/v2/ngx_http_v2_huff_decode.c
+-rw-r--r-- mdounin/mdounin  12829 2018-11-06 14:52 nginx-1.14.1/src/http/v2/ngx_http_v2_huff_encode.c
+-rw-r--r-- mdounin/mdounin  16454 2018-11-06 14:52 nginx-1.14.1/src/http/v2/ngx_http_v2_module.c
+-rw-r--r-- mdounin/mdounin   1261 2018-11-06 14:52 nginx-1.14.1/src/http/v2/ngx_http_v2_module.h
+-rw-r--r-- mdounin/mdounin  11697 2018-11-06 14:52 nginx-1.14.1/src/http/v2/ngx_http_v2_table.c
+-rw-r--r-- mdounin/mdounin  11866 2018-11-06 14:52 nginx-1.14.1/src/http/modules/ngx_http_access_module.c
+-rw-r--r-- mdounin/mdounin   6994 2018-11-06 14:52 nginx-1.14.1/src/http/modules/ngx_http_addition_filter_module.c
+-rw-r--r-- mdounin/mdounin  11642 2018-11-06 14:52 nginx-1.14.1/src/http/modules/ngx_http_auth_basic_module.c
+-rw-r--r-- mdounin/mdounin  11525 2018-11-06 14:52 nginx-1.14.1/src/http/modules/ngx_http_auth_request_module.c
+-rw-r--r-- mdounin/mdounin  30709 2018-11-06 14:52 nginx-1.14.1/src/http/modules/ngx_http_autoindex_module.c
+-rw-r--r-- mdounin/mdounin  19921 2018-11-06 14:52 nginx-1.14.1/src/http/modules/ngx_http_browser_module.c
+-rw-r--r-- mdounin/mdounin  41078 2018-11-06 14:52 nginx-1.14.1/src/http/modules/ngx_http_charset_filter_module.c
+-rw-r--r-- mdounin/mdounin   8737 2018-11-06 14:52 nginx-1.14.1/src/http/modules/ngx_http_chunked_filter_module.c
+-rw-r--r-- mdounin/mdounin  32210 2018-11-06 14:52 nginx-1.14.1/src/http/modules/ngx_http_dav_module.c
+-rw-r--r-- mdounin/mdounin   6240 2018-11-06 14:52 nginx-1.14.1/src/http/modules/ngx_http_degradation_module.c
+-rw-r--r-- mdounin/mdounin   5536 2018-11-06 14:52 nginx-1.14.1/src/http/modules/ngx_http_empty_gif_module.c
+-rw-r--r-- mdounin/mdounin 109267 2018-11-06 14:52 nginx-1.14.1/src/http/modules/ngx_http_fastcgi_module.c
+drwxr-xr-x mdounin/mdounin      0 2018-11-06 14:52 nginx-1.14.1/src/http/modules/perl/
+-rw-r--r-- mdounin/mdounin   6623 2018-11-06 14:52 nginx-1.14.1/src/http/modules/ngx_http_flv_module.c
+-rw-r--r-- mdounin/mdounin  43777 2018-11-06 14:52 nginx-1.14.1/src/http/modules/ngx_http_geo_module.c
+-rw-r--r-- mdounin/mdounin  22371 2018-11-06 14:52 nginx-1.14.1/src/http/modules/ngx_http_geoip_module.c
+-rw-r--r-- mdounin/mdounin 133097 2018-11-06 14:52 nginx-1.14.1/src/http/modules/ngx_http_grpc_module.c
+-rw-r--r-- mdounin/mdounin  17038 2018-11-06 14:52 nginx-1.14.1/src/http/modules/ngx_http_gunzip_filter_module.c
+-rw-r--r-- mdounin/mdounin  32397 2018-11-06 14:52 nginx-1.14.1/src/http/modules/ngx_http_gzip_filter_module.c
+-rw-r--r-- mdounin/mdounin   8468 2018-11-06 14:52 nginx-1.14.1/src/http/modules/ngx_http_gzip_static_module.c
+-rw-r--r-- mdounin/mdounin  21700 2018-11-06 14:52 nginx-1.14.1/src/http/modules/ngx_http_headers_filter_module.c
+-rw-r--r-- mdounin/mdounin  42569 2018-11-06 14:52 nginx-1.14.1/src/http/modules/ngx_http_image_filter_module.c
+-rw-r--r-- mdounin/mdounin  15015 2018-11-06 14:52 nginx-1.14.1/src/http/modules/ngx_http_index_module.c
+-rw-r--r-- mdounin/mdounin  17998 2018-11-06 14:52 nginx-1.14.1/src/http/modules/ngx_http_limit_conn_module.c
+-rw-r--r-- mdounin/mdounin  25017 2018-11-06 14:52 nginx-1.14.1/src/http/modules/ngx_http_limit_req_module.c
+-rw-r--r-- mdounin/mdounin  49773 2018-11-06 14:52 nginx-1.14.1/src/http/modules/ngx_http_log_module.c
+-rw-r--r-- mdounin/mdounin  15012 2018-11-06 14:52 nginx-1.14.1/src/http/modules/ngx_http_map_module.c
+-rw-r--r-- mdounin/mdounin  20663 2018-11-06 14:52 nginx-1.14.1/src/http/modules/ngx_http_memcached_module.c
+-rw-r--r-- mdounin/mdounin   6794 2018-11-06 14:52 nginx-1.14.1/src/http/modules/ngx_http_mirror_module.c
+-rw-r--r-- mdounin/mdounin 105351 2018-11-06 14:52 nginx-1.14.1/src/http/modules/ngx_http_mp4_module.c
+-rw-r--r-- mdounin/mdounin   6976 2018-11-06 14:52 nginx-1.14.1/src/http/modules/ngx_http_not_modified_filter_module.c
+-rw-r--r-- mdounin/mdounin 123147 2018-11-06 14:52 nginx-1.14.1/src/http/modules/ngx_http_proxy_module.c
+-rw-r--r-- mdounin/mdounin   8988 2018-11-06 14:52 nginx-1.14.1/src/http/modules/ngx_http_random_index_module.c
+-rw-r--r-- mdounin/mdounin  25990 2018-11-06 14:52 nginx-1.14.1/src/http/modules/ngx_http_range_filter_module.c
+-rw-r--r-- mdounin/mdounin  15297 2018-11-06 14:52 nginx-1.14.1/src/http/modules/ngx_http_realip_module.c
+-rw-r--r-- mdounin/mdounin  17385 2018-11-06 14:52 nginx-1.14.1/src/http/modules/ngx_http_referer_module.c
+-rw-r--r-- mdounin/mdounin  28376 2018-11-06 14:52 nginx-1.14.1/src/http/modules/ngx_http_rewrite_module.c
+-rw-r--r-- mdounin/mdounin  59746 2018-11-06 14:52 nginx-1.14.1/src/http/modules/ngx_http_scgi_module.c
+-rw-r--r-- mdounin/mdounin   9106 2018-11-06 14:52 nginx-1.14.1/src/http/modules/ngx_http_secure_link_module.c
+-rw-r--r-- mdounin/mdounin  13889 2018-11-06 14:52 nginx-1.14.1/src/http/modules/ngx_http_slice_filter_module.c
+-rw-r--r-- mdounin/mdounin   6615 2018-11-06 14:52 nginx-1.14.1/src/http/modules/ngx_http_split_clients_module.c
+-rw-r--r-- mdounin/mdounin  79686 2018-11-06 14:52 nginx-1.14.1/src/http/modules/ngx_http_ssi_filter_module.c
+-rw-r--r-- mdounin/mdounin   2800 2018-11-06 14:52 nginx-1.14.1/src/http/modules/ngx_http_ssi_filter_module.h
+-rw-r--r-- mdounin/mdounin  29592 2018-11-06 14:52 nginx-1.14.1/src/http/modules/ngx_http_ssl_module.c
+-rw-r--r-- mdounin/mdounin   1687 2018-11-06 14:52 nginx-1.14.1/src/http/modules/ngx_http_ssl_module.h
+-rw-r--r-- mdounin/mdounin   7674 2018-11-06 14:52 nginx-1.14.1/src/http/modules/ngx_http_static_module.c
+-rw-r--r-- mdounin/mdounin   6321 2018-11-06 14:52 nginx-1.14.1/src/http/modules/ngx_http_stub_status_module.c
+-rw-r--r-- mdounin/mdounin  26018 2018-11-06 14:52 nginx-1.14.1/src/http/modules/ngx_http_sub_filter_module.c
+-rw-r--r-- mdounin/mdounin  10833 2018-11-06 14:52 nginx-1.14.1/src/http/modules/ngx_http_try_files_module.c
+-rw-r--r-- mdounin/mdounin  18366 2018-11-06 14:52 nginx-1.14.1/src/http/modules/ngx_http_upstream_hash_module.c
+-rw-r--r-- mdounin/mdounin   7223 2018-11-06 14:52 nginx-1.14.1/src/http/modules/ngx_http_upstream_ip_hash_module.c
+-rw-r--r-- mdounin/mdounin  13565 2018-11-06 14:52 nginx-1.14.1/src/http/modules/ngx_http_upstream_keepalive_module.c
+-rw-r--r-- mdounin/mdounin   8644 2018-11-06 14:52 nginx-1.14.1/src/http/modules/ngx_http_upstream_zone_module.c
+-rw-r--r-- mdounin/mdounin   8198 2018-11-06 14:52 nginx-1.14.1/src/http/modules/ngx_http_upstream_least_conn_module.c
+-rw-r--r-- mdounin/mdounin  22188 2018-11-06 14:52 nginx-1.14.1/src/http/modules/ngx_http_userid_filter_module.c
+-rw-r--r-- mdounin/mdounin  71834 2018-11-06 14:52 nginx-1.14.1/src/http/modules/ngx_http_uwsgi_module.c
+-rw-r--r-- mdounin/mdounin  30008 2018-11-06 14:52 nginx-1.14.1/src/http/modules/ngx_http_xslt_filter_module.c
+-rw-r--r-- mdounin/mdounin   1024 2018-11-06 14:52 nginx-1.14.1/src/http/modules/perl/Makefile.PL
+-rw-r--r-- mdounin/mdounin   3388 2018-11-06 14:52 nginx-1.14.1/src/http/modules/perl/nginx.pm
+-rw-r--r-- mdounin/mdounin  21358 2018-11-06 14:52 nginx-1.14.1/src/http/modules/perl/nginx.xs
+-rw-r--r-- mdounin/mdounin  24806 2018-11-06 14:52 nginx-1.14.1/src/http/modules/perl/ngx_http_perl_module.c
+-rw-r--r-- mdounin/mdounin   1275 2018-11-06 14:52 nginx-1.14.1/src/http/modules/perl/ngx_http_perl_module.h
+-rw-r--r-- mdounin/mdounin     24 2018-11-06 14:52 nginx-1.14.1/src/http/modules/perl/typemap
+drwxr-xr-x mdounin/mdounin      0 2018-11-06 14:52 nginx-1.14.1/src/event/modules/
+-rw-r--r-- mdounin/mdounin  32256 2018-11-06 14:52 nginx-1.14.1/src/event/ngx_event.c
+-rw-r--r-- mdounin/mdounin  12902 2018-11-06 14:52 nginx-1.14.1/src/event/ngx_event.h
+-rw-r--r-- mdounin/mdounin  21618 2018-11-06 14:52 nginx-1.14.1/src/event/ngx_event_accept.c
+-rw-r--r-- mdounin/mdounin  10009 2018-11-06 14:52 nginx-1.14.1/src/event/ngx_event_connect.c
+-rw-r--r-- mdounin/mdounin   2123 2018-11-06 14:52 nginx-1.14.1/src/event/ngx_event_connect.h
+-rw-r--r-- mdounin/mdounin 103732 2018-11-06 14:52 nginx-1.14.1/src/event/ngx_event_openssl.c
+-rw-r--r-- mdounin/mdounin   9074 2018-11-06 14:52 nginx-1.14.1/src/event/ngx_event_openssl.h
+-rw-r--r-- mdounin/mdounin  46476 2018-11-06 14:52 nginx-1.14.1/src/event/ngx_event_openssl_stapling.c
+-rw-r--r-- mdounin/mdounin  27481 2018-11-06 14:52 nginx-1.14.1/src/event/ngx_event_pipe.c
+-rw-r--r-- mdounin/mdounin   2906 2018-11-06 14:52 nginx-1.14.1/src/event/ngx_event_pipe.h
+-rw-r--r-- mdounin/mdounin    635 2018-11-06 14:52 nginx-1.14.1/src/event/ngx_event_posted.c
+-rw-r--r-- mdounin/mdounin   1842 2018-11-06 14:52 nginx-1.14.1/src/event/ngx_event_posted.h
+-rw-r--r-- mdounin/mdounin   2707 2018-11-06 14:52 nginx-1.14.1/src/event/ngx_event_timer.c
+-rw-r--r-- mdounin/mdounin   2067 2018-11-06 14:52 nginx-1.14.1/src/event/ngx_event_timer.h
+-rw-r--r-- mdounin/mdounin  14473 2018-11-06 14:52 nginx-1.14.1/src/event/modules/ngx_devpoll_module.c
+-rw-r--r-- mdounin/mdounin  25479 2018-11-06 14:52 nginx-1.14.1/src/event/modules/ngx_epoll_module.c
+-rw-r--r-- mdounin/mdounin  16894 2018-11-06 14:52 nginx-1.14.1/src/event/modules/ngx_eventport_module.c
+-rw-r--r-- mdounin/mdounin  18163 2018-11-06 14:52 nginx-1.14.1/src/event/modules/ngx_kqueue_module.c
+-rw-r--r-- mdounin/mdounin  10999 2018-11-06 14:52 nginx-1.14.1/src/event/modules/ngx_poll_module.c
+-rw-r--r-- mdounin/mdounin  10854 2018-11-06 14:52 nginx-1.14.1/src/event/modules/ngx_select_module.c
+-rw-r--r-- mdounin/mdounin  10480 2018-11-06 14:52 nginx-1.14.1/src/event/modules/ngx_win32_select_module.c
+-rw-r--r-- mdounin/mdounin  38587 2018-11-06 14:52 nginx-1.14.1/src/core/nginx.c
+-rw-r--r-- mdounin/mdounin    476 2018-11-06 14:52 nginx-1.14.1/src/core/nginx.h
+-rw-r--r-- mdounin/mdounin   2694 2018-11-06 14:52 nginx-1.14.1/src/core/ngx_array.c
+-rw-r--r-- mdounin/mdounin   1069 2018-11-06 14:52 nginx-1.14.1/src/core/ngx_array.h
+-rw-r--r-- mdounin/mdounin   5466 2018-11-06 14:52 nginx-1.14.1/src/core/ngx_buf.c
+-rw-r--r-- mdounin/mdounin   4996 2018-11-06 14:52 nginx-1.14.1/src/core/ngx_buf.h
+-rw-r--r-- mdounin/mdounin  34355 2018-11-06 14:52 nginx-1.14.1/src/core/ngx_conf_file.c
+-rw-r--r-- mdounin/mdounin  10320 2018-11-06 14:52 nginx-1.14.1/src/core/ngx_conf_file.h
+-rw-r--r-- mdounin/mdounin   2777 2018-11-06 14:52 nginx-1.14.1/src/core/ngx_config.h
+-rw-r--r-- mdounin/mdounin  38897 2018-11-06 14:52 nginx-1.14.1/src/core/ngx_connection.c
+-rw-r--r-- mdounin/mdounin   6218 2018-11-06 14:52 nginx-1.14.1/src/core/ngx_connection.h
+-rw-r--r-- mdounin/mdounin   2855 2018-11-06 14:52 nginx-1.14.1/src/core/ngx_core.h
+-rw-r--r-- mdounin/mdounin   2423 2018-11-06 14:52 nginx-1.14.1/src/core/ngx_cpuinfo.c
+-rw-r--r-- mdounin/mdounin    616 2018-11-06 14:52 nginx-1.14.1/src/core/ngx_crc.h
+-rw-r--r-- mdounin/mdounin   4927 2018-11-06 14:52 nginx-1.14.1/src/core/ngx_crc32.c
+-rw-r--r-- mdounin/mdounin   1359 2018-11-06 14:52 nginx-1.14.1/src/core/ngx_crc32.h
+-rw-r--r-- mdounin/mdounin   6777 2018-11-06 14:52 nginx-1.14.1/src/core/ngx_crypt.c
+-rw-r--r-- mdounin/mdounin    308 2018-11-06 14:52 nginx-1.14.1/src/core/ngx_crypt.h
+-rw-r--r-- mdounin/mdounin  36114 2018-11-06 14:52 nginx-1.14.1/src/core/ngx_cycle.c
+-rw-r--r-- mdounin/mdounin   4225 2018-11-06 14:52 nginx-1.14.1/src/core/ngx_cycle.h
+-rw-r--r-- mdounin/mdounin  26923 2018-11-06 14:52 nginx-1.14.1/src/core/ngx_file.c
+-rw-r--r-- mdounin/mdounin   4667 2018-11-06 14:52 nginx-1.14.1/src/core/ngx_file.h
+-rw-r--r-- mdounin/mdounin  22251 2018-11-06 14:52 nginx-1.14.1/src/core/ngx_hash.c
+-rw-r--r-- mdounin/mdounin   2812 2018-11-06 14:52 nginx-1.14.1/src/core/ngx_hash.h
+-rw-r--r-- mdounin/mdounin  31086 2018-11-06 14:52 nginx-1.14.1/src/core/ngx_inet.c
+-rw-r--r-- mdounin/mdounin   3611 2018-11-06 14:52 nginx-1.14.1/src/core/ngx_inet.h
+-rw-r--r-- mdounin/mdounin   1102 2018-11-06 14:52 nginx-1.14.1/src/core/ngx_list.c
+-rw-r--r-- mdounin/mdounin   1436 2018-11-06 14:52 nginx-1.14.1/src/core/ngx_list.h
+-rw-r--r-- mdounin/mdounin  16763 2018-11-06 14:52 nginx-1.14.1/src/core/ngx_log.c
+-rw-r--r-- mdounin/mdounin   9697 2018-11-06 14:52 nginx-1.14.1/src/core/ngx_log.h
+-rw-r--r-- mdounin/mdounin   8633 2018-11-06 14:52 nginx-1.14.1/src/core/ngx_md5.c
+-rw-r--r-- mdounin/mdounin    475 2018-11-06 14:52 nginx-1.14.1/src/core/ngx_md5.h
+-rw-r--r-- mdounin/mdounin   8294 2018-11-06 14:52 nginx-1.14.1/src/core/ngx_module.c
+-rw-r--r-- mdounin/mdounin   6970 2018-11-06 14:52 nginx-1.14.1/src/core/ngx_module.h
+-rw-r--r-- mdounin/mdounin    763 2018-11-06 14:52 nginx-1.14.1/src/core/ngx_murmurhash.c
+-rw-r--r-- mdounin/mdounin    286 2018-11-06 14:52 nginx-1.14.1/src/core/ngx_murmurhash.h
+-rw-r--r-- mdounin/mdounin  31195 2018-11-06 14:52 nginx-1.14.1/src/core/ngx_open_file_cache.c
+-rw-r--r-- mdounin/mdounin   3305 2018-11-06 14:52 nginx-1.14.1/src/core/ngx_open_file_cache.h
+-rw-r--r-- mdounin/mdounin  18281 2018-11-06 14:52 nginx-1.14.1/src/core/ngx_output_chain.c
+-rw-r--r-- mdounin/mdounin   8225 2018-11-06 14:52 nginx-1.14.1/src/core/ngx_palloc.c
+-rw-r--r-- mdounin/mdounin   2263 2018-11-06 14:52 nginx-1.14.1/src/core/ngx_palloc.h
+-rw-r--r-- mdounin/mdounin   5578 2018-11-06 14:52 nginx-1.14.1/src/core/ngx_parse.c
+-rw-r--r-- mdounin/mdounin    362 2018-11-06 14:52 nginx-1.14.1/src/core/ngx_parse.h
+-rw-r--r-- mdounin/mdounin   5500 2018-11-06 14:52 nginx-1.14.1/src/core/ngx_parse_time.c
+-rw-r--r-- mdounin/mdounin   1477 2018-11-06 14:52 nginx-1.14.1/src/core/ngx_queue.c
+-rw-r--r-- mdounin/mdounin    382 2018-11-06 14:52 nginx-1.14.1/src/core/ngx_parse_time.h
+-rw-r--r-- mdounin/mdounin   8552 2018-11-06 14:52 nginx-1.14.1/src/core/ngx_proxy_protocol.c
+-rw-r--r-- mdounin/mdounin    466 2018-11-06 14:52 nginx-1.14.1/src/core/ngx_proxy_protocol.h
+-rw-r--r-- mdounin/mdounin   3533 2018-11-06 14:52 nginx-1.14.1/src/core/ngx_queue.h
+-rw-r--r-- mdounin/mdounin   9177 2018-11-06 14:52 nginx-1.14.1/src/core/ngx_radix_tree.c
+-rw-r--r-- mdounin/mdounin   1318 2018-11-06 14:52 nginx-1.14.1/src/core/ngx_radix_tree.h
+-rw-r--r-- mdounin/mdounin   9438 2018-11-06 14:52 nginx-1.14.1/src/core/ngx_rbtree.c
+-rw-r--r-- mdounin/mdounin   2290 2018-11-06 14:52 nginx-1.14.1/src/core/ngx_rbtree.h
+-rw-r--r-- mdounin/mdounin   9694 2018-11-06 14:52 nginx-1.14.1/src/core/ngx_regex.c
+-rw-r--r-- mdounin/mdounin   1190 2018-11-06 14:52 nginx-1.14.1/src/core/ngx_regex.h
+-rw-r--r-- mdounin/mdounin 104814 2018-11-06 14:52 nginx-1.14.1/src/core/ngx_resolver.c
+-rw-r--r-- mdounin/mdounin   6364 2018-11-06 14:52 nginx-1.14.1/src/core/ngx_resolver.h
+-rw-r--r-- mdounin/mdounin   2198 2018-11-06 14:52 nginx-1.14.1/src/core/ngx_rwlock.c
+-rw-r--r-- mdounin/mdounin    401 2018-11-06 14:52 nginx-1.14.1/src/core/ngx_rwlock.h
+-rw-r--r-- mdounin/mdounin   9696 2018-11-06 14:52 nginx-1.14.1/src/core/ngx_sha1.c
+-rw-r--r-- mdounin/mdounin    491 2018-11-06 14:52 nginx-1.14.1/src/core/ngx_sha1.h
+-rw-r--r-- mdounin/mdounin   5874 2018-11-06 14:52 nginx-1.14.1/src/core/ngx_shmtx.c
+-rw-r--r-- mdounin/mdounin    943 2018-11-06 14:52 nginx-1.14.1/src/core/ngx_shmtx.h
+-rw-r--r-- mdounin/mdounin  20078 2018-11-06 14:52 nginx-1.14.1/src/core/ngx_slab.c
+-rw-r--r-- mdounin/mdounin   1483 2018-11-06 14:52 nginx-1.14.1/src/core/ngx_slab.h
+-rw-r--r-- mdounin/mdounin    820 2018-11-06 14:52 nginx-1.14.1/src/core/ngx_spinlock.c
+-rw-r--r-- mdounin/mdounin  44776 2018-11-06 14:52 nginx-1.14.1/src/core/ngx_string.c
+-rw-r--r-- mdounin/mdounin   6592 2018-11-06 14:52 nginx-1.14.1/src/core/ngx_string.h
+-rw-r--r-- mdounin/mdounin  10011 2018-11-06 14:52 nginx-1.14.1/src/core/ngx_syslog.c
+-rw-r--r-- mdounin/mdounin    731 2018-11-06 14:52 nginx-1.14.1/src/core/ngx_syslog.h
+-rw-r--r-- mdounin/mdounin  15532 2018-11-06 14:52 nginx-1.14.1/src/core/ngx_thread_pool.c
+-rw-r--r-- mdounin/mdounin    844 2018-11-06 14:52 nginx-1.14.1/src/core/ngx_thread_pool.h
+-rw-r--r-- mdounin/mdounin  11690 2018-11-06 14:52 nginx-1.14.1/src/core/ngx_times.c
+-rw-r--r-- mdounin/mdounin   1198 2018-11-06 14:52 nginx-1.14.1/src/core/ngx_times.h
+-rw-r--r-- mdounin/mdounin    543 2018-11-06 14:52 nginx-1.14.1/contrib/README
+-rw-r--r-- mdounin/mdounin   1272 2018-11-06 14:52 nginx-1.14.1/contrib/geo2nginx.pl
+drwxr-xr-x mdounin/mdounin      0 2018-11-06 14:52 nginx-1.14.1/contrib/unicode2nginx/
+drwxr-xr-x mdounin/mdounin      0 2018-11-06 14:52 nginx-1.14.1/contrib/vim/
+drwxr-xr-x mdounin/mdounin      0 2018-11-06 14:52 nginx-1.14.1/contrib/vim/ftdetect/
+drwxr-xr-x mdounin/mdounin      0 2018-11-06 14:52 nginx-1.14.1/contrib/vim/ftplugin/
+drwxr-xr-x mdounin/mdounin      0 2018-11-06 14:52 nginx-1.14.1/contrib/vim/indent/
+drwxr-xr-x mdounin/mdounin      0 2018-11-06 14:52 nginx-1.14.1/contrib/vim/syntax/
+-rw-r--r-- mdounin/mdounin 125645 2018-11-06 14:52 nginx-1.14.1/contrib/vim/syntax/nginx.vim
+-rw-r--r-- mdounin/mdounin    250 2018-11-06 14:52 nginx-1.14.1/contrib/vim/indent/nginx.vim
+-rw-r--r-- mdounin/mdounin     29 2018-11-06 14:52 nginx-1.14.1/contrib/vim/ftplugin/nginx.vim
+-rw-r--r-- mdounin/mdounin    198 2018-11-06 14:52 nginx-1.14.1/contrib/vim/ftdetect/nginx.vim
+-rw-r--r-- mdounin/mdounin   5991 2018-11-06 14:52 nginx-1.14.1/contrib/unicode2nginx/koi-utf
+-rwxr-xr-x mdounin/mdounin   1090 2018-11-06 14:52 nginx-1.14.1/contrib/unicode2nginx/unicode-to-nginx.pl
+-rw-r--r-- mdounin/mdounin   5339 2018-11-06 14:52 nginx-1.14.1/contrib/unicode2nginx/win-utf
+-rw-r--r-- mdounin/mdounin   1077 2018-11-06 14:52 nginx-1.14.1/conf/fastcgi.conf
+-rw-r--r-- mdounin/mdounin   1007 2018-11-06 14:52 nginx-1.14.1/conf/fastcgi_params
+-rw-r--r-- mdounin/mdounin   2837 2018-11-06 14:52 nginx-1.14.1/conf/koi-utf
+-rw-r--r-- mdounin/mdounin   2223 2018-11-06 14:52 nginx-1.14.1/conf/koi-win
+-rw-r--r-- mdounin/mdounin   5170 2018-11-06 14:52 nginx-1.14.1/conf/mime.types
+-rw-r--r-- mdounin/mdounin   2656 2018-11-06 14:52 nginx-1.14.1/conf/nginx.conf
+-rw-r--r-- mdounin/mdounin    636 2018-11-06 14:52 nginx-1.14.1/conf/scgi_params
+-rw-r--r-- mdounin/mdounin    664 2018-11-06 14:52 nginx-1.14.1/conf/uwsgi_params
+-rw-r--r-- mdounin/mdounin   3610 2018-11-06 14:52 nginx-1.14.1/conf/win-utf
+drwxr-xr-x mdounin/mdounin      0 2018-11-06 14:52 nginx-1.14.1/auto/cc/
+-rw-r--r-- mdounin/mdounin    141 2018-11-06 14:52 nginx-1.14.1/auto/define
+-rw-r--r-- mdounin/mdounin    889 2018-11-06 14:52 nginx-1.14.1/auto/endianness
+-rw-r--r-- mdounin/mdounin   2812 2018-11-06 14:52 nginx-1.14.1/auto/feature
+-rw-r--r-- mdounin/mdounin    136 2018-11-06 14:52 nginx-1.14.1/auto/have
+-rw-r--r-- mdounin/mdounin    137 2018-11-06 14:52 nginx-1.14.1/auto/have_headers
+-rw-r--r-- mdounin/mdounin    411 2018-11-06 14:52 nginx-1.14.1/auto/headers
+-rw-r--r-- mdounin/mdounin   1020 2018-11-06 14:52 nginx-1.14.1/auto/include
+-rw-r--r-- mdounin/mdounin    745 2018-11-06 14:52 nginx-1.14.1/auto/init
+-rw-r--r-- mdounin/mdounin   4836 2018-11-06 14:52 nginx-1.14.1/auto/install
+drwxr-xr-x mdounin/mdounin      0 2018-11-06 14:52 nginx-1.14.1/auto/lib/
+-rw-r--r-- mdounin/mdounin  18253 2018-11-06 14:52 nginx-1.14.1/auto/make
+-rw-r--r-- mdounin/mdounin   3183 2018-11-06 14:52 nginx-1.14.1/auto/module
+-rw-r--r-- mdounin/mdounin  37857 2018-11-06 14:52 nginx-1.14.1/auto/modules
+-rw-r--r-- mdounin/mdounin    136 2018-11-06 14:52 nginx-1.14.1/auto/nohave
+-rw-r--r-- mdounin/mdounin  24767 2018-11-06 14:52 nginx-1.14.1/auto/options
+drwxr-xr-x mdounin/mdounin      0 2018-11-06 14:52 nginx-1.14.1/auto/os/
+-rw-r--r-- mdounin/mdounin   8654 2018-11-06 14:52 nginx-1.14.1/auto/sources
+-rw-r--r-- mdounin/mdounin    120 2018-11-06 14:52 nginx-1.14.1/auto/stubs
+-rw-r--r-- mdounin/mdounin   2014 2018-11-06 14:52 nginx-1.14.1/auto/summary
+-rw-r--r-- mdounin/mdounin    394 2018-11-06 14:52 nginx-1.14.1/auto/threads
+drwxr-xr-x mdounin/mdounin      0 2018-11-06 14:52 nginx-1.14.1/auto/types/
+-rw-r--r-- mdounin/mdounin  26859 2018-11-06 14:52 nginx-1.14.1/auto/unix
+-rw-r--r-- mdounin/mdounin   1423 2018-11-06 14:52 nginx-1.14.1/auto/types/sizeof
+-rw-r--r-- mdounin/mdounin   1681 2018-11-06 14:52 nginx-1.14.1/auto/types/typedef
+-rw-r--r-- mdounin/mdounin    915 2018-11-06 14:52 nginx-1.14.1/auto/types/uintptr_t
+-rw-r--r-- mdounin/mdounin    155 2018-11-06 14:52 nginx-1.14.1/auto/types/value
+-rw-r--r-- mdounin/mdounin   2669 2018-11-06 14:52 nginx-1.14.1/auto/os/conf
+-rw-r--r-- mdounin/mdounin   3035 2018-11-06 14:52 nginx-1.14.1/auto/os/darwin
+-rw-r--r-- mdounin/mdounin   2344 2018-11-06 14:52 nginx-1.14.1/auto/os/freebsd
+-rw-r--r-- mdounin/mdounin   5580 2018-11-06 14:52 nginx-1.14.1/auto/os/linux
+-rw-r--r-- mdounin/mdounin   1400 2018-11-06 14:52 nginx-1.14.1/auto/os/solaris
+-rw-r--r-- mdounin/mdounin    892 2018-11-06 14:52 nginx-1.14.1/auto/os/win32
+-rw-r--r-- mdounin/mdounin    952 2018-11-06 14:52 nginx-1.14.1/auto/lib/conf
+drwxr-xr-x mdounin/mdounin      0 2018-11-06 14:52 nginx-1.14.1/auto/lib/geoip/
+drwxr-xr-x mdounin/mdounin      0 2018-11-06 14:52 nginx-1.14.1/auto/lib/google-perftools/
+drwxr-xr-x mdounin/mdounin      0 2018-11-06 14:52 nginx-1.14.1/auto/lib/libatomic/
+drwxr-xr-x mdounin/mdounin      0 2018-11-06 14:52 nginx-1.14.1/auto/lib/libgd/
+drwxr-xr-x mdounin/mdounin      0 2018-11-06 14:52 nginx-1.14.1/auto/lib/libxslt/
+-rw-r--r-- mdounin/mdounin    482 2018-11-06 14:52 nginx-1.14.1/auto/lib/make
+drwxr-xr-x mdounin/mdounin      0 2018-11-06 14:52 nginx-1.14.1/auto/lib/openssl/
+drwxr-xr-x mdounin/mdounin      0 2018-11-06 14:52 nginx-1.14.1/auto/lib/pcre/
+drwxr-xr-x mdounin/mdounin      0 2018-11-06 14:52 nginx-1.14.1/auto/lib/perl/
+drwxr-xr-x mdounin/mdounin      0 2018-11-06 14:52 nginx-1.14.1/auto/lib/zlib/
+-rw-r--r-- mdounin/mdounin   2040 2018-11-06 14:52 nginx-1.14.1/auto/lib/zlib/conf
+-rw-r--r-- mdounin/mdounin   2525 2018-11-06 14:52 nginx-1.14.1/auto/lib/zlib/make
+-rw-r--r-- mdounin/mdounin    382 2018-11-06 14:52 nginx-1.14.1/auto/lib/zlib/makefile.bcc
+-rw-r--r-- mdounin/mdounin    385 2018-11-06 14:52 nginx-1.14.1/auto/lib/zlib/makefile.msvc
+-rw-r--r-- mdounin/mdounin    374 2018-11-06 14:52 nginx-1.14.1/auto/lib/zlib/makefile.owc
+-rw-r--r-- mdounin/mdounin   2505 2018-11-06 14:52 nginx-1.14.1/auto/lib/perl/conf
+-rw-r--r-- mdounin/mdounin   1548 2018-11-06 14:52 nginx-1.14.1/auto/lib/perl/make
+-rw-r--r-- mdounin/mdounin   5984 2018-11-06 14:52 nginx-1.14.1/auto/lib/pcre/conf
+-rw-r--r-- mdounin/mdounin   1371 2018-11-06 14:52 nginx-1.14.1/auto/lib/pcre/make
+-rw-r--r-- mdounin/mdounin    530 2018-11-06 14:52 nginx-1.14.1/auto/lib/pcre/makefile.bcc
+-rw-r--r-- mdounin/mdounin    474 2018-11-06 14:52 nginx-1.14.1/auto/lib/pcre/makefile.msvc
+-rw-r--r-- mdounin/mdounin    484 2018-11-06 14:52 nginx-1.14.1/auto/lib/pcre/makefile.owc
+-rw-r--r-- mdounin/mdounin   4127 2018-11-06 14:52 nginx-1.14.1/auto/lib/openssl/conf
+-rw-r--r-- mdounin/mdounin   1491 2018-11-06 14:52 nginx-1.14.1/auto/lib/openssl/make
+-rw-r--r-- mdounin/mdounin    365 2018-11-06 14:52 nginx-1.14.1/auto/lib/openssl/makefile.bcc
+-rw-r--r-- mdounin/mdounin    399 2018-11-06 14:52 nginx-1.14.1/auto/lib/openssl/makefile.msvc
+-rw-r--r-- mdounin/mdounin   3795 2018-11-06 14:52 nginx-1.14.1/auto/lib/libxslt/conf
+-rw-r--r-- mdounin/mdounin   1827 2018-11-06 14:52 nginx-1.14.1/auto/lib/libgd/conf
+-rw-r--r-- mdounin/mdounin   1090 2018-11-06 14:52 nginx-1.14.1/auto/lib/libatomic/conf
+-rw-r--r-- mdounin/mdounin    364 2018-11-06 14:52 nginx-1.14.1/auto/lib/libatomic/make
+-rw-r--r-- mdounin/mdounin   1134 2018-11-06 14:52 nginx-1.14.1/auto/lib/google-perftools/conf
+-rw-r--r-- mdounin/mdounin   1968 2018-11-06 14:52 nginx-1.14.1/auto/lib/geoip/conf
+-rw-r--r-- mdounin/mdounin    201 2018-11-06 14:52 nginx-1.14.1/auto/cc/acc
+-rw-r--r-- mdounin/mdounin   1275 2018-11-06 14:52 nginx-1.14.1/auto/cc/bcc
+-rw-r--r-- mdounin/mdounin   1324 2018-11-06 14:52 nginx-1.14.1/auto/cc/ccc
+-rw-r--r-- mdounin/mdounin   1799 2018-11-06 14:52 nginx-1.14.1/auto/cc/clang
+-rw-r--r-- mdounin/mdounin   5269 2018-11-06 14:52 nginx-1.14.1/auto/cc/conf
+-rw-r--r-- mdounin/mdounin   3588 2018-11-06 14:52 nginx-1.14.1/auto/cc/gcc
+-rw-r--r-- mdounin/mdounin   2874 2018-11-06 14:52 nginx-1.14.1/auto/cc/icc
+-rw-r--r-- mdounin/mdounin   3285 2018-11-06 14:52 nginx-1.14.1/auto/cc/msvc
+-rw-r--r-- mdounin/mdounin   1568 2018-11-06 14:52 nginx-1.14.1/auto/cc/name
+-rw-r--r-- mdounin/mdounin   1862 2018-11-06 14:52 nginx-1.14.1/auto/cc/owc
+-rw-r--r-- mdounin/mdounin   3516 2018-11-06 14:52 nginx-1.14.1/auto/cc/sunc
+drwxrwxr-x zimmerle/zimmerle 0 2019-12-12 14:19 modsecurity-nginx-v1.0.1/
+-rw-rw-r-- zimmerle/zimmerle 11357 2015-07-06 21:06 modsecurity-nginx-v1.0.1/LICENSE
+-rwxr-xr-x zimmerle/zimmerle   734 2018-02-19 18:50 modsecurity-nginx-v1.0.1/ngx-modsec.stp
+-rw-r--r-- zimmerle/zimmerle    96 2017-12-22 17:58 modsecurity-nginx-v1.0.1/AUTHORS
+drwxrwxr-x zimmerle/zimmerle     0 2019-12-12 14:19 modsecurity-nginx-v1.0.1/src/
+-rw-r--r-- zimmerle/zimmerle  2331 2017-12-20 15:04 modsecurity-nginx-v1.0.1/src/ddebug.h
+-rw-r--r-- zimmerle/zimmerle 22258 2019-12-11 19:43 modsecurity-nginx-v1.0.1/src/ngx_http_modsecurity_module.c
+-rw-r--r-- zimmerle/zimmerle  7257 2019-12-11 19:43 modsecurity-nginx-v1.0.1/src/ngx_http_modsecurity_rewrite.c
+-rw-r--r-- zimmerle/zimmerle  5863 2019-12-11 19:43 modsecurity-nginx-v1.0.1/src/ngx_http_modsecurity_body_filter.c
+-rw-r--r-- zimmerle/zimmerle 17501 2019-12-11 19:43 modsecurity-nginx-v1.0.1/src/ngx_http_modsecurity_header_filter.c
+-rw-r--r-- zimmerle/zimmerle  6540 2019-12-11 19:43 modsecurity-nginx-v1.0.1/src/ngx_http_modsecurity_pre_access.c
+-rw-r--r-- zimmerle/zimmerle  2117 2019-12-11 19:43 modsecurity-nginx-v1.0.1/src/ngx_http_modsecurity_log.c
+-rw-r--r-- zimmerle/zimmerle  4911 2019-12-11 19:43 modsecurity-nginx-v1.0.1/src/ngx_http_modsecurity_common.h
+-rw-r--r-- zimmerle/zimmerle  7194 2019-12-11 19:43 modsecurity-nginx-v1.0.1/config
+-rw-r--r-- zimmerle/zimmerle  9154 2019-12-11 19:43 modsecurity-nginx-v1.0.1/README.md
+drwxrwxr-x zimmerle/zimmerle     0 2019-12-12 14:19 modsecurity-nginx-v1.0.1/tests/
+-rw-r--r-- zimmerle/zimmerle  6849 2019-12-11 19:43 modsecurity-nginx-v1.0.1/tests/modsecurity-proxy.t
+-rw-r--r-- zimmerle/zimmerle  4258 2019-12-11 19:43 modsecurity-nginx-v1.0.1/tests/modsecurity-transaction-id.t
+-rw-r--r-- zimmerle/zimmerle  2337 2017-03-07 19:49 modsecurity-nginx-v1.0.1/tests/modsecurity-scoring.t
+-rw-rw-r-- zimmerle/zimmerle   335 2015-07-06 21:06 modsecurity-nginx-v1.0.1/tests/README.md
+-rw-r--r-- zimmerle/zimmerle  7869 2017-12-22 17:58 modsecurity-nginx-v1.0.1/tests/modsecurity-config-auditlog.t
+-rw-r--r-- zimmerle/zimmerle   995 2017-03-07 19:49 modsecurity-nginx-v1.0.1/tests/nginx-tests-cvt.pl
+-rw-r--r-- zimmerle/zimmerle  7873 2019-12-11 19:43 modsecurity-nginx-v1.0.1/tests/modsecurity-request-body-h2.t
+-rw-r--r-- zimmerle/zimmerle  7029 2019-12-11 19:43 modsecurity-nginx-v1.0.1/tests/modsecurity-h2.t
+-rw-r--r-- zimmerle/zimmerle  3945 2017-06-16 23:40 modsecurity-nginx-v1.0.1/tests/modsecurity-config-debuglog.t
+-rw-r--r-- zimmerle/zimmerle  6113 2019-12-11 19:43 modsecurity-nginx-v1.0.1/tests/modsecurity.t
+-rw-r--r-- zimmerle/zimmerle  7677 2019-12-11 19:43 modsecurity-nginx-v1.0.1/tests/modsecurity-request-body.t
+-rw-r--r-- zimmerle/zimmerle  1328 2017-03-07 19:49 modsecurity-nginx-v1.0.1/tests/modsecurity-response-body.t
+-rw-r--r-- zimmerle/zimmerle  8964 2019-12-11 19:43 modsecurity-nginx-v1.0.1/tests/modsecurity-proxy-h2.t
+-rw-r--r-- zimmerle/zimmerle  3775 2017-06-16 23:40 modsecurity-nginx-v1.0.1/tests/modsecurity-config.t
+-rw-r--r-- zimmerle/zimmerle  6018 2019-12-11 19:43 modsecurity-nginx-v1.0.1/tests/modsecurity-config-merge.t
+-rw-r--r-- zimmerle/zimmerle   963 2019-12-11 19:43 modsecurity-nginx-v1.0.1/.travis.yml
+-rwxr-xr-x zimmerle/zimmerle   401 2018-02-19 18:51 modsecurity-nginx-v1.0.1/release.sh
+-rw-r--r-- zimmerle/zimmerle  1600 2019-12-11 19:44 modsecurity-nginx-v1.0.1/CHANGES
+Patch #5 (nginx-auto-cc-gcc.patch):
+patching file auto/cc/gcc
+Hunk #1 succeeded at 166 (offset -6 lines).
+Executing(%build): /bin/sh -e /var/tmp/rpm-tmp.F8AaX5
+checking for OS
+ + Linux 5.4.13-201.fc31.x86_64 x86_64
+checking for C compiler ... found
+ + using GNU C compiler
+ + gcc version: 9.2.1 20190827 (Red Hat 9.2.1-1) (GCC) 
+checking for gcc -pipe switch ... found
+checking for --with-ld-opt="-Wl,-z,relro -Wl,--as-needed  -Wl,-z,now -specs=/usr/lib/rpm/redhat/redhat-hardened-ld -Wl,-E" ... found
+checking for -Wl,-E switch ... found
+checking for gcc builtin atomic operations ... found
+checking for C99 variadic macros ... found
+checking for gcc variadic macros ... found
+checking for gcc builtin 64 bit byteswap ... found
+checking for unistd.h ... found
+checking for inttypes.h ... found
+checking for limits.h ... found
+checking for sys/filio.h ... not found
+checking for sys/param.h ... found
+checking for sys/mount.h ... found
+checking for sys/statvfs.h ... found
+checking for crypt.h ... found
+checking for Linux specific features
+checking for epoll ... found
+checking for EPOLLRDHUP ... found
+checking for EPOLLEXCLUSIVE ... found
+checking for O_PATH ... found
+checking for sendfile() ... found
+checking for sendfile64() ... found
+checking for sys/prctl.h ... found
+checking for prctl(PR_SET_DUMPABLE) ... found
+checking for prctl(PR_SET_KEEPCAPS) ... found
+checking for capabilities ... found
+checking for crypt_r() ... found
+checking for sys/vfs.h ... found
+checking for poll() ... found
+checking for /dev/poll ... not found
+checking for kqueue ... not found
+checking for crypt() ... not found
+checking for crypt() in libcrypt ... found
+checking for F_READAHEAD ... not found
+checking for posix_fadvise() ... found
+checking for O_DIRECT ... found
+checking for F_NOCACHE ... not found
+checking for directio() ... not found
+checking for statfs() ... found
+checking for statvfs() ... found
+checking for dlopen() ... not found
+checking for dlopen() in libdl ... found
+checking for sched_yield() ... found
+checking for sched_setaffinity() ... found
+checking for SO_SETFIB ... not found
+checking for SO_REUSEPORT ... found
+checking for SO_ACCEPTFILTER ... not found
+checking for SO_BINDANY ... not found
+checking for IP_TRANSPARENT ... found
+checking for IP_BINDANY ... not found
+checking for IP_BIND_ADDRESS_NO_PORT ... found
+checking for IP_RECVDSTADDR ... not found
+checking for IP_SENDSRCADDR ... not found
+checking for IP_PKTINFO ... found
+checking for IPV6_RECVPKTINFO ... found
+checking for TCP_DEFER_ACCEPT ... found
+checking for TCP_KEEPIDLE ... found
+checking for TCP_FASTOPEN ... found
+checking for TCP_INFO ... found
+checking for accept4() ... found
+checking for kqueue AIO support ... not found
+checking for Linux AIO support ... found
+checking for int size ... 4 bytes
+checking for long size ... 8 bytes
+checking for long long size ... 8 bytes
+checking for void * size ... 8 bytes
+checking for uint32_t ... found
+checking for uint64_t ... found
+checking for sig_atomic_t ... found
+checking for sig_atomic_t size ... 4 bytes
+checking for socklen_t ... found
+checking for in_addr_t ... found
+checking for in_port_t ... found
+checking for rlim_t ... found
+checking for uintptr_t ... uintptr_t found
+checking for system byte ordering ... little endian
+checking for size_t size ... 8 bytes
+checking for off_t size ... 8 bytes
+checking for time_t size ... 8 bytes
+checking for AF_INET6 ... found
+checking for setproctitle() ... not found
+checking for pread() ... found
+checking for pwrite() ... found
+checking for pwritev() ... found
+checking for sys_nerr ... found
+checking for localtime_r() ... found
+checking for clock_gettime(CLOCK_MONOTONIC) ... found
+checking for posix_memalign() ... found
+checking for memalign() ... found
+checking for mmap(MAP_ANON|MAP_SHARED) ... found
+checking for mmap("/dev/zero", MAP_SHARED) ... found
+checking for System V shared memory ... found
+checking for POSIX semaphores ... not found
+checking for POSIX semaphores in libpthread ... found
+checking for struct msghdr.msg_control ... found
+checking for ioctl(FIONBIO) ... found
+checking for struct tm.tm_gmtoff ... found
+checking for struct dirent.d_namlen ... not found
+checking for struct dirent.d_type ... found
+checking for sysconf(_SC_NPROCESSORS_ONLN) ... found
+checking for sysconf(_SC_LEVEL1_DCACHE_LINESIZE) ... found
+checking for openat(), fstatat() ... found
+checking for getaddrinfo() ... found
+configuring additional dynamic modules
+adding module in /home/user/git/nginx-mod-modsecurity/nginx-mod-modsecurity-v1.0.1/modsecurity-nginx-v1.0.1
+checking for ModSecurity library ... not found
+checking for ModSecurity library in /usr/local/modsecurity ... found
+ + ngx_http_modsecurity_module was configured
+checking for PCRE library ... found
+checking for PCRE JIT support ... found
+checking for OpenSSL library ... found
+checking for zlib library ... found
+checking for libxslt ... found
+checking for libexslt ... found
+checking for GD library ... found
+checking for GD WebP support ... found
+checking for perl
+ + perl version: This is perl 5, version 30, subversion 1 (v5.30.1) built for x86_64-linux-thread-multi
+ + perl interpreter multiplicity found
+checking for Google perftools ... found
+creating objs/Makefile
+
+Configuration summary
+  + using system PCRE library
+  + using system OpenSSL library
+  + using system zlib library
+
+  nginx path prefix: "/usr/share/nginx"
+  nginx binary file: "/usr/sbin/nginx"
+  nginx modules path: "/usr/lib64/nginx/modules"
+  nginx configuration prefix: "/etc/nginx"
+  nginx configuration file: "/etc/nginx/nginx.conf"
+  nginx pid file: "/run/nginx.pid"
+  nginx error log file: "/var/log/nginx/error.log"
+  nginx http access log file: "/var/log/nginx/access.log"
+  nginx http client request body temporary files: "/var/lib/nginx/tmp/client_body"
+  nginx http proxy temporary files: "/var/lib/nginx/tmp/proxy"
+  nginx http fastcgi temporary files: "/var/lib/nginx/tmp/fastcgi"
+  nginx http uwsgi temporary files: "/var/lib/nginx/tmp/uwsgi"
+  nginx http scgi temporary files: "/var/lib/nginx/tmp/scgi"
+
+./configure: warning: the "--with-ipv6" option is deprecated
+make -f objs/Makefile modules
+make[1]: Entering directory '/home/user/git/nginx-mod-modsecurity/nginx-mod-modsecurity-v1.0.1/nginx-1.14.1'
+cc -c -fPIC -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -g -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -m64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection  -I src/core -I src/event -I src/event/modules -I src/os/unix -I src/http/modules/perl -I /usr/local/modsecurity/include -I /usr/include/libxml2 -I objs -I src/http -I src/http/modules -I src/http/v2 -I src/mail -I src/stream \
+	-o objs/src/http/modules/ngx_http_xslt_filter_module.o \
+	src/http/modules/ngx_http_xslt_filter_module.c
+cc -c -fPIC -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -g -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -m64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection  -I src/core -I src/event -I src/event/modules -I src/os/unix -I src/http/modules/perl -I /usr/local/modsecurity/include -I /usr/include/libxml2 -I objs -I src/http -I src/http/modules -I src/http/v2 -I src/mail -I src/stream \
+	-o objs/ngx_http_xslt_filter_module_modules.o \
+	objs/ngx_http_xslt_filter_module_modules.c
+cc -c -fPIC -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -g -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -m64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection  -I src/core -I src/event -I src/event/modules -I src/os/unix -I src/http/modules/perl -I /usr/local/modsecurity/include -I /usr/include/libxml2 -I objs -I src/http -I src/http/modules -I src/http/v2 -I src/mail -I src/stream \
+	-o objs/src/http/modules/ngx_http_image_filter_module.o \
+	src/http/modules/ngx_http_image_filter_module.c
+cc -c -fPIC -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -g -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -m64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection  -I src/core -I src/event -I src/event/modules -I src/os/unix -I src/http/modules/perl -I /usr/local/modsecurity/include -I /usr/include/libxml2 -I objs -I src/http -I src/http/modules -I src/http/v2 -I src/mail -I src/stream \
+	-o objs/ngx_http_image_filter_module_modules.o \
+	objs/ngx_http_image_filter_module_modules.c
+grep 'define NGINX_VERSION' src/core/nginx.h \
+	| sed -e 's/^.*"\(.*\)".*/\1/' > \
+	objs/src/http/modules/perl/version
+sed "s/%%VERSION%%/`cat objs/src/http/modules/perl/version`/" \
+	src/http/modules/perl/nginx.pm > \
+	objs/src/http/modules/perl/nginx.pm
+cc -c -fPIC -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -g -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -m64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection  -I src/core -I src/event -I src/event/modules -I src/os/unix -I src/http/modules/perl -I /usr/local/modsecurity/include -I /usr/include/libxml2 -I objs -I src/http -I src/http/modules -I src/http/v2 -I src/mail -I src/stream \
+	-o objs/ngx_http_perl_module_modules.o \
+	objs/ngx_http_perl_module_modules.c
+cp -p src/http/modules/perl/nginx.xs objs/src/http/modules/perl/
+cp -p src/http/modules/perl/typemap objs/src/http/modules/perl/
+cp -p src/http/modules/perl/Makefile.PL objs/src/http/modules/perl/
+cd objs/src/http/modules/perl \
+	&& NGX_PM_CFLAGS="-D_REENTRANT -D_GNU_SOURCE -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -m64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -fwrapv -fno-strict-aliasing -I/usr/local/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -I/usr/lib64/perl5/CORE -g -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -m64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection " \
+		NGX_PM_LDFLAGS="-Wl,-z,relro -Wl,--as-needed  -Wl,-z,now -specs=/usr/lib/rpm/redhat/redhat-hardened-ld -Wl,-E -lpthread -shared -Wl,-z,relro -Wl,--as-needed -Wl,-z,now -specs=/usr/lib/rpm/redhat/redhat-hardened-ld -L/usr/local/lib -fstack-protector-strong" \
+		NGX_INCS="src/core src/event src/event/modules src/os/unix src/http/modules/perl /usr/local/modsecurity/include   /usr/include/libxml2  objs  src/http src/http/modules src/http/v2" \
+		NGX_DEPS="src/core/nginx.h src/core/ngx_config.h src/core/ngx_core.h src/core/ngx_log.h src/core/ngx_palloc.h src/core/ngx_array.h src/core/ngx_list.h src/core/ngx_hash.h src/core/ngx_buf.h src/core/ngx_queue.h src/core/ngx_string.h src/core/ngx_parse.h src/core/ngx_parse_time.h src/core/ngx_inet.h src/core/ngx_file.h src/core/ngx_crc.h src/core/ngx_crc32.h src/core/ngx_murmurhash.h src/core/ngx_md5.h src/core/ngx_sha1.h src/core/ngx_rbtree.h src/core/ngx_radix_tree.h src/core/ngx_rwlock.h src/core/ngx_slab.h src/core/ngx_times.h src/core/ngx_shmtx.h src/core/ngx_connection.h src/core/ngx_cycle.h src/core/ngx_conf_file.h src/core/ngx_module.h src/core/ngx_resolver.h src/core/ngx_open_file_cache.h src/core/ngx_crypt.h src/core/ngx_proxy_protocol.h src/core/ngx_syslog.h src/event/ngx_event.h src/event/ngx_event_timer.h src/event/ngx_event_posted.h src/event/ngx_event_connect.h src/event/ngx_event_pipe.h src/os/unix/ngx_time.h src/os/unix/ngx_errno.h src/os/unix/ngx_alloc.h src/os/unix/ngx_files.h src/os/unix/ngx_channel.h src/os/unix/ngx_shmem.h src/os/unix/ngx_process.h src/os/unix/ngx_setaffinity.h src/os/unix/ngx_setproctitle.h src/os/unix/ngx_atomic.h src/os/unix/ngx_gcc_atomic_x86.h src/os/unix/ngx_thread.h src/os/unix/ngx_socket.h src/os/unix/ngx_os.h src/os/unix/ngx_user.h src/os/unix/ngx_dlopen.h src/os/unix/ngx_process_cycle.h src/os/unix/ngx_linux_config.h src/os/unix/ngx_linux.h src/event/ngx_event_openssl.h src/core/ngx_regex.h objs/ngx_auto_config.h src/http/ngx_http.h src/http/ngx_http_request.h src/http/ngx_http_config.h src/http/ngx_http_core_module.h src/http/ngx_http_cache.h src/http/ngx_http_variables.h src/http/ngx_http_script.h src/http/ngx_http_upstream.h src/http/ngx_http_upstream_round_robin.h src/http/modules/ngx_http_ssi_filter_module.h src/http/v2/ngx_http_v2.h src/http/v2/ngx_http_v2_module.h src/http/modules/ngx_http_ssl_module.h" \
+	perl Makefile.PL \
+		LIB= \
+		INSTALLSITEMAN3DIR=
+cc -c -fPIC -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -g -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -m64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection  -I src/core -I src/event -I src/event/modules -I src/os/unix -I src/http/modules/perl -I /usr/local/modsecurity/include -I /usr/include/libxml2 -I objs -I src/http -I src/http/modules -I src/http/v2 -I src/mail -I src/stream \
+	-o objs/addon/src/ngx_http_modsecurity_module.o \
+	/home/user/git/nginx-mod-modsecurity/nginx-mod-modsecurity-v1.0.1/modsecurity-nginx-v1.0.1/src/ngx_http_modsecurity_module.c
+Generating a Unix-style Makefile
+Writing Makefile for nginx
+Writing MYMETA.yml and MYMETA.json
+cc -c -fPIC -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -g -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -m64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection  -I src/core -I src/event -I src/event/modules -I src/os/unix -I src/http/modules/perl -I /usr/local/modsecurity/include -I /usr/include/libxml2 -I objs -I src/http -I src/http/modules -I src/http/v2 -I src/mail -I src/stream \
+	-o objs/addon/src/ngx_http_modsecurity_pre_access.o \
+	/home/user/git/nginx-mod-modsecurity/nginx-mod-modsecurity-v1.0.1/modsecurity-nginx-v1.0.1/src/ngx_http_modsecurity_pre_access.c
+cc -c -fPIC -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -g -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -m64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection  -I src/core -I src/event -I src/event/modules -I src/os/unix -I src/http/modules/perl -I /usr/local/modsecurity/include -I /usr/include/libxml2 -I objs -I src/http -I src/http/modules -I src/http/v2 -I src/mail -I src/stream \
+	-o objs/addon/src/ngx_http_modsecurity_header_filter.o \
+	/home/user/git/nginx-mod-modsecurity/nginx-mod-modsecurity-v1.0.1/modsecurity-nginx-v1.0.1/src/ngx_http_modsecurity_header_filter.c
+cc -c -fPIC -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -g -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -m64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection  -I src/core -I src/event -I src/event/modules -I src/os/unix -I src/http/modules/perl -I /usr/local/modsecurity/include -I /usr/include/libxml2 -I objs -I src/http -I src/http/modules -I src/http/v2 -I src/mail -I src/stream \
+	-o objs/addon/src/ngx_http_modsecurity_body_filter.o \
+	/home/user/git/nginx-mod-modsecurity/nginx-mod-modsecurity-v1.0.1/modsecurity-nginx-v1.0.1/src/ngx_http_modsecurity_body_filter.c
+cc -c -fPIC -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -g -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -m64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection  -I src/core -I src/event -I src/event/modules -I src/os/unix -I src/http/modules/perl -I /usr/local/modsecurity/include -I /usr/include/libxml2 -I objs -I src/http -I src/http/modules -I src/http/v2 -I src/mail -I src/stream \
+	-o objs/addon/src/ngx_http_modsecurity_log.o \
+	/home/user/git/nginx-mod-modsecurity/nginx-mod-modsecurity-v1.0.1/modsecurity-nginx-v1.0.1/src/ngx_http_modsecurity_log.c
+cc -c -fPIC -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -g -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -m64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection  -I src/core -I src/event -I src/event/modules -I src/os/unix -I src/http/modules/perl -I /usr/local/modsecurity/include -I /usr/include/libxml2 -I objs -I src/http -I src/http/modules -I src/http/v2 -I src/mail -I src/stream \
+	-o objs/addon/src/ngx_http_modsecurity_rewrite.o \
+	/home/user/git/nginx-mod-modsecurity/nginx-mod-modsecurity-v1.0.1/modsecurity-nginx-v1.0.1/src/ngx_http_modsecurity_rewrite.c
+cc -c -fPIC -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -g -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -m64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection  -I src/core -I src/event -I src/event/modules -I src/os/unix -I src/http/modules/perl -I /usr/local/modsecurity/include -I /usr/include/libxml2 -I objs -I src/http -I src/http/modules -I src/http/v2 -I src/mail -I src/stream \
+	-o objs/ngx_http_modsecurity_module_modules.o \
+	objs/ngx_http_modsecurity_module_modules.c
+cc -c -fPIC -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -g -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -m64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection  -I src/core -I src/event -I src/event/modules -I src/os/unix -I src/http/modules/perl -I /usr/local/modsecurity/include -I /usr/include/libxml2 -I objs -I src/http -I src/http/modules -I src/http/v2 -I src/mail -I src/stream \
+	-o objs/src/mail/ngx_mail.o \
+	src/mail/ngx_mail.c
+cc -c -fPIC -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -g -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -m64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection  -I src/core -I src/event -I src/event/modules -I src/os/unix -I src/http/modules/perl -I /usr/local/modsecurity/include -I /usr/include/libxml2 -I objs -I src/http -I src/http/modules -I src/http/v2 -I src/mail -I src/stream \
+	-o objs/src/mail/ngx_mail_core_module.o \
+	src/mail/ngx_mail_core_module.c
+cc -c -fPIC -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -g -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -m64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection  -I src/core -I src/event -I src/event/modules -I src/os/unix -I src/http/modules/perl -I /usr/local/modsecurity/include -I /usr/include/libxml2 -I objs -I src/http -I src/http/modules -I src/http/v2 -I src/mail -I src/stream \
+	-o objs/src/mail/ngx_mail_handler.o \
+	src/mail/ngx_mail_handler.c
+cc -c -fPIC -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -g -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -m64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection  -I src/core -I src/event -I src/event/modules -I src/os/unix -I src/http/modules/perl -I /usr/local/modsecurity/include -I /usr/include/libxml2 -I objs -I src/http -I src/http/modules -I src/http/v2 -I src/mail -I src/stream \
+	-o objs/src/mail/ngx_mail_parse.o \
+	src/mail/ngx_mail_parse.c
+cc -c -fPIC -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -g -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -m64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection  -I src/core -I src/event -I src/event/modules -I src/os/unix -I src/http/modules/perl -I /usr/local/modsecurity/include -I /usr/include/libxml2 -I objs -I src/http -I src/http/modules -I src/http/v2 -I src/mail -I src/stream \
+	-o objs/src/mail/ngx_mail_ssl_module.o \
+	src/mail/ngx_mail_ssl_module.c
+cc -c -fPIC -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -g -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -m64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection  -I src/core -I src/event -I src/event/modules -I src/os/unix -I src/http/modules/perl -I /usr/local/modsecurity/include -I /usr/include/libxml2 -I objs -I src/http -I src/http/modules -I src/http/v2 -I src/mail -I src/stream \
+	-o objs/src/mail/ngx_mail_pop3_module.o \
+	src/mail/ngx_mail_pop3_module.c
+cc -c -fPIC -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -g -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -m64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection  -I src/core -I src/event -I src/event/modules -I src/os/unix -I src/http/modules/perl -I /usr/local/modsecurity/include -I /usr/include/libxml2 -I objs -I src/http -I src/http/modules -I src/http/v2 -I src/mail -I src/stream \
+	-o objs/src/mail/ngx_mail_pop3_handler.o \
+	src/mail/ngx_mail_pop3_handler.c
+cc -c -fPIC -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -g -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -m64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection  -I src/core -I src/event -I src/event/modules -I src/os/unix -I src/http/modules/perl -I /usr/local/modsecurity/include -I /usr/include/libxml2 -I objs -I src/http -I src/http/modules -I src/http/v2 -I src/mail -I src/stream \
+	-o objs/src/mail/ngx_mail_imap_module.o \
+	src/mail/ngx_mail_imap_module.c
+cc -c -fPIC -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -g -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -m64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection  -I src/core -I src/event -I src/event/modules -I src/os/unix -I src/http/modules/perl -I /usr/local/modsecurity/include -I /usr/include/libxml2 -I objs -I src/http -I src/http/modules -I src/http/v2 -I src/mail -I src/stream \
+	-o objs/src/mail/ngx_mail_imap_handler.o \
+	src/mail/ngx_mail_imap_handler.c
+cc -c -fPIC -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -g -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -m64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection  -I src/core -I src/event -I src/event/modules -I src/os/unix -I src/http/modules/perl -I /usr/local/modsecurity/include -I /usr/include/libxml2 -I objs -I src/http -I src/http/modules -I src/http/v2 -I src/mail -I src/stream \
+	-o objs/src/mail/ngx_mail_smtp_module.o \
+	src/mail/ngx_mail_smtp_module.c
+cc -c -fPIC -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -g -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -m64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection  -I src/core -I src/event -I src/event/modules -I src/os/unix -I src/http/modules/perl -I /usr/local/modsecurity/include -I /usr/include/libxml2 -I objs -I src/http -I src/http/modules -I src/http/v2 -I src/mail -I src/stream \
+	-o objs/src/mail/ngx_mail_smtp_handler.o \
+	src/mail/ngx_mail_smtp_handler.c
+cc -c -fPIC -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -g -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -m64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection  -I src/core -I src/event -I src/event/modules -I src/os/unix -I src/http/modules/perl -I /usr/local/modsecurity/include -I /usr/include/libxml2 -I objs -I src/http -I src/http/modules -I src/http/v2 -I src/mail -I src/stream \
+	-o objs/src/mail/ngx_mail_auth_http_module.o \
+	src/mail/ngx_mail_auth_http_module.c
+cc -c -fPIC -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -g -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -m64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection  -I src/core -I src/event -I src/event/modules -I src/os/unix -I src/http/modules/perl -I /usr/local/modsecurity/include -I /usr/include/libxml2 -I objs -I src/http -I src/http/modules -I src/http/v2 -I src/mail -I src/stream \
+	-o objs/src/mail/ngx_mail_proxy_module.o \
+	src/mail/ngx_mail_proxy_module.c
+cc -c -fPIC -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -g -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -m64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection  -I src/core -I src/event -I src/event/modules -I src/os/unix -I src/http/modules/perl -I /usr/local/modsecurity/include -I /usr/include/libxml2 -I objs -I src/http -I src/http/modules -I src/http/v2 -I src/mail -I src/stream \
+	-o objs/ngx_mail_module_modules.o \
+	objs/ngx_mail_module_modules.c
+cc -c -fPIC -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -g -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -m64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection  -I src/core -I src/event -I src/event/modules -I src/os/unix -I src/http/modules/perl -I /usr/local/modsecurity/include -I /usr/include/libxml2 -I objs -I src/http -I src/http/modules -I src/http/v2 -I src/mail -I src/stream \
+	-o objs/src/stream/ngx_stream.o \
+	src/stream/ngx_stream.c
+cc -c -fPIC -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -g -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -m64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection  -I src/core -I src/event -I src/event/modules -I src/os/unix -I src/http/modules/perl -I /usr/local/modsecurity/include -I /usr/include/libxml2 -I objs -I src/http -I src/http/modules -I src/http/v2 -I src/mail -I src/stream \
+	-o objs/src/stream/ngx_stream_variables.o \
+	src/stream/ngx_stream_variables.c
+cc -c -fPIC -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -g -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -m64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection  -I src/core -I src/event -I src/event/modules -I src/os/unix -I src/http/modules/perl -I /usr/local/modsecurity/include -I /usr/include/libxml2 -I objs -I src/http -I src/http/modules -I src/http/v2 -I src/mail -I src/stream \
+	-o objs/src/stream/ngx_stream_script.o \
+	src/stream/ngx_stream_script.c
+cc -c -fPIC -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -g -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -m64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection  -I src/core -I src/event -I src/event/modules -I src/os/unix -I src/http/modules/perl -I /usr/local/modsecurity/include -I /usr/include/libxml2 -I objs -I src/http -I src/http/modules -I src/http/v2 -I src/mail -I src/stream \
+	-o objs/src/stream/ngx_stream_handler.o \
+	src/stream/ngx_stream_handler.c
+cc -c -fPIC -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -g -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -m64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection  -I src/core -I src/event -I src/event/modules -I src/os/unix -I src/http/modules/perl -I /usr/local/modsecurity/include -I /usr/include/libxml2 -I objs -I src/http -I src/http/modules -I src/http/v2 -I src/mail -I src/stream \
+	-o objs/src/stream/ngx_stream_core_module.o \
+	src/stream/ngx_stream_core_module.c
+cc -c -fPIC -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -g -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -m64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection  -I src/core -I src/event -I src/event/modules -I src/os/unix -I src/http/modules/perl -I /usr/local/modsecurity/include -I /usr/include/libxml2 -I objs -I src/http -I src/http/modules -I src/http/v2 -I src/mail -I src/stream \
+	-o objs/src/stream/ngx_stream_log_module.o \
+	src/stream/ngx_stream_log_module.c
+cc -c -fPIC -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -g -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -m64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection  -I src/core -I src/event -I src/event/modules -I src/os/unix -I src/http/modules/perl -I /usr/local/modsecurity/include -I /usr/include/libxml2 -I objs -I src/http -I src/http/modules -I src/http/v2 -I src/mail -I src/stream \
+	-o objs/src/stream/ngx_stream_proxy_module.o \
+	src/stream/ngx_stream_proxy_module.c
+cc -c -fPIC -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -g -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -m64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection  -I src/core -I src/event -I src/event/modules -I src/os/unix -I src/http/modules/perl -I /usr/local/modsecurity/include -I /usr/include/libxml2 -I objs -I src/http -I src/http/modules -I src/http/v2 -I src/mail -I src/stream \
+	-o objs/src/stream/ngx_stream_upstream.o \
+	src/stream/ngx_stream_upstream.c
+cc -c -fPIC -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -g -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -m64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection  -I src/core -I src/event -I src/event/modules -I src/os/unix -I src/http/modules/perl -I /usr/local/modsecurity/include -I /usr/include/libxml2 -I objs -I src/http -I src/http/modules -I src/http/v2 -I src/mail -I src/stream \
+	-o objs/src/stream/ngx_stream_upstream_round_robin.o \
+	src/stream/ngx_stream_upstream_round_robin.c
+cc -c -fPIC -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -g -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -m64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection  -I src/core -I src/event -I src/event/modules -I src/os/unix -I src/http/modules/perl -I /usr/local/modsecurity/include -I /usr/include/libxml2 -I objs -I src/http -I src/http/modules -I src/http/v2 -I src/mail -I src/stream \
+	-o objs/src/stream/ngx_stream_write_filter_module.o \
+	src/stream/ngx_stream_write_filter_module.c
+cc -c -fPIC -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -g -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -m64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection  -I src/core -I src/event -I src/event/modules -I src/os/unix -I src/http/modules/perl -I /usr/local/modsecurity/include -I /usr/include/libxml2 -I objs -I src/http -I src/http/modules -I src/http/v2 -I src/mail -I src/stream \
+	-o objs/src/stream/ngx_stream_ssl_module.o \
+	src/stream/ngx_stream_ssl_module.c
+cc -c -fPIC -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -g -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -m64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection  -I src/core -I src/event -I src/event/modules -I src/os/unix -I src/http/modules/perl -I /usr/local/modsecurity/include -I /usr/include/libxml2 -I objs -I src/http -I src/http/modules -I src/http/v2 -I src/mail -I src/stream \
+	-o objs/src/stream/ngx_stream_limit_conn_module.o \
+	src/stream/ngx_stream_limit_conn_module.c
+cc -c -fPIC -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -g -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -m64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection  -I src/core -I src/event -I src/event/modules -I src/os/unix -I src/http/modules/perl -I /usr/local/modsecurity/include -I /usr/include/libxml2 -I objs -I src/http -I src/http/modules -I src/http/v2 -I src/mail -I src/stream \
+	-o objs/src/stream/ngx_stream_access_module.o \
+	src/stream/ngx_stream_access_module.c
+cc -c -fPIC -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -g -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -m64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection  -I src/core -I src/event -I src/event/modules -I src/os/unix -I src/http/modules/perl -I /usr/local/modsecurity/include -I /usr/include/libxml2 -I objs -I src/http -I src/http/modules -I src/http/v2 -I src/mail -I src/stream \
+	-o objs/src/stream/ngx_stream_geo_module.o \
+	src/stream/ngx_stream_geo_module.c
+cc -c -fPIC -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -g -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -m64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection  -I src/core -I src/event -I src/event/modules -I src/os/unix -I src/http/modules/perl -I /usr/local/modsecurity/include -I /usr/include/libxml2 -I objs -I src/http -I src/http/modules -I src/http/v2 -I src/mail -I src/stream \
+	-o objs/src/stream/ngx_stream_map_module.o \
+	src/stream/ngx_stream_map_module.c
+cc -c -fPIC -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -g -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -m64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection  -I src/core -I src/event -I src/event/modules -I src/os/unix -I src/http/modules/perl -I /usr/local/modsecurity/include -I /usr/include/libxml2 -I objs -I src/http -I src/http/modules -I src/http/v2 -I src/mail -I src/stream \
+	-o objs/src/stream/ngx_stream_split_clients_module.o \
+	src/stream/ngx_stream_split_clients_module.c
+cc -c -fPIC -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -g -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -m64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection  -I src/core -I src/event -I src/event/modules -I src/os/unix -I src/http/modules/perl -I /usr/local/modsecurity/include -I /usr/include/libxml2 -I objs -I src/http -I src/http/modules -I src/http/v2 -I src/mail -I src/stream \
+	-o objs/src/stream/ngx_stream_return_module.o \
+	src/stream/ngx_stream_return_module.c
+cc -c -fPIC -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -g -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -m64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection  -I src/core -I src/event -I src/event/modules -I src/os/unix -I src/http/modules/perl -I /usr/local/modsecurity/include -I /usr/include/libxml2 -I objs -I src/http -I src/http/modules -I src/http/v2 -I src/mail -I src/stream \
+	-o objs/src/stream/ngx_stream_upstream_hash_module.o \
+	src/stream/ngx_stream_upstream_hash_module.c
+cc -c -fPIC -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -g -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -m64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection  -I src/core -I src/event -I src/event/modules -I src/os/unix -I src/http/modules/perl -I /usr/local/modsecurity/include -I /usr/include/libxml2 -I objs -I src/http -I src/http/modules -I src/http/v2 -I src/mail -I src/stream \
+	-o objs/src/stream/ngx_stream_upstream_least_conn_module.o \
+	src/stream/ngx_stream_upstream_least_conn_module.c
+cc -c -fPIC -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -g -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -m64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection  -I src/core -I src/event -I src/event/modules -I src/os/unix -I src/http/modules/perl -I /usr/local/modsecurity/include -I /usr/include/libxml2 -I objs -I src/http -I src/http/modules -I src/http/v2 -I src/mail -I src/stream \
+	-o objs/src/stream/ngx_stream_upstream_zone_module.o \
+	src/stream/ngx_stream_upstream_zone_module.c
+cc -c -fPIC -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -g -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -m64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection  -I src/core -I src/event -I src/event/modules -I src/os/unix -I src/http/modules/perl -I /usr/local/modsecurity/include -I /usr/include/libxml2 -I objs -I src/http -I src/http/modules -I src/http/v2 -I src/mail -I src/stream \
+	-o objs/src/stream/ngx_stream_ssl_preread_module.o \
+	src/stream/ngx_stream_ssl_preread_module.c
+cc -c -fPIC -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -g -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -m64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection  -I src/core -I src/event -I src/event/modules -I src/os/unix -I src/http/modules/perl -I /usr/local/modsecurity/include -I /usr/include/libxml2 -I objs -I src/http -I src/http/modules -I src/http/v2 -I src/mail -I src/stream \
+	-o objs/ngx_stream_module_modules.o \
+	objs/ngx_stream_module_modules.c
+cc -o objs/ngx_http_xslt_filter_module.so \
+objs/src/http/modules/ngx_http_xslt_filter_module.o \
+objs/ngx_http_xslt_filter_module_modules.o \
+-Wl,-z,relro -Wl,--as-needed -Wl,-z,now -specs=/usr/lib/rpm/redhat/redhat-hardened-ld -Wl,-E -lxml2 -lxslt -lexslt \
+-shared
+cc -o objs/ngx_http_image_filter_module.so \
+objs/src/http/modules/ngx_http_image_filter_module.o \
+objs/ngx_http_image_filter_module_modules.o \
+-Wl,-z,relro -Wl,--as-needed -Wl,-z,now -specs=/usr/lib/rpm/redhat/redhat-hardened-ld -Wl,-E -lgd \
+-shared
+cd objs/src/http/modules/perl && make
+make[2]: Entering directory '/home/user/git/nginx-mod-modsecurity/nginx-mod-modsecurity-v1.0.1/nginx-1.14.1/objs/src/http/modules/perl'
+cc -o objs/ngx_http_modsecurity_module.so \
+objs/addon/src/ngx_http_modsecurity_module.o \
+objs/addon/src/ngx_http_modsecurity_pre_access.o \
+objs/addon/src/ngx_http_modsecurity_header_filter.o \
+objs/addon/src/ngx_http_modsecurity_body_filter.o \
+objs/addon/src/ngx_http_modsecurity_log.o \
+objs/addon/src/ngx_http_modsecurity_rewrite.o \
+objs/ngx_http_modsecurity_module_modules.o \
+-Wl,-z,relro -Wl,--as-needed -Wl,-z,now -specs=/usr/lib/rpm/redhat/redhat-hardened-ld -Wl,-E -Wl,-rpath,/usr/local/modsecurity/lib -L/usr/local/modsecurity/lib -lmodsecurity \
+-shared
+cc -o objs/ngx_mail_module.so \
+objs/src/mail/ngx_mail.o \
+objs/src/mail/ngx_mail_core_module.o \
+objs/src/mail/ngx_mail_handler.o \
+objs/src/mail/ngx_mail_parse.o \
+objs/src/mail/ngx_mail_ssl_module.o \
+objs/src/mail/ngx_mail_pop3_module.o \
+objs/src/mail/ngx_mail_pop3_handler.o \
+objs/src/mail/ngx_mail_imap_module.o \
+objs/src/mail/ngx_mail_imap_handler.o \
+objs/src/mail/ngx_mail_smtp_module.o \
+objs/src/mail/ngx_mail_smtp_handler.o \
+objs/src/mail/ngx_mail_auth_http_module.o \
+objs/src/mail/ngx_mail_proxy_module.o \
+objs/ngx_mail_module_modules.o \
+-Wl,-z,relro -Wl,--as-needed -Wl,-z,now -specs=/usr/lib/rpm/redhat/redhat-hardened-ld -Wl,-E \
+-shared
+cc -o objs/ngx_stream_module.so \
+objs/src/stream/ngx_stream.o \
+objs/src/stream/ngx_stream_variables.o \
+objs/src/stream/ngx_stream_script.o \
+objs/src/stream/ngx_stream_handler.o \
+objs/src/stream/ngx_stream_core_module.o \
+objs/src/stream/ngx_stream_log_module.o \
+objs/src/stream/ngx_stream_proxy_module.o \
+objs/src/stream/ngx_stream_upstream.o \
+objs/src/stream/ngx_stream_upstream_round_robin.o \
+objs/src/stream/ngx_stream_write_filter_module.o \
+objs/src/stream/ngx_stream_ssl_module.o \
+objs/src/stream/ngx_stream_limit_conn_module.o \
+objs/src/stream/ngx_stream_access_module.o \
+objs/src/stream/ngx_stream_geo_module.o \
+objs/src/stream/ngx_stream_map_module.o \
+objs/src/stream/ngx_stream_split_clients_module.o \
+objs/src/stream/ngx_stream_return_module.o \
+objs/src/stream/ngx_stream_upstream_hash_module.o \
+objs/src/stream/ngx_stream_upstream_least_conn_module.o \
+objs/src/stream/ngx_stream_upstream_zone_module.o \
+objs/src/stream/ngx_stream_ssl_preread_module.o \
+objs/ngx_stream_module_modules.o \
+-Wl,-z,relro -Wl,--as-needed -Wl,-z,now -specs=/usr/lib/rpm/redhat/redhat-hardened-ld -Wl,-E \
+-shared
+Running Mkbootstrap for nginx ()
+"/usr/bin/perl" "/usr/share/perl5/vendor_perl/ExtUtils/xsubpp"  -typemap '/usr/share/perl5/ExtUtils/typemap' -typemap '/home/user/git/nginx-mod-modsecurity/nginx-mod-modsecurity-v1.0.1/nginx-1.14.1/objs/src/http/modules/perl/typemap'  nginx.xs > nginx.xsc
+chmod 644 "nginx.bs"
+"/usr/bin/perl" -MExtUtils::Command::MM -e 'cp_nonempty' -- nginx.bs blib/arch/auto/nginx/nginx.bs 644
+cp nginx.pm blib/lib/nginx.pm
+mv nginx.xsc nginx.c
+gcc -c  -I ../../../../../src/core -I ../../../../../src/event -I ../../../../../src/event/modules -I ../../../../../src/os/unix -I ../../../../../src/http/modules/perl -I /usr/local/modsecurity/include -I /usr/include/libxml2 -I ../../../../../objs -I ../../../../../src/http -I ../../../../../src/http/modules -I ../../../../../src/http/v2 -D_REENTRANT -D_GNU_SOURCE -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -m64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -fwrapv -fno-strict-aliasing -I/usr/local/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -I/usr/lib64/perl5/CORE -g -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -m64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection  -O   -DVERSION=\"1.14.1\" -DXS_VERSION=\"1.14.1\" -fPIC "-I/usr/lib64/perl5/CORE"   nginx.c
+rm -f blib/arch/auto/nginx/nginx.so
+gcc  -Wl,-z,relro -Wl,--as-needed  -Wl,-z,now -specs=/usr/lib/rpm/redhat/redhat-hardened-ld -Wl,-E -lpthread -shared -Wl,-z,relro -Wl,--as-needed -Wl,-z,now -specs=/usr/lib/rpm/redhat/redhat-hardened-ld -L/usr/local/lib -fstack-protector-strong  nginx.o  -o blib/arch/auto/nginx/nginx.so  \
+    -lperl   \
+  
+chmod 755 blib/arch/auto/nginx/nginx.so
+Manifying 1 pod document
+make[2]: Leaving directory '/home/user/git/nginx-mod-modsecurity/nginx-mod-modsecurity-v1.0.1/nginx-1.14.1/objs/src/http/modules/perl'
+rm -rf objs/install_perl
+cc -c -fPIC -pipe -O -W -Wall -Wpointer-arith -Wno-unused-parameter -g -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -m64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -D_REENTRANT -D_GNU_SOURCE -O2 -g -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -m64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -fwrapv -fno-strict-aliasing -I/usr/local/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -I/usr/lib64/perl5/CORE -I src/core -I src/event -I src/event/modules -I src/os/unix -I src/http/modules/perl -I /usr/local/modsecurity/include -I /usr/include/libxml2 -I objs -I src/http -I src/http/modules -I src/http/v2 -I src/mail -I src/stream \
+	-o objs/src/http/modules/perl/ngx_http_perl_module.o \
+	src/http/modules/perl/ngx_http_perl_module.c
+cc -o objs/ngx_http_perl_module.so \
+objs/src/http/modules/perl/ngx_http_perl_module.o \
+objs/ngx_http_perl_module_modules.o \
+-Wl,-z,relro -Wl,--as-needed -Wl,-z,now -specs=/usr/lib/rpm/redhat/redhat-hardened-ld -Wl,-E -Wl,--enable-new-dtags -Wl,-z,relro -Wl,--as-needed -Wl,-z,now -specs=/usr/lib/rpm/redhat/redhat-hardened-ld -Wl,-z,relro -Wl,--as-needed -Wl,-z,now -specs=/usr/lib/rpm/redhat/redhat-hardened-ld -fstack-protector-strong -L/usr/local/lib -L/usr/lib64/perl5/CORE -lperl -lpthread -lresolv -ldl -lm -lcrypt -lutil -lc \
+-shared
+make[1]: Leaving directory '/home/user/git/nginx-mod-modsecurity/nginx-mod-modsecurity-v1.0.1/nginx-1.14.1'
+Executing(%install): /bin/sh -e /var/tmp/rpm-tmp.h9QTs6
+Processing files: nginx-mod-modsecurity-v1.0.1-1.el8.x86_64
+Provides: nginx-mod-modsecurity = 1:v1.0.1-1.el8 nginx-mod-modsecurity(x86-64) = 1:v1.0.1-1.el8
+Requires(rpmlib): rpmlib(CompressedFileNames) <= 3.0.4-1 rpmlib(FileDigests) <= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) <= 4.0-1
+Requires: libc.so.6()(64bit) libc.so.6(GLIBC_2.14)(64bit) libc.so.6(GLIBC_2.2.5)(64bit) libc.so.6(GLIBC_2.4)(64bit) libmodsecurity.so.3()(64bit) rtld(GNU_HASH)
+Checking for unpackaged file(s): /usr/lib/rpm/check-files /home/user/rpmbuild/BUILDROOT/nginx-mod-modsecurity-v1.0.1-1.el8.x86_64
+Wrote: /home/user/git/nginx-mod-modsecurity/nginx-mod-modsecurity-v1.0.1-1.el8.src.rpm
+Wrote: /home/user/git/nginx-mod-modsecurity/x86_64/nginx-mod-modsecurity-v1.0.1-1.el8.x86_64.rpm
+Executing(%clean): /bin/sh -e /var/tmp/rpm-tmp.Y0ynG7
