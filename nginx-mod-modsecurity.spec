@@ -67,9 +67,9 @@ ModSecurity is an open source, cross platform web application firewall (WAF) eng
 
 %prep
 %if 0%{?fedora} >= 31
-%setup -c -q
+%setup -q -c
 %elif 0%{?rhel} >= 8
-%setup -T -D -a 5 -c
+%setup -q -c -a 5
 %endif
 
 %setup -T -D -a 2
