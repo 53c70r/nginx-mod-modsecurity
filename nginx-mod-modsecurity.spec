@@ -8,6 +8,7 @@
 %if 0%{?fedora} > 22 || 0%{?rhel} >= 8
 %global with_mailcap_mimetypes 1
 %endif
+
 %ifnarch s390 s390x ppc64 ppc64le
 %global with_gperftools 1
 %endif
@@ -31,15 +32,12 @@ Source3:        https://github.com/SpiderLabs/ModSecurity-nginx/releases/downloa
 Source4:        mod-modsecurity.conf
 Source5:        https://nginx.org/download/nginx-%{rhel_nginx_version}.tar.gz
 Source6:        https://nginx.org/download/nginx-%{rhel_nginx_version}.tar.gz.asc
-%if 0%{?fedora} >= 31
 Patch0:         nginx-auto-cc-gcc.patch
-%else
-Patch5:         nginx-auto-cc-gcc.patch
-%endif
 
 %if 0%{?with_gperftools}
 BuildRequires:  gperftools-devel
 %endif
+
 BuildRequires:  gcc
 BuildRequires:  openssl-devel
 BuildRequires:  pcre-devel
@@ -54,11 +52,13 @@ BuildRequires:  automake
 BuildRequires:  libtool
 BuildRequires:  perl-ExtUtils-Embed
 BuildRequires:  libmodsecurity
+
 %if 0%{?fedora} >= 31
 Requires:       nginx >= %{fedora_nginx_version}
-%else
+%elif 0%{?rhel} >= 8
 Requires:       nginx >= %{rhel_nginx_version}
 %endif
+
 Requires:       GeoIP
 Requires:       libmodsecurity
 
@@ -68,26 +68,27 @@ ModSecurity is an open source, cross platform web application firewall (WAF) eng
 %prep
 %if 0%{?fedora} >= 31
 %setup -c -q
-%else
+%elif 0%{?rhel} >= 8
 %setup -T -D -a 5 -c
 %endif
+
 %setup -T -D -a 2
+
 %if 0%{?fedora} >= 31
 cd nginx-%{fedora_nginx_version}
-%patch0 -p0
-%else
+%elif 0%{?rhel} >= 8
 cd nginx-%{rhel_nginx_version}
-%patch5 -p0
 %endif
 
+%patch0 -p0
+
 %build
-connector_path=$(realpath modsecurity-nginx-%{version})
 %if 0%{?fedora} >= 31
 cd nginx-%{fedora_nginx_version}
-%else
+%elif 0%{?rhel} >= 8
 cd nginx-%{rhel_nginx_version}
 %endif
-#export DESTDIR=%{buildroot}
+
 nginx_ldopts="$RPM_LD_FLAGS -Wl,-E"
 if ! ./configure \
     --prefix=%{_datadir}/nginx \
@@ -144,7 +145,7 @@ if ! ./configure \
     --with-debug \
     --with-cc-opt="%{optflags} $(pcre-config --cflags)" \
     --with-ld-opt="$nginx_ldopts" \
-    --add-dynamic-module=$connector_path; then
+    --add-dynamic-module=../modsecurity-nginx-%{version}; then
   : configure failed
   cat objs/autoconf.err
   exit 1
@@ -152,13 +153,14 @@ fi
 make modules %{?_smp_mflags}
 
 %install
+
 %if 0%{?fedora} >= 31
 %{__install} -p -D -m 0755 ./nginx-%{fedora_nginx_version}/objs/ngx_http_modsecurity_module.so %{buildroot}%{_libdir}/nginx/modules/ngx_http_modsecurity_module.so
-%else
+%elif 0%{?rhel} >= 8
 %{__install} -p -D -m 0755 ./nginx-%{rhel_nginx_version}/objs/ngx_http_modsecurity_module.so %{buildroot}%{_libdir}/nginx/modules/ngx_http_modsecurity_module.so
 %endif
-%{__install} -p -D -m 0644 %{SOURCE4} %{buildroot}%{_datadir}/nginx/modules/mod-modsecurity.conf
 
+%{__install} -p -D -m 0644 %{SOURCE4} %{buildroot}%{_datadir}/nginx/modules/mod-modsecurity.conf
 
 %files
 %defattr (-,root,root)

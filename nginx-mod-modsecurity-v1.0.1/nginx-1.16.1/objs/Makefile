@@ -138,7 +138,7 @@ STREAM_DEPS = src/stream/ngx_stream.h \
 STREAM_INCS = -I src/stream
 
 
-ADDON_DEPS = $(CORE_DEPS)  src/http/modules/perl/ngx_http_perl_module.h /home/user/git/nginx-mod-modsecurity/nginx-mod-modsecurity-v1.0.1/modsecurity-nginx-v1.0.1/src/ddebug.h             /home/user/git/nginx-mod-modsecurity/nginx-mod-modsecurity-v1.0.1/modsecurity-nginx-v1.0.1/src/ngx_http_modsecurity_common.h              $(HTTP_DEPS) $(MAIL_DEPS) $(STREAM_DEPS)
+ADDON_DEPS = $(CORE_DEPS)  src/http/modules/perl/ngx_http_perl_module.h ../modsecurity-nginx-v1.0.1/src/ddebug.h             ../modsecurity-nginx-v1.0.1/src/ngx_http_modsecurity_common.h              $(HTTP_DEPS) $(MAIL_DEPS) $(STREAM_DEPS)
 
 
 build:	binary modules manpage
@@ -1585,45 +1585,45 @@ objs/ngx_http_modsecurity_module_modules.o:	$(CORE_DEPS) \
 
 
 objs/addon/src/ngx_http_modsecurity_module.o:	$(ADDON_DEPS) \
-	/home/user/git/nginx-mod-modsecurity/nginx-mod-modsecurity-v1.0.1/modsecurity-nginx-v1.0.1/src/ngx_http_modsecurity_module.c
+	../modsecurity-nginx-v1.0.1/src/ngx_http_modsecurity_module.c
 	$(CC) -c -fPIC $(CFLAGS) $(ALL_INCS) \
 		-o objs/addon/src/ngx_http_modsecurity_module.o \
-		/home/user/git/nginx-mod-modsecurity/nginx-mod-modsecurity-v1.0.1/modsecurity-nginx-v1.0.1/src/ngx_http_modsecurity_module.c
+		../modsecurity-nginx-v1.0.1/src/ngx_http_modsecurity_module.c
 
 
 objs/addon/src/ngx_http_modsecurity_pre_access.o:	$(ADDON_DEPS) \
-	/home/user/git/nginx-mod-modsecurity/nginx-mod-modsecurity-v1.0.1/modsecurity-nginx-v1.0.1/src/ngx_http_modsecurity_pre_access.c
+	../modsecurity-nginx-v1.0.1/src/ngx_http_modsecurity_pre_access.c
 	$(CC) -c -fPIC $(CFLAGS) $(ALL_INCS) \
 		-o objs/addon/src/ngx_http_modsecurity_pre_access.o \
-		/home/user/git/nginx-mod-modsecurity/nginx-mod-modsecurity-v1.0.1/modsecurity-nginx-v1.0.1/src/ngx_http_modsecurity_pre_access.c
+		../modsecurity-nginx-v1.0.1/src/ngx_http_modsecurity_pre_access.c
 
 
 objs/addon/src/ngx_http_modsecurity_header_filter.o:	$(ADDON_DEPS) \
-	/home/user/git/nginx-mod-modsecurity/nginx-mod-modsecurity-v1.0.1/modsecurity-nginx-v1.0.1/src/ngx_http_modsecurity_header_filter.c
+	../modsecurity-nginx-v1.0.1/src/ngx_http_modsecurity_header_filter.c
 	$(CC) -c -fPIC $(CFLAGS) $(ALL_INCS) \
 		-o objs/addon/src/ngx_http_modsecurity_header_filter.o \
-		/home/user/git/nginx-mod-modsecurity/nginx-mod-modsecurity-v1.0.1/modsecurity-nginx-v1.0.1/src/ngx_http_modsecurity_header_filter.c
+		../modsecurity-nginx-v1.0.1/src/ngx_http_modsecurity_header_filter.c
 
 
 objs/addon/src/ngx_http_modsecurity_body_filter.o:	$(ADDON_DEPS) \
-	/home/user/git/nginx-mod-modsecurity/nginx-mod-modsecurity-v1.0.1/modsecurity-nginx-v1.0.1/src/ngx_http_modsecurity_body_filter.c
+	../modsecurity-nginx-v1.0.1/src/ngx_http_modsecurity_body_filter.c
 	$(CC) -c -fPIC $(CFLAGS) $(ALL_INCS) \
 		-o objs/addon/src/ngx_http_modsecurity_body_filter.o \
-		/home/user/git/nginx-mod-modsecurity/nginx-mod-modsecurity-v1.0.1/modsecurity-nginx-v1.0.1/src/ngx_http_modsecurity_body_filter.c
+		../modsecurity-nginx-v1.0.1/src/ngx_http_modsecurity_body_filter.c
 
 
 objs/addon/src/ngx_http_modsecurity_log.o:	$(ADDON_DEPS) \
-	/home/user/git/nginx-mod-modsecurity/nginx-mod-modsecurity-v1.0.1/modsecurity-nginx-v1.0.1/src/ngx_http_modsecurity_log.c
+	../modsecurity-nginx-v1.0.1/src/ngx_http_modsecurity_log.c
 	$(CC) -c -fPIC $(CFLAGS) $(ALL_INCS) \
 		-o objs/addon/src/ngx_http_modsecurity_log.o \
-		/home/user/git/nginx-mod-modsecurity/nginx-mod-modsecurity-v1.0.1/modsecurity-nginx-v1.0.1/src/ngx_http_modsecurity_log.c
+		../modsecurity-nginx-v1.0.1/src/ngx_http_modsecurity_log.c
 
 
 objs/addon/src/ngx_http_modsecurity_rewrite.o:	$(ADDON_DEPS) \
-	/home/user/git/nginx-mod-modsecurity/nginx-mod-modsecurity-v1.0.1/modsecurity-nginx-v1.0.1/src/ngx_http_modsecurity_rewrite.c
+	../modsecurity-nginx-v1.0.1/src/ngx_http_modsecurity_rewrite.c
 	$(CC) -c -fPIC $(CFLAGS) $(ALL_INCS) \
 		-o objs/addon/src/ngx_http_modsecurity_rewrite.o \
-		/home/user/git/nginx-mod-modsecurity/nginx-mod-modsecurity-v1.0.1/modsecurity-nginx-v1.0.1/src/ngx_http_modsecurity_rewrite.c
+		../modsecurity-nginx-v1.0.1/src/ngx_http_modsecurity_rewrite.c
 
 
 modules:	objs/ngx_mail_module.so

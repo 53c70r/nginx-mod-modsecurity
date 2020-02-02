@@ -1,0 +1,52 @@
+
+
+Executing(%prep): /bin/sh -e /var/tmp/rpm-tmp.1mDps7
+drwxrwxr-x zimmerle/zimmerle 0 2019-12-12 14:19 modsecurity-nginx-v1.0.1/
+-rw-rw-r-- zimmerle/zimmerle 11357 2015-07-06 21:06 modsecurity-nginx-v1.0.1/LICENSE
+-rwxr-xr-x zimmerle/zimmerle   734 2018-02-19 18:50 modsecurity-nginx-v1.0.1/ngx-modsec.stp
+-rw-r--r-- zimmerle/zimmerle    96 2017-12-22 17:58 modsecurity-nginx-v1.0.1/AUTHORS
+drwxrwxr-x zimmerle/zimmerle     0 2019-12-12 14:19 modsecurity-nginx-v1.0.1/src/
+-rw-r--r-- zimmerle/zimmerle  2331 2017-12-20 15:04 modsecurity-nginx-v1.0.1/src/ddebug.h
+-rw-r--r-- zimmerle/zimmerle 22258 2019-12-11 19:43 modsecurity-nginx-v1.0.1/src/ngx_http_modsecurity_module.c
+-rw-r--r-- zimmerle/zimmerle  7257 2019-12-11 19:43 modsecurity-nginx-v1.0.1/src/ngx_http_modsecurity_rewrite.c
+-rw-r--r-- zimmerle/zimmerle  5863 2019-12-11 19:43 modsecurity-nginx-v1.0.1/src/ngx_http_modsecurity_body_filter.c
+-rw-r--r-- zimmerle/zimmerle 17501 2019-12-11 19:43 modsecurity-nginx-v1.0.1/src/ngx_http_modsecurity_header_filter.c
+-rw-r--r-- zimmerle/zimmerle  6540 2019-12-11 19:43 modsecurity-nginx-v1.0.1/src/ngx_http_modsecurity_pre_access.c
+-rw-r--r-- zimmerle/zimmerle  2117 2019-12-11 19:43 modsecurity-nginx-v1.0.1/src/ngx_http_modsecurity_log.c
+-rw-r--r-- zimmerle/zimmerle  4911 2019-12-11 19:43 modsecurity-nginx-v1.0.1/src/ngx_http_modsecurity_common.h
+-rw-r--r-- zimmerle/zimmerle  7194 2019-12-11 19:43 modsecurity-nginx-v1.0.1/config
+-rw-r--r-- zimmerle/zimmerle  9154 2019-12-11 19:43 modsecurity-nginx-v1.0.1/README.md
+drwxrwxr-x zimmerle/zimmerle     0 2019-12-12 14:19 modsecurity-nginx-v1.0.1/tests/
+-rw-r--r-- zimmerle/zimmerle  6849 2019-12-11 19:43 modsecurity-nginx-v1.0.1/tests/modsecurity-proxy.t
+-rw-r--r-- zimmerle/zimmerle  4258 2019-12-11 19:43 modsecurity-nginx-v1.0.1/tests/modsecurity-transaction-id.t
+-rw-r--r-- zimmerle/zimmerle  2337 2017-03-07 19:49 modsecurity-nginx-v1.0.1/tests/modsecurity-scoring.t
+-rw-rw-r-- zimmerle/zimmerle   335 2015-07-06 21:06 modsecurity-nginx-v1.0.1/tests/README.md
+-rw-r--r-- zimmerle/zimmerle  7869 2017-12-22 17:58 modsecurity-nginx-v1.0.1/tests/modsecurity-config-auditlog.t
+-rw-r--r-- zimmerle/zimmerle   995 2017-03-07 19:49 modsecurity-nginx-v1.0.1/tests/nginx-tests-cvt.pl
+-rw-r--r-- zimmerle/zimmerle  7873 2019-12-11 19:43 modsecurity-nginx-v1.0.1/tests/modsecurity-request-body-h2.t
+-rw-r--r-- zimmerle/zimmerle  7029 2019-12-11 19:43 modsecurity-nginx-v1.0.1/tests/modsecurity-h2.t
+-rw-r--r-- zimmerle/zimmerle  3945 2017-06-16 23:40 modsecurity-nginx-v1.0.1/tests/modsecurity-config-debuglog.t
+-rw-r--r-- zimmerle/zimmerle  6113 2019-12-11 19:43 modsecurity-nginx-v1.0.1/tests/modsecurity.t
+-rw-r--r-- zimmerle/zimmerle  7677 2019-12-11 19:43 modsecurity-nginx-v1.0.1/tests/modsecurity-request-body.t
+-rw-r--r-- zimmerle/zimmerle  1328 2017-03-07 19:49 modsecurity-nginx-v1.0.1/tests/modsecurity-response-body.t
+-rw-r--r-- zimmerle/zimmerle  8964 2019-12-11 19:43 modsecurity-nginx-v1.0.1/tests/modsecurity-proxy-h2.t
+-rw-r--r-- zimmerle/zimmerle  3775 2017-06-16 23:40 modsecurity-nginx-v1.0.1/tests/modsecurity-config.t
+-rw-r--r-- zimmerle/zimmerle  6018 2019-12-11 19:43 modsecurity-nginx-v1.0.1/tests/modsecurity-config-merge.t
+-rw-r--r-- zimmerle/zimmerle   963 2019-12-11 19:43 modsecurity-nginx-v1.0.1/.travis.yml
+-rwxr-xr-x zimmerle/zimmerle   401 2018-02-19 18:51 modsecurity-nginx-v1.0.1/release.sh
+-rw-r--r-- zimmerle/zimmerle  1600 2019-12-11 19:44 modsecurity-nginx-v1.0.1/CHANGES
+Patch #0 (nginx-auto-cc-gcc.patch):
+can't find file to patch at input line 3
+Perhaps you used the wrong -p or --strip option?
+The text leading up to this was:
+--------------------------
+|--- auto/cc/gcc.orig	2007-03-22 08:34:53.000000000 -0600
+|+++ auto/cc/gcc	2007-03-22 08:58:47.000000000 -0600
+--------------------------
+File to patch: 
+Skip this patch? [y] 
+Skipping patch.
+1 out of 1 hunk ignored
+
+
+RPM build errors:
