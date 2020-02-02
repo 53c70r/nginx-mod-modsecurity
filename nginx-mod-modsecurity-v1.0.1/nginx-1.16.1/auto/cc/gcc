@@ -166,7 +166,9 @@ esac
 
 
 # stop on warning
-CFLAGS="$CFLAGS -Werror"
+# This combined with Fedora's FORTIFY_SOURCE=2 option causes it nginx
+# to not compile.
+#CFLAGS="$CFLAGS -Werror"
 
 # debug
 CFLAGS="$CFLAGS -g"

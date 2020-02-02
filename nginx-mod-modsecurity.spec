@@ -33,6 +33,7 @@ Source4:        mod-modsecurity.conf
 Source5:        https://nginx.org/download/nginx-%{rhel_nginx_version}.tar.gz
 Source6:        https://nginx.org/download/nginx-%{rhel_nginx_version}.tar.gz.asc
 Patch0:         nginx-auto-cc-gcc.patch
+Patch5:         nginx-auto-cc-gcc.patch
 
 %if 0%{?with_gperftools}
 BuildRequires:  gperftools-devel
@@ -70,15 +71,15 @@ ModSecurity is an open source, cross platform web application firewall (WAF) eng
 %setup -c -q
 %setup -T -D -a 2 -q
 cd nginx-%{fedora_nginx_version}
+%patch0 -p0
 %elif 0%{?rhel} >= 8
 %setup -c -q -a 5
 %setup -T -D -a 2 -q
 cd nginx-%{rhel_nginx_version}
+%patch5 -p0
 %endif
-%patch0 -p0
 
 %build
-
 %if 0%{?fedora} >= 31
 #connector_path=$(realpath modsecurity-nginx-%{version})
 cd nginx-%{fedora_nginx_version}
@@ -152,6 +153,9 @@ if ! ./configure \
   exit 1
 fi
 make modules %{?_smp_mflags}
+
+%clean 
+[ "$RPM_BUILD_ROOT" != "/" ] && rm -rf $RPM_BUILD_ROOT
 
 %install
 %if 0%{?fedora} >= 31
