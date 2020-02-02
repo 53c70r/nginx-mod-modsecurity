@@ -56,7 +56,9 @@ BuildRequires:  libmodsecurity
 
 %if 0%{?fedora} >= 31
 Requires:       nginx >= %{fedora_nginx_version}
-%elif 0%{?rhel} >= 8
+%endif
+
+%if 0%{?rhel} >= 8
 Requires:       nginx >= %{rhel_nginx_version}
 %endif
 
@@ -72,7 +74,9 @@ ModSecurity is an open source, cross platform web application firewall (WAF) eng
 %setup -T -D -a 2 -q
 cd nginx-%{fedora_nginx_version}
 %patch0 -p0
-%elif 0%{?rhel} >= 8
+%endif
+
+%if 0%{?rhel} >= 8
 %setup -c -q -a 5
 %setup -T -D -a 2 -q
 cd nginx-%{rhel_nginx_version}
@@ -83,7 +87,9 @@ cd nginx-%{rhel_nginx_version}
 %if 0%{?fedora} >= 31
 #connector_path=$(realpath modsecurity-nginx-%{version})
 cd nginx-%{fedora_nginx_version}
-%elif 0%{?rhel} >= 8
+%endif
+
+%if 0%{?rhel} >= 8
 #connector_path=$(realpath modsecurity-nginx-%{version})
 cd nginx-%{rhel_nginx_version}
 %endif
@@ -160,9 +166,12 @@ make modules %{?_smp_mflags}
 %install
 %if 0%{?fedora} >= 31
 %{__install} -p -D -m 0755 ./nginx-%{fedora_nginx_version}/objs/ngx_http_modsecurity_module.so %{buildroot}%{_libdir}/nginx/modules/ngx_http_modsecurity_module.so
-%elif 0%{?rhel} >= 8
+%endif
+
+%if 0%{?rhel} >= 8
 %{__install} -p -D -m 0755 ./nginx-%{rhel_nginx_version}/objs/ngx_http_modsecurity_module.so %{buildroot}%{_libdir}/nginx/modules/ngx_http_modsecurity_module.so
 %endif
+
 %{__install} -p -D -m 0644 %{SOURCE4} %{buildroot}%{_datadir}/nginx/modules/mod-modsecurity.conf
 
 
