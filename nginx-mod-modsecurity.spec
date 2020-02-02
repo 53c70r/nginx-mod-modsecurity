@@ -65,14 +65,15 @@ Requires:       libmodsecurity
 %description
 ModSecurity is an open source, cross platform web application firewall (WAF) engine for Apache, IIS and Nginx that is developed by Trustwave's SpiderLabs. It has a robust event-based programming language which provides protection from a range of attacks against web applications and allows for HTTP traffic monitoring, logging and real-time analys...
 
-%prep
 %if 0%{?fedora} >= 31
+%prep
 %setup -q -c
 %elif 0%{?rhel} >= 8
+%prep
 %setup -q -c -a 5
 %endif
 
-%setup -T -D -a 2
+%setup -q -T -D -a 2
 
 %if 0%{?fedora} >= 31
 cd nginx-%{fedora_nginx_version}
