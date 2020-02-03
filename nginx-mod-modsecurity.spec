@@ -16,7 +16,7 @@
 
 Name:           nginx-mod-modsecurity
 Epoch:          1
-Version:        v1.0.1
+Version:        1.0.1
 Release:        1%{?dist}
 Summary:        ModSecurity v3 Nginx Connector
 License:        Apache License 2.0
@@ -138,7 +138,7 @@ if ! ./configure \
     --with-debug \
     --with-cc-opt="%{optflags} $(pcre-config --cflags)" \
     --with-ld-opt="$nginx_ldopts" \
-    --add-dynamic-module=../modsecurity-nginx-%{version}; then
+    --add-dynamic-module=../modsecurity-nginx-v%{version}; then
   : configure failed
   cat objs/autoconf.err
   exit 1
