@@ -25,8 +25,8 @@ URL:            https://www.modsecurity.org/
 
 Source0:        https://nginx.org/download/nginx-%{fedora_nginx_version}.tar.gz
 Source1:        https://nginx.org/download/nginx-%{fedora_nginx_version}.tar.gz.asc
-Source2:        https://github.com/SpiderLabs/ModSecurity-nginx/releases/download/%{version}/modsecurity-nginx-%{version}.tar.gz
-Source3:        https://github.com/SpiderLabs/ModSecurity-nginx/releases/download/%{version}/modsecurity-nginx-%{version}.tar.gz.asc
+Source2:        https://github.com/SpiderLabs/ModSecurity-nginx/releases/download/v%{version}/modsecurity-nginx-v%{version}.tar.gz
+Source3:        https://github.com/SpiderLabs/ModSecurity-nginx/releases/download/v%{version}/modsecurity-nginx-v%{version}.tar.gz.asc
 Source4:        mod-modsecurity.conf
 Source5:        https://nginx.org/download/nginx-%{rhel_nginx_version}.tar.gz
 Source6:        https://nginx.org/download/nginx-%{rhel_nginx_version}.tar.gz.asc
