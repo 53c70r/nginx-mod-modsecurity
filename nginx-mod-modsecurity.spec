@@ -8,11 +8,9 @@
 %if 0%{?fedora} > 22 || 0%{?rhel} >= 8
 %global with_mailcap_mimetypes 1
 %endif
-
 %ifnarch s390 s390x ppc64 ppc64le
 %global with_gperftools 1
 %endif
-
 %undefine _strict_symbol_defs_build
 %bcond_with geoip
 
@@ -37,7 +35,6 @@ Patch0:         nginx-auto-cc-gcc.patch
 %if 0%{?with_gperftools}
 BuildRequires:  gperftools-devel
 %endif
-
 BuildRequires:  gcc
 BuildRequires:  openssl-devel
 BuildRequires:  pcre-devel
@@ -52,20 +49,17 @@ BuildRequires:  automake
 BuildRequires:  libtool
 BuildRequires:  perl-ExtUtils-Embed
 BuildRequires:  libmodsecurity
-
 %if 0%{?fedora} >= 31
 Requires:       nginx >= %{fedora_nginx_version}
 %endif
-
 %if 0%{?rhel} >= 8
 Requires:       nginx >= %{rhel_nginx_version}
 %endif
-
 Requires:       GeoIP
 Requires:       libmodsecurity
 
 %description
-ModSecurity is an open source, cross platform web application firewall (WAF) engine for Apache, IIS and Nginx that is developed by Trustwave's SpiderLabs. It has a robust event-based programming language which provides protection from a range of attacks against web applications and allows for HTTP traffic monitoring, logging and real-time analys...
+The ModSecurity-nginx connector is the connection point between nginx and libmodsecurity (ModSecurity v3). Said another way, this project provides a communication channel between nginx and libmodsecurity. This connector is required to use LibModSecurity with nginx.
 
 %prep
 %if 0%{?fedora} >= 31
@@ -73,7 +67,6 @@ ModSecurity is an open source, cross platform web application firewall (WAF) eng
 %setup -T -D -a 2 -q
 cd nginx-%{fedora_nginx_version}
 %endif
-
 %if 0%{?rhel} >= 8
 %setup -c -q -a 5
 %setup -T -D -a 2 -q
@@ -85,14 +78,11 @@ cd nginx-%{rhel_nginx_version}
 %if 0%{?fedora} >= 31
 cd nginx-%{fedora_nginx_version}
 %endif
-
 %if 0%{?rhel} >= 8
 cd nginx-%{rhel_nginx_version}
 %endif
-
 export DESTDIR=%{buildroot}	
 nginx_ldopts="$RPM_LD_FLAGS -Wl,-E"
-
 if ! ./configure \
     --prefix=%{_datadir}/nginx \
     --sbin-path=%{_sbindir}/nginx \
@@ -155,20 +145,14 @@ if ! ./configure \
 fi
 make modules %{?_smp_mflags}
 
-%clean 
-[ "$RPM_BUILD_ROOT" != "/" ] && rm -rf $RPM_BUILD_ROOT
-
 %install
 %if 0%{?fedora} >= 31
 %{__install} -p -D -m 0755 ./nginx-%{fedora_nginx_version}/objs/ngx_http_modsecurity_module.so %{buildroot}%{_libdir}/nginx/modules/ngx_http_modsecurity_module.so
 %endif
-
 %if 0%{?rhel} >= 8
 %{__install} -p -D -m 0755 ./nginx-%{rhel_nginx_version}/objs/ngx_http_modsecurity_module.so %{buildroot}%{_libdir}/nginx/modules/ngx_http_modsecurity_module.so
 %endif
-
 %{__install} -p -D -m 0644 %{SOURCE4} %{buildroot}%{_datadir}/nginx/modules/mod-modsecurity.conf
-
 
 %files
 %defattr (-,root,root)
