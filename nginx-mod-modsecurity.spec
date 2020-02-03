@@ -33,7 +33,6 @@ Source4:        mod-modsecurity.conf
 Source5:        https://nginx.org/download/nginx-%{rhel_nginx_version}.tar.gz
 Source6:        https://nginx.org/download/nginx-%{rhel_nginx_version}.tar.gz.asc
 Patch0:         nginx-auto-cc-gcc.patch
-Patch5:         nginx-auto-cc-gcc.patch
 
 %if 0%{?with_gperftools}
 BuildRequires:  gperftools-devel
