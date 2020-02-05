@@ -19,7 +19,7 @@ Epoch:          1
 Version:        1.0.1
 Release:        1%{?dist}
 Summary:        ModSecurity v3 Nginx Connector
-License:        Apache License 2.0
+License:        ASL 2.0
 BuildArch:      x86_64
 URL:            https://www.modsecurity.org/
 
