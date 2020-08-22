@@ -35,7 +35,6 @@ Source6:        https://nginx.org/download/nginx-%{rhel_nginx_version}.tar.gz.as
 Source7:        LICENSE
 
 Patch0:         nginx-auto-cc-gcc.patch
-Patch1:         0001-unix-ngx_user-Apply-fix-for-really-old-bug-in-glibc-.patch
 Patch2:         nginx-1.14.0-logs-perm.patch
 Patch3:         nginx-1.14.0-pkcs11.patch
 Patch4:         nginx-1.14.1-perl-module-hardening.patch
@@ -92,7 +91,6 @@ cd nginx-%{rhel_nginx_version}
 %endif
 
 %patch0 -p0
-%patch1 -p1
 %patch2 -p1
 %patch3 -p1
 %patch4 -p1
