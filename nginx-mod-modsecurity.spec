@@ -165,7 +165,7 @@ export DESTDIR=%{buildroot}
 %endif
     --with-debug \
     --with-cc-opt="%{optflags} $(pcre-config --cflags)" \
-    --with-ld-opt="$RPM_LD_FLAGS -Wl,-E"
+    --with-ld-opt="$RPM_LD_FLAGS -Wl,-E" \
     --add-dynamic-module=../modsecurity-nginx-v%{version}
 
 make modules %{?_smp_mflags}
