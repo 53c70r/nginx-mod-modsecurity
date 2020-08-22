@@ -35,13 +35,6 @@ Source6:        https://nginx.org/download/nginx-%{rhel_nginx_version}.tar.gz.as
 Source7:        LICENSE
 
 Patch0:         nginx-auto-cc-gcc.patch
-Patch2:         nginx-1.14.0-logs-perm.patch
-Patch3:         nginx-1.14.0-pkcs11.patch
-Patch4:         nginx-1.14.1-perl-module-hardening.patch
-Patch5:         nginx-1.14.1-enable-tls1v3-by-default.patch
-Patch200:       nginx-1.14.1-CVE-2019-9511.patch
-Patch201:       nginx-1.14.1-CVE-2019-9513.patch
-Patch202:       nginx-1.14.1-CVE-2019-9516.patch
 
 %if 0%{?with_gperftools}
 BuildRequires:  gperftools-devel
@@ -91,13 +84,6 @@ cd nginx-%{rhel_nginx_version}
 %endif
 
 %patch0 -p0
-%patch2 -p1
-%patch3 -p1
-%patch4 -p1
-%patch5 -p1
-%patch200 -p1
-%patch201 -p1
-%patch202 -p1
 
 %build
 
