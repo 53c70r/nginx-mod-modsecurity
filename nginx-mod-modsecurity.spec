@@ -172,6 +172,7 @@ export DESTDIR=%{buildroot}
 make modules %{?_smp_mflags}
 
 %install
+%{__install} -p -D -m 644 %{SOURCE7} %{buildroot}%{_datarootdir}/licenses/%{NAME}/LICENSE
 
 %if 0%{?fedora} >= 32
 %{__install} -p -D -m 0755 ./nginx-%{fedora_nginx_version}/objs/ngx_http_modsecurity_module.so %{buildroot}%{_libdir}/nginx/modules/ngx_http_modsecurity_module.so
@@ -187,7 +188,7 @@ make modules %{?_smp_mflags}
 /usr/bin/systemctl reload nginx.service >/dev/null 2>&1 || :
 
 %files
-%license %{SOURCE7}
 %defattr (-,root,root)
+%{_datarootdir}/licenses/%{NAME}/LICENSE
 %{_libdir}/nginx/modules/ngx_http_modsecurity_module.so
 %{_datadir}/nginx/modules/mod-modsecurity.conf
