@@ -8,9 +8,11 @@
 %if 0%{?fedora} > 22 || 0%{?rhel} >= 8
 %global with_mailcap_mimetypes 1
 %endif
+
 %ifnarch s390 s390x ppc64 ppc64le
 %global with_gperftools 1
 %endif
+
 %undefine _strict_symbol_defs_build
 %bcond_with geoip
 
@@ -30,11 +32,21 @@ Source3:        https://github.com/SpiderLabs/ModSecurity-nginx/releases/downloa
 Source4:        mod-modsecurity.conf
 Source5:        https://nginx.org/download/nginx-%{rhel_nginx_version}.tar.gz
 Source6:        https://nginx.org/download/nginx-%{rhel_nginx_version}.tar.gz.asc
+
 Patch0:         nginx-auto-cc-gcc.patch
+Patch1:         0001-unix-ngx_user-Apply-fix-for-really-old-bug-in-glibc-.patch
+Patch2:         nginx-1.14.0-logs-perm.patch
+Patch3:         nginx-1.14.0-pkcs11.patch
+Patch4:         nginx-1.14.1-perl-module-hardening.patch
+Patch5:         nginx-1.14.1-enable-tls1v3-by-default.patch
+Patch200:       nginx-1.14.1-CVE-2019-9511.patch
+Patch201:       nginx-1.14.1-CVE-2019-9513.patch
+Patch202:       nginx-1.14.1-CVE-2019-9516.patch
 
 %if 0%{?with_gperftools}
 BuildRequires:  gperftools-devel
 %endif
+
 BuildRequires:  gcc
 BuildRequires:  openssl-devel
 BuildRequires:  pcre-devel
@@ -49,12 +61,15 @@ BuildRequires:  automake
 BuildRequires:  libtool
 BuildRequires:  perl-ExtUtils-Embed
 BuildRequires:  libmodsecurity
+
 %if 0%{?fedora} >= 32
 Requires:       nginx >= %{fedora_nginx_version}
 %endif
+
 %if 0%{?rhel} >= 8
 Requires:       nginx >= %{rhel_nginx_version}
 %endif
+
 Requires:       GeoIP
 Requires:       libmodsecurity
 
@@ -62,28 +77,42 @@ Requires:       libmodsecurity
 The ModSecurity-nginx connector is the connection point between nginx and libmodsecurity (ModSecurity v3). Said another way, this project provides a communication channel between nginx and libmodsecurity. This connector is required to use LibModSecurity with nginx.
 
 %prep
+
 %if 0%{?fedora} >= 32
-%setup -c -q
+%setup -c -q -a 5
 %setup -T -D -a 2 -q
 cd nginx-%{fedora_nginx_version}
 %endif
+
 %if 0%{?rhel} >= 8
 %setup -c -q -a 5
 %setup -T -D -a 2 -q
 cd nginx-%{rhel_nginx_version}
 %endif
+
 %patch0 -p0
+%patch1 -p1
+%patch2 -p1
+%patch3 -p1
+%patch4 -p1
+%patch5 -p1
+%patch200 -p1
+%patch201 -p1
+%patch202 -p1
 
 %build
+
 %if 0%{?fedora} >= 32
 cd nginx-%{fedora_nginx_version}
 %endif
+
 %if 0%{?rhel} >= 8
 cd nginx-%{rhel_nginx_version}
 %endif
+
 export DESTDIR=%{buildroot}	
-nginx_ldopts="$RPM_LD_FLAGS -Wl,-E"
-if ! ./configure \
+
+./configure \
     --prefix=%{_datadir}/nginx \
     --sbin-path=%{_sbindir}/nginx \
     --modules-path=%{_libdir}/nginx/modules \
@@ -106,7 +135,6 @@ if ! ./configure \
     --with-http_ssl_module \
     --with-http_v2_module \
     --with-http_realip_module \
-    --with-stream_ssl_preread_module \
     --with-http_addition_module \
     --with-http_xslt_module=dynamic \
     --with-http_image_filter_module=dynamic \
@@ -137,24 +165,28 @@ if ! ./configure \
 %endif
     --with-debug \
     --with-cc-opt="%{optflags} $(pcre-config --cflags)" \
-    --with-ld-opt="$nginx_ldopts" \
-    --add-dynamic-module=../modsecurity-nginx-v%{version}; then
-  : configure failed
-  cat objs/autoconf.err
-  exit 1
-fi
+    --with-ld-opt="$RPM_LD_FLAGS -Wl,-E"
+    --add-dynamic-module=../modsecurity-nginx-v%{version}
+
 make modules %{?_smp_mflags}
 
 %install
+
 %if 0%{?fedora} >= 32
 %{__install} -p -D -m 0755 ./nginx-%{fedora_nginx_version}/objs/ngx_http_modsecurity_module.so %{buildroot}%{_libdir}/nginx/modules/ngx_http_modsecurity_module.so
 %endif
+
 %if 0%{?rhel} >= 8
 %{__install} -p -D -m 0755 ./nginx-%{rhel_nginx_version}/objs/ngx_http_modsecurity_module.so %{buildroot}%{_libdir}/nginx/modules/ngx_http_modsecurity_module.so
 %endif
+
 %{__install} -p -D -m 0644 %{SOURCE4} %{buildroot}%{_datadir}/nginx/modules/mod-modsecurity.conf
 
+%post
+/usr/bin/systemctl reload nginx.service >/dev/null 2>&1 || :
+
 %files
+%license LICENSE
 %defattr (-,root,root)
 %{_libdir}/nginx/modules/ngx_http_modsecurity_module.so
 %{_datadir}/nginx/modules/mod-modsecurity.conf
