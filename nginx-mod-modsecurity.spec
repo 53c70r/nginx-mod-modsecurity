@@ -32,6 +32,7 @@ Source3:        https://github.com/SpiderLabs/ModSecurity-nginx/releases/downloa
 Source4:        mod-modsecurity.conf
 Source5:        https://nginx.org/download/nginx-%{rhel_nginx_version}.tar.gz
 Source6:        https://nginx.org/download/nginx-%{rhel_nginx_version}.tar.gz.asc
+Source7:        LICENSE
 
 Patch0:         nginx-auto-cc-gcc.patch
 Patch1:         0001-unix-ngx_user-Apply-fix-for-really-old-bug-in-glibc-.patch
@@ -186,7 +187,7 @@ make modules %{?_smp_mflags}
 /usr/bin/systemctl reload nginx.service >/dev/null 2>&1 || :
 
 %files
-%license LICENSE
+%license %{SOURCE7}
 %defattr (-,root,root)
 %{_libdir}/nginx/modules/ngx_http_modsecurity_module.so
 %{_datadir}/nginx/modules/mod-modsecurity.conf
