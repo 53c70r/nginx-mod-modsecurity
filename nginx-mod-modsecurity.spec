@@ -2,7 +2,7 @@
 %global nginx_user nginx
 %global debug_package %{nil}
 %global with_aio 1
-%global fedora_nginx_version 1.16.1
+%global fedora_nginx_version 1.18.0
 %global rhel_nginx_version 1.14.1
 
 %if 0%{?fedora} > 22 || 0%{?rhel} >= 8
@@ -49,7 +49,7 @@ BuildRequires:  automake
 BuildRequires:  libtool
 BuildRequires:  perl-ExtUtils-Embed
 BuildRequires:  libmodsecurity
-%if 0%{?fedora} >= 31
+%if 0%{?fedora} >= 32
 Requires:       nginx >= %{fedora_nginx_version}
 %endif
 %if 0%{?rhel} >= 8
@@ -62,7 +62,7 @@ Requires:       libmodsecurity
 The ModSecurity-nginx connector is the connection point between nginx and libmodsecurity (ModSecurity v3). Said another way, this project provides a communication channel between nginx and libmodsecurity. This connector is required to use LibModSecurity with nginx.
 
 %prep
-%if 0%{?fedora} >= 31
+%if 0%{?fedora} >= 32
 %setup -c -q
 %setup -T -D -a 2 -q
 cd nginx-%{fedora_nginx_version}
@@ -75,7 +75,7 @@ cd nginx-%{rhel_nginx_version}
 %patch0 -p0
 
 %build
-%if 0%{?fedora} >= 31
+%if 0%{?fedora} >= 32
 cd nginx-%{fedora_nginx_version}
 %endif
 %if 0%{?rhel} >= 8
@@ -146,7 +146,7 @@ fi
 make modules %{?_smp_mflags}
 
 %install
-%if 0%{?fedora} >= 31
+%if 0%{?fedora} >= 32
 %{__install} -p -D -m 0755 ./nginx-%{fedora_nginx_version}/objs/ngx_http_modsecurity_module.so %{buildroot}%{_libdir}/nginx/modules/ngx_http_modsecurity_module.so
 %endif
 %if 0%{?rhel} >= 8
