@@ -66,11 +66,12 @@ Requires:       nginx >= %{rhel_nginx_version}
 Requires:       GeoIP
 Requires:       libmodsecurity
 
+
 %description
 The ModSecurity-nginx connector is the connection point between nginx and libmodsecurity (ModSecurity v3). Said another way, this project provides a communication channel between nginx and libmodsecurity. This connector is required to use LibModSecurity with nginx.
 
-%prep
 
+%prep
 %if 0%{?fedora} >= 32
 %setup -c -q -a 5
 %setup -T -D -a 2 -q
@@ -85,8 +86,8 @@ cd nginx-%{rhel_nginx_version}
 
 %patch0 -p0
 
-%build
 
+%build
 %if 0%{?fedora} >= 32
 cd nginx-%{fedora_nginx_version}
 %endif
@@ -155,6 +156,7 @@ export DESTDIR=%{buildroot}
 
 make modules %{?_smp_mflags}
 
+
 %install
 %{__install} -p -D -m 644 %{SOURCE7} %{buildroot}%{_datarootdir}/licenses/%{NAME}/LICENSE
 
@@ -168,8 +170,6 @@ make modules %{?_smp_mflags}
 
 %{__install} -p -D -m 0644 %{SOURCE4} %{buildroot}%{_datadir}/nginx/modules/mod-modsecurity.conf
 
-%post
-/usr/bin/systemctl reload nginx.service >/dev/null 2>&1 || :
 
 %files
 %defattr (-,root,root)
