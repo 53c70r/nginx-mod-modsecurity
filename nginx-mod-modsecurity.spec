@@ -4,6 +4,9 @@
 %global with_aio 1
 %global fedora_nginx_version 1.18.0
 %global rhel_nginx_version 1.14.1
+%global fedora_min_version 32
+%global rhel_min_version 8
+
 
 %if 0%{?fedora} > 22 || 0%{?rhel} >= 8
 %global with_mailcap_mimetypes 1
@@ -24,15 +27,11 @@ License:        ASL 2.0
 BuildArch:      x86_64
 URL:            https://www.modsecurity.org/
 
-Source0:        https://nginx.org/download/nginx-%{fedora_nginx_version}.tar.gz
-Source1:        https://nginx.org/download/nginx-%{fedora_nginx_version}.tar.gz.asc
-Source2:        https://github.com/SpiderLabs/ModSecurity-nginx/releases/download/v%{version}/modsecurity-nginx-v%{version}.tar.gz
-Source3:        https://github.com/SpiderLabs/ModSecurity-nginx/releases/download/v%{version}/modsecurity-nginx-v%{version}.tar.gz.asc
-Source4:        mod-modsecurity.conf
-Source5:        https://nginx.org/download/nginx-%{rhel_nginx_version}.tar.gz
-Source6:        https://nginx.org/download/nginx-%{rhel_nginx_version}.tar.gz.asc
-Source7:        LICENSE
-
+Source0:        https://github.com/SpiderLabs/ModSecurity-nginx/releases/download/v%{version}/modsecurity-nginx-v%{version}.tar.gz
+Source1:        https://nginx.org/download/nginx-%{fedora_nginx_version}.tar.gz
+Source2:        https://nginx.org/download/nginx-%{rhel_nginx_version}.tar.gz
+Source3:        mod-modsecurity.conf
+Source4:        LICENSE
 Patch0:         nginx-auto-cc-gcc.patch
 
 %if 0%{?with_gperftools}
@@ -54,49 +53,41 @@ BuildRequires:  libtool
 BuildRequires:  perl-ExtUtils-Embed
 BuildRequires:  libmodsecurity
 
-%if 0%{?fedora} >= 32
+%if 0%{?fedora} >= %{fedora_min_version}
 Requires:       nginx >= %{fedora_nginx_version}
 %endif
 
-%if 0%{?rhel} >= 8
+%if 0%{?rhel} >= %{rhel_min_version}
 Requires:       nginx >= %{rhel_nginx_version}
 %endif
 
 Requires:       GeoIP
 Requires:       libmodsecurity
 
-
 %description
 The ModSecurity-nginx connector is the connection point between nginx and libmodsecurity (ModSecurity v3). Said another way, this project provides a communication channel between nginx and libmodsecurity. This connector is required to use LibModSecurity with nginx.
 
-
 %prep
-%if 0%{?fedora} >= 32
-%setup -c -q -a 5
-%setup -T -D -a 2 -q
+%if 0%{?fedora} >= %{fedora_min_version}
+%setup -c -q -a 1
+%setup -T -D -a 0 -q
 cd nginx-%{fedora_nginx_version}
 %endif
-
-%if 0%{?rhel} >= 8
-%setup -c -q -a 5
-%setup -T -D -a 2 -q
+%if 0%{?rhel} >= %{rhel_min_version}
+%setup -c -q -a 2
+%setup -T -D -a 0 -q
 cd nginx-%{rhel_nginx_version}
 %endif
-
 %patch0 -p0
 
-
 %build
-%if 0%{?fedora} >= 32
+%if 0%{?fedora} >= %{fedora_min_version}
 cd nginx-%{fedora_nginx_version}
 %endif
-
-%if 0%{?rhel} >= 8
+%if 0%{?rhel} >= %{rhel_min_version}
 cd nginx-%{rhel_nginx_version}
 %endif
-
 export DESTDIR=%{buildroot}	
-
 ./configure \
     --prefix=%{_datadir}/nginx \
     --sbin-path=%{_sbindir}/nginx \
@@ -152,26 +143,20 @@ export DESTDIR=%{buildroot}
     --with-cc-opt="%{optflags} $(pcre-config --cflags)" \
     --with-ld-opt="$RPM_LD_FLAGS -Wl,-E" \
     --add-dynamic-module=../modsecurity-nginx-v%{version}
-
 make modules %{?_smp_mflags}
 
-
 %install
-%{__install} -p -D -m 644 %{SOURCE7} %{buildroot}%{_datarootdir}/licenses/%{NAME}/LICENSE
-
-%if 0%{?fedora} >= 32
+%if 0%{?fedora} >= %{fedora_min_version}
 %{__install} -p -D -m 0755 ./nginx-%{fedora_nginx_version}/objs/ngx_http_modsecurity_module.so %{buildroot}%{_libdir}/nginx/modules/ngx_http_modsecurity_module.so
 %endif
-
-%if 0%{?rhel} >= 8
+%if 0%{?rhel} >= %{rhel_min_version}
 %{__install} -p -D -m 0755 ./nginx-%{rhel_nginx_version}/objs/ngx_http_modsecurity_module.so %{buildroot}%{_libdir}/nginx/modules/ngx_http_modsecurity_module.so
 %endif
-
-%{__install} -p -D -m 0644 %{SOURCE4} %{buildroot}%{_datadir}/nginx/modules/mod-modsecurity.conf
-
+%{__install} -p -D -m 0644 %{SOURCE3} %{buildroot}%{_datadir}/nginx/modules/mod-modsecurity.conf
+%{__install} -p -D -m 644 %{SOURCE4} %{buildroot}%{_datarootdir}/licenses/%{NAME}/LICENSE
 
 %files
 %defattr (-,root,root)
-%{_datarootdir}/licenses/%{NAME}/LICENSE
 %{_libdir}/nginx/modules/ngx_http_modsecurity_module.so
 %{_datadir}/nginx/modules/mod-modsecurity.conf
+%{_datarootdir}/licenses/%{NAME}/LICENSE
