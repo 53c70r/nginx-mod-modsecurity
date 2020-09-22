@@ -21,7 +21,7 @@
 
 Name:           nginx-mod-modsecurity
 Version:        1.0.1
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        ModSecurity v3 Nginx Connector
 License:        ASL 2.0
 BuildArch:      x86_64
@@ -153,7 +153,7 @@ make modules %{?_smp_mflags}
 %{__install} -p -D -m 0755 ./nginx-%{rhel_nginx_version}/objs/ngx_http_modsecurity_module.so %{buildroot}%{_libdir}/nginx/modules/ngx_http_modsecurity_module.so
 %endif
 %{__install} -p -D -m 0644 %{SOURCE3} %{buildroot}%{_datadir}/nginx/modules/mod-modsecurity.conf
-%{__install} -p -D -m 644 %{SOURCE4} %{buildroot}%{_datarootdir}/licenses/%{NAME}/LICENSE
+%{__install} -p -D -m 0644 %{SOURCE4} %{buildroot}%{_datarootdir}/licenses/%{NAME}/LICENSE
 
 %files
 %defattr (-,root,root)
