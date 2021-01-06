@@ -3,12 +3,10 @@
 %global debug_package %{nil}
 %global with_aio 1
 %global fedora_nginx_version 1.18.0
-%global rhel_nginx_version 1.14.1
 %global fedora_min_version 32
-%global rhel_min_version 8
 
 
-%if 0%{?fedora} > 22 || 0%{?rhel} >= 8
+%if 0%{?fedora} > 22
 %global with_mailcap_mimetypes 1
 %endif
 
@@ -29,7 +27,6 @@ URL:            https://www.modsecurity.org/
 
 Source0:        https://github.com/SpiderLabs/ModSecurity-nginx/releases/download/v%{version}/modsecurity-nginx-v%{version}.tar.gz
 Source1:        https://nginx.org/download/nginx-%{fedora_nginx_version}.tar.gz
-Source2:        https://nginx.org/download/nginx-%{rhel_nginx_version}.tar.gz
 Source3:        mod-modsecurity.conf
 Source4:        LICENSE
 Patch0:         nginx-auto-cc-gcc.patch
@@ -52,15 +49,9 @@ BuildRequires:  automake
 BuildRequires:  libtool
 BuildRequires:  perl-ExtUtils-Embed
 BuildRequires:  libmodsecurity
+BuildRequires:  libmodsecurity-devel
 
-%if 0%{?fedora} >= %{fedora_min_version}
 Requires:       nginx >= %{fedora_nginx_version}
-%endif
-
-%if 0%{?rhel} >= %{rhel_min_version}
-Requires:       nginx >= %{rhel_nginx_version}
-%endif
-
 Requires:       GeoIP
 Requires:       libmodsecurity
 
@@ -68,25 +59,13 @@ Requires:       libmodsecurity
 The ModSecurity-nginx connector is the connection point between nginx and libmodsecurity (ModSecurity v3). Said another way, this project provides a communication channel between nginx and libmodsecurity. This connector is required to use LibModSecurity with nginx.
 
 %prep
-%if 0%{?fedora} >= %{fedora_min_version}
 %setup -c -q -a 1
 %setup -T -D -a 0 -q
 cd nginx-%{fedora_nginx_version}
-%endif
-%if 0%{?rhel} >= %{rhel_min_version}
-%setup -c -q -a 2
-%setup -T -D -a 0 -q
-cd nginx-%{rhel_nginx_version}
-%endif
 %patch0 -p0
 
 %build
-%if 0%{?fedora} >= %{fedora_min_version}
 cd nginx-%{fedora_nginx_version}
-%endif
-%if 0%{?rhel} >= %{rhel_min_version}
-cd nginx-%{rhel_nginx_version}
-%endif
 export DESTDIR=%{buildroot}	
 ./configure \
     --prefix=%{_datadir}/nginx \
@@ -146,12 +125,7 @@ export DESTDIR=%{buildroot}
 make modules %{?_smp_mflags}
 
 %install
-%if 0%{?fedora} >= %{fedora_min_version}
 %{__install} -p -D -m 0755 ./nginx-%{fedora_nginx_version}/objs/ngx_http_modsecurity_module.so %{buildroot}%{_libdir}/nginx/modules/ngx_http_modsecurity_module.so
-%endif
-%if 0%{?rhel} >= %{rhel_min_version}
-%{__install} -p -D -m 0755 ./nginx-%{rhel_nginx_version}/objs/ngx_http_modsecurity_module.so %{buildroot}%{_libdir}/nginx/modules/ngx_http_modsecurity_module.so
-%endif
 %{__install} -p -D -m 0644 %{SOURCE3} %{buildroot}%{_datadir}/nginx/modules/mod-modsecurity.conf
 %{__install} -p -D -m 0644 %{SOURCE4} %{buildroot}%{_datarootdir}/licenses/%{NAME}/LICENSE
 
