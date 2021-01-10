@@ -57,6 +57,7 @@ BuildRequires:  automake
 BuildRequires:  libtool
 BuildRequires:  perl-ExtUtils-Embed
 BuildRequires:  nginx-libmodsecurity
+BuildRequires:  gnupg2
 
 Requires:       nginx >= %{fedora_nginx_version}
 Requires:       GeoIP
