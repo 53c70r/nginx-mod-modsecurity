@@ -31,7 +31,6 @@ Source2:        https://nginx.org/download/nginx-%{fedora_nginx_version}.tar.gz
 Source3:        https://nginx.org/download/nginx-%{fedora_nginx_version}.tar.gz.asc
 Source4:        mod-modsecurity.conf
 Source5:        LICENSE
-Source100:      https://nginx.org/keys/aalexeev.key
 Source101:      https://nginx.org/keys/is.key
 Source102:      https://nginx.org/keys/maxim.key
 Source103:      https://nginx.org/keys/mdounin.key
@@ -67,7 +66,7 @@ Requires:       nginx-libmodsecurity
 The ModSecurity-nginx connector is the connection point between nginx and libmodsecurity (ModSecurity v3). Said another way, this project provides a communication channel between nginx and libmodsecurity. This connector is required to use LibModSecurity with nginx.
 
 %prep
-cat %{S:100} %{S:101} %{S:102} %{S:103} %{S:104} > %{_builddir}/nginx.gpg
+cat %{S:101} %{S:102} %{S:103} %{S:104} > %{_builddir}/nginx.gpg
 cat %{Source105} > %{_builddir}/modsecurity.gpg
 %{gpgverify} --keyring='%{_builddir}/modsecurity.gpg' --signature='%{SOURCE1}' --data='%{SOURCE0}'
 %{gpgverify} --keyring='%{_builddir}/nginx.gpg' --signature='%{SOURCE3}' --data='%{SOURCE2}'
