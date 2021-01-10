@@ -67,7 +67,7 @@ The ModSecurity-nginx connector is the connection point between nginx and libmod
 
 %prep
 cat %{S:101} %{S:102} %{S:103} %{S:104} > %{_builddir}/nginx.gpg
-cat %{Source105} > %{_builddir}/modsecurity.gpg
+cat %{SOURCE105} > %{_builddir}/modsecurity.gpg
 %{gpgverify} --keyring='%{_builddir}/modsecurity.gpg' --signature='%{SOURCE1}' --data='%{SOURCE0}'
 %{gpgverify} --keyring='%{_builddir}/nginx.gpg' --signature='%{SOURCE3}' --data='%{SOURCE2}'
 
