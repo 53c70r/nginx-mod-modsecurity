@@ -25,7 +25,7 @@
 
 Name:           nginx-mod-modsecurity
 Version:        1.0.1
-Release:        9%{?dist}
+Release:        8%{?dist}
 Summary:        ModSecurity v3 Nginx Connector
 License:        ASL 2.0
 BuildArch:      x86_64
