@@ -20,7 +20,7 @@
 
 Name:           nginx-mod-modsecurity
 Version:        1.0.1
-Release:        7%{?dist}
+Release:        8%{?dist}
 Summary:        ModSecurity v3 Nginx Connector
 License:        ASL 2.0
 BuildArch:      x86_64
@@ -114,6 +114,8 @@ cd nginx-%{fedora_nginx_version_34}
 
 export DESTDIR=%{buildroot}
 nginx_ldopts="$RPM_LD_FLAGS -Wl,-E"
+
+%if 0%{?fedora} == 33
 if ! ./configure \
     --prefix=%{_datadir}/nginx \
     --sbin-path=%{_sbindir}/nginx \
@@ -174,9 +176,60 @@ if ! ./configure \
     cat objs/autoconf.err
     exit 1
 fi
+%endif
+
+%if 0%{?fedora} == 34
+    ./configure \
+    --prefix=/usr/share/nginx \
+    --sbin-path=/usr/sbin/nginx \
+    --modules-path=/usr/lib64/nginx/modules \
+    --conf-path=/etc/nginx/nginx.conf \
+    --error-log-path=/var/log/nginx/error.log \
+    --http-log-path=/var/log/nginx/access.log \
+    --http-client-body-temp-path=/var/lib/nginx/tmp/client_body \
+    --http-proxy-temp-path=/var/lib/nginx/tmp/proxy \
+    --http-fastcgi-temp-path=/var/lib/nginx/tmp/fastcgi \
+    --http-uwsgi-temp-path=/var/lib/nginx/tmp/uwsgi \
+    --http-scgi-temp-path=/var/lib/nginx/tmp/scgi \
+    --pid-path=/run/nginx.pid \
+    --lock-path=/run/lock/subsys/nginx \
+    --user=nginx \
+    --group=nginx \
+    --with-compat \
+    --with-debug \
+    --with-file-aio \
+    --with-google_perftools_module \
+    --with-http_addition_module \
+    --with-http_auth_request_module \
+    --with-http_dav_module \
+    --with-http_degradation_module \
+    --with-http_flv_module \
+    --with-http_gunzip_module \
+    --with-http_gzip_static_module \
+    --with-http_image_filter_module=dynamic \
+    --with-http_mp4_module \
+    --with-http_perl_module=dynamic \
+    --with-http_random_index_module \
+    --with-http_realip_module \
+    --with-http_secure_link_module \
+    --with-http_slice_module \
+    --with-http_ssl_module \
+    --with-http_stub_status_module \
+    --with-http_sub_module \
+    --with-http_v2_module \
+    --with-http_xslt_module=dynamic \
+    --with-mail=dynamic \
+    --with-mail_ssl_module \
+    --with-pcre \
+    --with-pcre-jit \
+    --with-stream=dynamic \
+    --with-stream_ssl_module \
+    --with-stream_ssl_preread_module \
+    --with-threads \
+    --add-dynamic-module="../modsecurity-nginx-v%{version}"
+%endif
 
 make modules %{?_smp_mflags}
-
 
 %install
 
