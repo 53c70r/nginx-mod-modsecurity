@@ -9,7 +9,6 @@
 %endif
 
 %if 0%{?fedora} == 34
-%undefine fedora_nginx_version
 %define fedora_nginx_version 1.20.0
 %endif
 
