@@ -5,11 +5,11 @@
 %global fedora_min_version 33
 
 %if 0%{?fedora} == 33
-%define fedora_nginx_version 1.18.0
+%global fedora_nginx_version 1.18.0
 %endif
 
 %if 0%{?fedora} == 34
-%define fedora_nginx_version 1.20.0
+%global fedora_nginx_version 1.20.0
 %endif
 
 %if 0%{?fedora} > 22
