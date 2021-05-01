@@ -2,8 +2,8 @@
 %global nginx_user nginx
 %global debug_package %{nil}
 %global with_aio 1
-%global fedora_nginx_version 1.18.0
-%global fedora_min_version 32
+%global fedora_nginx_version 1.20.0
+%global fedora_min_version 34
 
 
 %if 0%{?fedora} > 22
@@ -19,7 +19,7 @@
 
 Name:           nginx-mod-modsecurity
 Version:        1.0.1
-Release:        5%{?dist}
+Release:        6%{?dist}
 Summary:        ModSecurity v3 Nginx Connector
 License:        ASL 2.0
 BuildArch:      x86_64
