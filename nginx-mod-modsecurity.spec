@@ -2,9 +2,10 @@
 %global nginx_user nginx
 %global debug_package %{nil}
 %global with_aio 1
-%global fedora_nginx_version_33 1.18.0
-%global fedora_nginx_version_34 1.20.1
+%global fedora_min_nginx_version 1.18.0
+%global fedora_max_nginx_version 1.20.1
 %global fedora_min_version 33
+%global fedora_max_version 34
 
 
 %if 0%{?fedora} > 22
@@ -28,12 +29,12 @@ URL:            https://www.modsecurity.org/
 
 Source0:        https://github.com/SpiderLabs/ModSecurity-nginx/releases/download/v%{version}/modsecurity-nginx-v%{version}.tar.gz
 Source1:        https://github.com/SpiderLabs/ModSecurity-nginx/releases/download/v%{version}/modsecurity-nginx-v%{version}.tar.gz.asc
-Source2:        https://nginx.org/download/nginx-%{fedora_nginx_version_33}.tar.gz
-Source3:        https://nginx.org/download/nginx-%{fedora_nginx_version_33}.tar.gz.asc
+Source2:        https://nginx.org/download/nginx-%{fedora_min_nginx_version}.tar.gz
+Source3:        https://nginx.org/download/nginx-%{fedora_min_nginx_version}.tar.gz.asc
 Source4:        mod-modsecurity.conf
 Source5:        LICENSE
-Source6:        https://nginx.org/download/nginx-%{fedora_nginx_version_34}.tar.gz
-Source7:        https://nginx.org/download/nginx-%{fedora_nginx_version_34}.tar.gz.asc
+Source6:        https://nginx.org/download/nginx-%{fedora_max_nginx_version}.tar.gz
+Source7:        https://nginx.org/download/nginx-%{fedora_max_nginx_version}.tar.gz.asc
 Source101:      https://nginx.org/keys/is.key
 Source102:      https://nginx.org/keys/maxim.key
 Source103:      https://nginx.org/keys/mdounin.key
@@ -62,7 +63,14 @@ BuildRequires:  perl-ExtUtils-Embed
 BuildRequires:  nginx-libmodsecurity
 BuildRequires:  gnupg2
 
-Requires:       nginx >= %{fedora_nginx_version}
+%if 0%{?fedora} == %{fedora_min_version}
+Requires:       nginx >= %{fedora_min_nginx_version}
+%endif
+
+%if 0%{?fedora} == %{fedora_max_version}
+Requires:       nginx >= %{fedora_max_nginx_version}
+%endif
+
 Requires:       GeoIP
 Requires:       nginx-libmodsecurity
 
@@ -74,48 +82,48 @@ cat %{S:101} %{S:102} %{S:103} %{S:104} > %{_builddir}/nginx.gpg
 cat %{SOURCE105} > %{_builddir}/modsecurity.gpg
 %{gpgverify} --keyring='%{_builddir}/modsecurity.gpg' --signature='%{SOURCE1}' --data='%{SOURCE0}'
 
-%if 0%{?fedora} == 33
+%if 0%{?fedora} == %{fedora_min_version}
 %{gpgverify} --keyring='%{_builddir}/nginx.gpg' --signature='%{SOURCE3}' --data='%{SOURCE2}'
 %endif
 
-%if 0%{?fedora} == 34
+%if 0%{?fedora} == %{fedora_max_version}
 %{gpgverify} --keyring='%{_builddir}/nginx.gpg' --signature='%{SOURCE7}' --data='%{SOURCE6}'
 %endif
 
-%if 0%{?fedora} == 33
+%if 0%{?fedora} == %{fedora_min_version}
 %setup -c -q -a 2
 %endif
 
-%if 0%{?fedora} == 34
+%if 0%{?fedora} == %{fedora_max_version}
 %setup -c -q -a 6
 %endif
 
 %setup -T -D -a 0 -q
 
-%if 0%{?fedora} == 33
-cd nginx-%{fedora_nginx_version_33}
+%if 0%{?fedora} == %{fedora_min_version}
+cd nginx-%{fedora_min_nginx_version}
 %endif
 
-%if 0%{?fedora} == 34
-cd nginx-%{fedora_nginx_version_34}
+%if 0%{?fedora} == %{fedora_max_version}
+cd nginx-%{fedora_max_nginx_version}
 %endif
 
 %patch0 -p0
 
 %build
 
-%if 0%{?fedora} == 33
-cd nginx-%{fedora_nginx_version_33}
+%if 0%{?fedora} == %{fedora_min_version}
+cd nginx-%{fedora_min_nginx_version}
 %endif
 
-%if 0%{?fedora} == 34
-cd nginx-%{fedora_nginx_version_34}
+%if 0%{?fedora} == %{fedora_max_version}
+cd nginx-%{fedora_max_nginx_version}
 %endif
 
 export DESTDIR=%{buildroot}
 nginx_ldopts="$RPM_LD_FLAGS -Wl,-E"
 
-%if 0%{?fedora} == 33
+%if 0%{?fedora} == %{fedora_min_version}
 if ! ./configure \
     --prefix=%{_datadir}/nginx \
     --sbin-path=%{_sbindir}/nginx \
@@ -178,7 +186,7 @@ if ! ./configure \
 fi
 %endif
 
-%if 0%{?fedora} == 34
+%if 0%{?fedora} == %{fedora_max_version}
     ./configure \
     --prefix=/usr/share/nginx \
     --sbin-path=/usr/sbin/nginx \
@@ -233,12 +241,12 @@ make modules %{?_smp_mflags}
 
 %install
 
-%if 0%{?fedora} == 33
-%{__install} -p -D -m 0755 ./nginx-%{fedora_nginx_version_33}/objs/ngx_http_modsecurity_module.so %{buildroot}%{_libdir}/nginx/modules/ngx_http_modsecurity_module.so
+%if 0%{?fedora} == %{fedora_min_version}
+%{__install} -p -D -m 0755 ./nginx-%{fedora_min_nginx_version}/objs/ngx_http_modsecurity_module.so %{buildroot}%{_libdir}/nginx/modules/ngx_http_modsecurity_module.so
 %endif
 
-%if 0%{?fedora} == 34
-%{__install} -p -D -m 0755 ./nginx-%{fedora_nginx_version_34}/objs/ngx_http_modsecurity_module.so %{buildroot}%{_libdir}/nginx/modules/ngx_http_modsecurity_module.so
+%if 0%{?fedora} == %{fedora_max_version}
+%{__install} -p -D -m 0755 ./nginx-%{fedora_max_nginx_version}/objs/ngx_http_modsecurity_module.so %{buildroot}%{_libdir}/nginx/modules/ngx_http_modsecurity_module.so
 %endif
 
 %{__install} -p -D -m 0644 %{SOURCE4} %{buildroot}%{_datadir}/nginx/modules/mod-modsecurity.conf
