@@ -3,7 +3,7 @@
 %global debug_package %{nil}
 %global with_aio 1
 %global fedora_nginx_version_33 1.18.0
-%global fedora_nginx_version_34 1.20.0
+%global fedora_nginx_version_34 1.20.1
 %global fedora_min_version 33
 
 
