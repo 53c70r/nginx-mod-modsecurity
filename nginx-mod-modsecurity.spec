@@ -21,7 +21,7 @@
 
 Name:           nginx-mod-modsecurity
 Version:        1.0.2
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        ModSecurity v3 Nginx Connector
 License:        ASL 2.0
 BuildArch:      x86_64
@@ -60,7 +60,7 @@ BuildRequires:  lmdb-devel
 BuildRequires:  automake
 BuildRequires:  libtool
 BuildRequires:  perl-ExtUtils-Embed
-BuildRequires:  libmodsecurity-devel
+BuildRequires:  nginx-libmodsecurity
 BuildRequires:  gnupg2
 
 %if 0%{?fedora} == %{fedora_min_version}
@@ -72,7 +72,7 @@ Requires:       nginx >= %{fedora_max_nginx_version}
 %endif
 
 Requires:       GeoIP
-Requires:       libmodsecurity
+Requires:       nginx-libmodsecurity
 
 %description
 The ModSecurity-nginx connector is the connection point between nginx and libmodsecurity (ModSecurity v3).
