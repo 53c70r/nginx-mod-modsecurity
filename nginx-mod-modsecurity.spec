@@ -28,7 +28,6 @@ Source1:        https://github.com/SpiderLabs/ModSecurity-nginx/releases/downloa
 Source2:        https://nginx.org/download/nginx-%{fedora_nginx_version}.tar.gz
 Source3:        https://nginx.org/download/nginx-%{fedora_nginx_version}.tar.gz.asc
 Source4:        mod-modsecurity.conf
-Source5:        LICENSE
 Source101:      https://nginx.org/keys/is.key
 Source102:      https://nginx.org/keys/maxim.key
 Source103:      https://nginx.org/keys/mdounin.key
