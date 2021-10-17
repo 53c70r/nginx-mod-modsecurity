@@ -15,7 +15,7 @@
 %undefine _strict_symbol_defs_build
 %bcond_with geoip
 
-Name:           nginx-mod-modsecurity
+Name:           modsecurity-nginx
 Version:        1.0.2
 Release:        4%{?dist}
 Summary:        ModSecurity v3 Nginx Connector
@@ -53,12 +53,12 @@ BuildRequires:  lmdb-devel
 BuildRequires:  automake
 BuildRequires:  libtool
 BuildRequires:  perl-ExtUtils-Embed
-BuildRequires:  nginx-libmodsecurity-devel
+BuildRequires:  libmodsecurity-nginx-devel
 BuildRequires:  gnupg
 
 Requires:       nginx >= %{fedora_nginx_version}
 Requires:       GeoIP
-Requires:       nginx-libmodsecurity
+Requires:       libmodsecurity-nginx
 
 %description
 The ModSecurity-nginx connector is the connection point between nginx and libmodsecurity (ModSecurity v3).
