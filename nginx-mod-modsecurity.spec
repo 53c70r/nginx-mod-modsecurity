@@ -151,4 +151,4 @@ make modules %{?_smp_mflags}
 %files
 %{_libdir}/nginx/modules/ngx_http_modsecurity_module.so
 %{_datadir}/nginx/modules/mod-modsecurity.conf
-%license {_builddir}/modsecurity-nginx-v%{version}/LICENSE
+%license ../LICENSE
