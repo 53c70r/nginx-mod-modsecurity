@@ -71,7 +71,8 @@ cat %{SOURCE105} > %{_builddir}/modsecurity.gpg
 %{gpgverify} --keyring='%{_builddir}/modsecurity.gpg' --signature='%{SOURCE1}' --data='%{SOURCE0}'
 %{gpgverify} --keyring='%{_builddir}/nginx.gpg' --signature='%{SOURCE3}' --data='%{SOURCE2}'
 
-%setup -q -a0 -a2
+%setup -q -a 0
+%setup -q -a 2 -T -D
 cd nginx-%{fedora_nginx_version}
 %patch0 -p0
 
