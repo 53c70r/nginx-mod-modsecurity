@@ -57,7 +57,6 @@ BuildRequires:  libmodsecurity-nginx-devel
 BuildRequires:  gnupg
 
 Requires:       nginx >= %{fedora_nginx_version}
-Requires:       GeoIP
 Requires:       libmodsecurity-nginx
 
 %description
