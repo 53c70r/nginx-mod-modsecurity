@@ -150,9 +150,9 @@ make modules %{?_smp_mflags}
 %install
 %{__install} -p -D -m 0755 ./nginx-%{fedora_max_nginx_version}/objs/ngx_http_modsecurity_module.so %{buildroot}%{_libdir}/nginx/modules/ngx_http_modsecurity_module.so
 %{__install} -p -D -m 0644 %{SOURCE4} %{buildroot}%{_datadir}/nginx/modules/mod-modsecurity.conf
+%{__install} -p -D -m 0644 %{SOURCE5} %{buildroot}/LICENSE
 
 %files
-%defattr (-,root,root)
-%license LICENSE
 %{_libdir}/nginx/modules/ngx_http_modsecurity_module.so
 %{_datadir}/nginx/modules/mod-modsecurity.conf
+%license LICENSE
