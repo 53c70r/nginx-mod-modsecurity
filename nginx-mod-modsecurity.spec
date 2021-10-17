@@ -78,7 +78,6 @@ cat %{SOURCE105} > %{_builddir}/modsecurity.gpg
 %patch0 -p 0
 
 %build
-cd nginx-%{fedora_nginx_version}
 export DESTDIR=%{buildroot}
 nginx_ldopts="$RPM_LD_FLAGS -Wl,-E"
 if ! ./configure \
