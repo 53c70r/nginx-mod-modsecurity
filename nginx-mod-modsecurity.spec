@@ -72,7 +72,7 @@ cat %{SOURCE105} > %{_builddir}/modsecurity.gpg
 
 # tree is: modsecurity-nginx-v%{version}/ as build root
 # extract modsecurity-nginx-v%{version}
-%setup
+%setup -n modsecurity-nginx-v%{version}
 # extract nginx into modsecurity-nginx-v%{version}
 %setup -T -D -a 2
 cd nginx-%{fedora_nginx_version}
