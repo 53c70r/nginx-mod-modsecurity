@@ -71,8 +71,11 @@ cat %{SOURCE105} > %{_builddir}/modsecurity.gpg
 %{gpgverify} --keyring='%{_builddir}/modsecurity.gpg' --signature='%{SOURCE1}' --data='%{SOURCE0}'
 %{gpgverify} --keyring='%{_builddir}/nginx.gpg' --signature='%{SOURCE3}' --data='%{SOURCE2}'
 
-%setup -q -a 0 -n modsecurity-nginx-v%{version}
-%setup -q -a 2 -D -n nginx-%{fedora_nginx_version}
+# tree is: modsecurity-nginx-v%{version}/ as build root
+# extract modsecurity-nginx-v%{version}
+%setup
+# extract nginx into modsecurity-nginx-v%{version}
+%setup -T -D -a 2
 cd nginx-%{fedora_nginx_version}
 %patch0 -p0
 
@@ -151,4 +154,4 @@ make modules %{?_smp_mflags}
 %files
 %{_libdir}/nginx/modules/ngx_http_modsecurity_module.so
 %{_datadir}/nginx/modules/mod-modsecurity.conf
-%license modsecurity-nginx-v%{version}/LICENSE
+%license LICENSE
