@@ -54,8 +54,8 @@ BuildRequires:  lmdb-devel
 BuildRequires:  automake
 BuildRequires:  libtool
 BuildRequires:  perl-ExtUtils-Embed
-BuildRequires:  nginx-libmodsecurity
-BuildRequires:  gnupg2
+BuildRequires:  nginx-libmodsecurity-devel
+BuildRequires:  gnupg
 
 Requires:       nginx >= %{fedora_nginx_version}
 Requires:       GeoIP
