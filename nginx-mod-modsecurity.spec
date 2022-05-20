@@ -16,8 +16,8 @@
 %bcond_with geoip
 
 Name:           modsecurity-nginx
-Version:        1.0.2
-Release:        5%{?dist}
+Version:        1.0.3
+Release:        1%{?dist}
 Summary:        ModSecurity v3 Nginx Connector
 License:        ASL 2.0
 BuildArch:      x86_64
