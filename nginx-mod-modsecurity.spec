@@ -78,7 +78,8 @@ cat %{SOURCE105} > %{_builddir}/modsecurity.gpg
 
 %build
 export DESTDIR=%{buildroot}
-nginx -V 2>&1 | grep 'configure arguments' | sed "s#configure arguments:#./configure --add-dynamic-module=\"../modsecurity-nginx-v%{version}\" #g" |bash
+configure=$(nginx -V 2>&1 | grep 'configure arguments' | sed 's#configure arguments:#./configure --add-dynamic-module=../modsecurity-nginx-v%{version} #g')
+$configure
 make modules %{?_smp_mflags}
 
 %install
