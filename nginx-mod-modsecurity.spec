@@ -20,7 +20,6 @@ Version:        1.0.3
 Release:        6%{?dist}
 Summary:        ModSecurity v3 Nginx Connector
 License:        ASL 2.0
-BuildArch:      noarch
 URL:            https://www.modsecurity.org/
 
 Source0:        https://github.com/SpiderLabs/ModSecurity-nginx/releases/download/v%{version}/modsecurity-nginx-v%{version}.tar.gz
