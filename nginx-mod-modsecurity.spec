@@ -17,7 +17,7 @@
 
 Name:           modsecurity-nginx
 Version:        1.0.3
-Release:        7%{?dist}
+Release:        8%{?dist}
 Summary:        ModSecurity v3 Nginx Connector
 License:        ASL 2.0
 URL:            https://www.modsecurity.org/
@@ -85,7 +85,7 @@ export DESTDIR=%{buildroot}
 nginx_ldopts="$RPM_LD_FLAGS -Wl,-E"
 	
 if ! ./configure \
-    --add-dynamic-module=../modsecurity-nginx-v%{version}
+    --add-dynamic-module=../modsecurity-nginx-v%{version} \
     --prefix=%{_datadir}/nginx \
     --sbin-path=%{_sbindir}/nginx \
     --modules-path=%{nginx_moduledir} \
