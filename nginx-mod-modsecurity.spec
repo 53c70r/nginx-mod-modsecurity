@@ -57,7 +57,7 @@ BuildRequires:  libmodsecurity-nginx-devel
 BuildRequires:  gnupg
 BuildRequires:  nginx
 
-Requires:       nginx = %{nginx_version}
+Requires:       nginx = 1:%{nginx_version}
 Requires:       libmodsecurity-nginx
 
 %description
