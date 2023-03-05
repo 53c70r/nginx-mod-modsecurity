@@ -7,11 +7,11 @@
 %global with_mailcap_mimetypes 1
 %endif
 
-%if 0%{?fedora} == 36
+%if 0%{?fedora} < 37
 %global nginx_version 1.20.2
 %endif
 
-%if 0%{?fedora} > 36
+%if 0%{?fedora} >= 37
 %global nginx_version 1.22.1
 %endif
 
@@ -77,7 +77,7 @@ cat %{S:101} %{S:102} %{S:103} %{S:104} > %{_builddir}/nginx.gpg
 cat %{SOURCE105} > %{_builddir}/modsecurity.gpg
 %{gpgverify} --keyring='%{_builddir}/modsecurity.gpg' --signature='%{SOURCE1}' --data='%{SOURCE0}'
 %{gpgverify} --keyring='%{_builddir}/nginx.gpg' --signature='%{SOURCE3}' --data='%{SOURCE2}'
-sed -i "s/MODULE_PATH/\%{buildroot}\%{_libdir}\/nginx\/modules\/ngx_http_modsecurity_module.so/g" mod-modsecurity.conf
+sed -i "s/MODULE_PATH/\%{_prefix}\%{_lib}\/nginx\/modules\/ngx_http_modsecurity_module.so/g" mod-modsecurity.conf
 
 # extract modsecurity-nginx
 %setup -n modsecurity-nginx-v%{version}
