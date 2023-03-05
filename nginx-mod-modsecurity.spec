@@ -71,7 +71,7 @@ cat %{SOURCE105} > %{_builddir}/modsecurity.gpg
 cat %{SOURCE4} > %{_builddir}/mod-modsecurity.conf
 %{gpgverify} --keyring='%{_builddir}/modsecurity.gpg' --signature='%{SOURCE1}' --data='%{SOURCE0}'
 %{gpgverify} --keyring='%{_builddir}/nginx.gpg' --signature='%{SOURCE3}' --data='%{SOURCE2}'
-sed -i "s#MODULE_PATH#%{_prefix}%{_lib}/nginx/modules/ngx_http_modsecurity_module.so#g" %{_builddir}/mod-modsecurity.conf
+sed -i "s#MODULE_PATH#%{_prefix}/%{_lib}/nginx/modules/ngx_http_modsecurity_module.so#g" %{_builddir}/mod-modsecurity.conf
 
 # extract modsecurity-nginx
 %setup -n modsecurity-nginx-v%{version}
