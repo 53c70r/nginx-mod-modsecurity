@@ -25,15 +25,11 @@ URL:            https://www.modsecurity.org/
 
 Source0:        https://github.com/SpiderLabs/ModSecurity-nginx/releases/download/v%{version}/modsecurity-nginx-v%{version}.tar.gz
 Source1:        https://github.com/SpiderLabs/ModSecurity-nginx/releases/download/v%{version}/modsecurity-nginx-v%{version}.tar.gz.asc
-%if 0%{?fedora} < 37
 Source2:        https://nginx.org/download/nginx-%{nginx_version_0}.tar.gz
 Source3:        https://nginx.org/download/nginx-%{nginx_version_0}.tar.gz.asc
-%endif
-%if 0%{?fedora} >= 37
-Source2:        https://nginx.org/download/nginx-%{nginx_version_1}.tar.gz
-Source3:        https://nginx.org/download/nginx-%{nginx_version_1}.tar.gz.asc
-%endif
 Source4:        mod-modsecurity.conf
+Source5:        https://nginx.org/download/nginx-%{nginx_version_1}.tar.gz
+Source6:        https://nginx.org/download/nginx-%{nginx_version_1}.tar.gz.asc
 Source101:      https://nginx.org/keys/thresh.key
 Source102:      https://nginx.org/keys/maxim.key
 Source103:      https://nginx.org/keys/mdounin.key
@@ -82,7 +78,12 @@ cat %{S:101} %{S:102} %{S:103} %{S:104} > %{_builddir}/nginx.gpg
 cat %{SOURCE105} > %{_builddir}/modsecurity.gpg
 cat %{SOURCE4} > %{_builddir}/mod-modsecurity.conf
 %{gpgverify} --keyring='%{_builddir}/modsecurity.gpg' --signature='%{SOURCE1}' --data='%{SOURCE0}'
+%if 0%{?fedora} < 37
 %{gpgverify} --keyring='%{_builddir}/nginx.gpg' --signature='%{SOURCE3}' --data='%{SOURCE2}'
+%endif
+%if 0%{?fedora} >= 37
+%{gpgverify} --keyring='%{_builddir}/nginx.gpg' --signature='%{SOURCE6}' --data='%{SOURCE5}'
+%endif
 sed -i "s/MODULE_PATH/\%{_prefix}\%{_lib}\/nginx\/modules\/ngx_http_modsecurity_module.so/g" %{_builddir}/mod-modsecurity.conf
 
 # extract modsecurity-nginx
@@ -92,7 +93,7 @@ sed -i "s/MODULE_PATH/\%{_prefix}\%{_lib}\/nginx\/modules\/ngx_http_modsecurity_
 %setup -T -b 2 -n nginx-%{nginx_version_0}
 %endif
 %if 0%{?fedora} >= 37
-%setup -T -b 2 -n nginx-%{nginx_version_1}
+%setup -T -b 5 -n nginx-%{nginx_version_1}
 %endif
 %patch0 -p 0
 
