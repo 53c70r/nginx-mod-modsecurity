@@ -99,7 +99,12 @@ sed -i "s/MODULE_PATH/\%{_prefix}\%{_lib}\/nginx\/modules\/ngx_http_modsecurity_
 
 %build
 export DESTDIR=%{buildroot}
-./configure %(nginx -V 2>&1 | grep 'configure arguments' | sed -r 's@^[^:]+: @@') --add-dynamic-module="../modsecurity-nginx-v%{version}"
+%if 0%{?fedora} < 37
+./configure %(nginx -V 2>&1 | grep 'configure arguments' | sed -r 's@^[^:]+: @@') --add-dynamic-module="../modsecurity-nginx-v%{nginx_version_0}"
+%endif
+%if 0%{?fedora} >= 37
+./configure %(nginx -V 2>&1 | grep 'configure arguments' | sed -r 's@^[^:]+: @@') --add-dynamic-module="../modsecurity-nginx-v%{nginx_version_1}"
+%endif
 $configure
 make modules %{?_smp_mflags}
 
