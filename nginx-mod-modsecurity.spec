@@ -47,6 +47,7 @@ BuildRequires:  gperftools-devel
 %endif
 
 BuildRequires:  gcc
+BuildRequires:  sed
 BuildRequires:  openssl-devel
 BuildRequires:  pcre-devel
 BuildRequires:  zlib-devel
@@ -103,5 +104,5 @@ make modules %{?_smp_mflags}
 %license ../modsecurity-nginx-v%{version}/LICENSE
 
 %changelog
-* Fri Mar 5 2023 Silvan Nagl <mail@53c70r.de> 1.0.3-10
+* Sun Mar 5 2023 Silvan Nagl <mail@53c70r.de> 1.0.3-10
 - Use a more generic build
