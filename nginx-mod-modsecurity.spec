@@ -2,17 +2,11 @@
 %global nginx_user nginx
 %global debug_package %{nil}
 %global with_aio 1
+%global nginx_version_0 1.20.2
+%global nginx_version_1 1.22.1
 
 %if 0%{?fedora} > 22
 %global with_mailcap_mimetypes 1
-%endif
-
-%if 0%{?fedora} < 37
-%global nginx_version 1.20.2
-%endif
-
-%if 0%{?fedora} >= 37
-%global nginx_version 1.22.1
 %endif
 
 %ifnarch s390 s390x ppc64 ppc64le
@@ -31,8 +25,14 @@ URL:            https://www.modsecurity.org/
 
 Source0:        https://github.com/SpiderLabs/ModSecurity-nginx/releases/download/v%{version}/modsecurity-nginx-v%{version}.tar.gz
 Source1:        https://github.com/SpiderLabs/ModSecurity-nginx/releases/download/v%{version}/modsecurity-nginx-v%{version}.tar.gz.asc
-Source2:        https://nginx.org/download/nginx-%{nginx_version}.tar.gz
-Source3:        https://nginx.org/download/nginx-%{nginx_version}.tar.gz.asc
+%if 0%{?fedora} < 37
+Source2:        https://nginx.org/download/nginx-%{nginx_version_0}.tar.gz
+Source3:        https://nginx.org/download/nginx-%{nginx_version_0}.tar.gz.asc
+%endif
+%if 0%{?fedora} >= 37
+Source2:        https://nginx.org/download/nginx-%{nginx_version_1}.tar.gz
+Source3:        https://nginx.org/download/nginx-%{nginx_version_1}.tar.gz.asc
+%endif
 Source4:        mod-modsecurity.conf
 Source101:      https://nginx.org/keys/thresh.key
 Source102:      https://nginx.org/keys/maxim.key
@@ -64,7 +64,12 @@ BuildRequires:  libmodsecurity-nginx-devel
 BuildRequires:  gnupg
 BuildRequires:  nginx
 
-Requires:       nginx >= %{nginx_version}
+%if 0%{?fedora} < 37
+Requires:       nginx = %{nginx_version_0}
+%endif
+%if 0%{?fedora} >= 37
+Requires:       nginx = %{nginx_version_1}
+%endif
 Requires:       libmodsecurity-nginx
 
 %description
@@ -75,28 +80,31 @@ This connector is required to use LibModSecurity with nginx.
 %prep
 cat %{S:101} %{S:102} %{S:103} %{S:104} > %{_builddir}/nginx.gpg
 cat %{SOURCE105} > %{_builddir}/modsecurity.gpg
+cat %{SOURCE4} > %{_builddir}/mod-modsecurity.conf
 %{gpgverify} --keyring='%{_builddir}/modsecurity.gpg' --signature='%{SOURCE1}' --data='%{SOURCE0}'
 %{gpgverify} --keyring='%{_builddir}/nginx.gpg' --signature='%{SOURCE3}' --data='%{SOURCE2}'
-sed -i "s/MODULE_PATH/\%{_prefix}\%{_lib}\/nginx\/modules\/ngx_http_modsecurity_module.so/g" mod-modsecurity.conf
+sed -i "s/MODULE_PATH/\%{_prefix}\%{_lib}\/nginx\/modules\/ngx_http_modsecurity_module.so/g" %{_builddir}/mod-modsecurity.conf
 
 # extract modsecurity-nginx
 %setup -n modsecurity-nginx-v%{version}
 # extract nginx next to modsecurity-nginx
-%setup -T -b 2 -n nginx-%{nginx_version}
+%if 0%{?fedora} < 37
+%setup -T -b 2 -n nginx-%{nginx_version_0}
+%endif
+%if 0%{?fedora} >= 37
+%setup -T -b 2 -n nginx-%{nginx_version_1}
+%endif
 %patch0 -p 0
 
 %build
-
 export DESTDIR=%{buildroot}
-	
 ./configure %(nginx -V 2>&1 | grep 'configure arguments' | sed -r 's@^[^:]+: @@') --add-dynamic-module="../modsecurity-nginx-v%{version}"
-
 $configure
 make modules %{?_smp_mflags}
 
 %install
 %{__install} -p -D -m 0755 objs/ngx_http_modsecurity_module.so %{buildroot}%{_libdir}/nginx/modules/ngx_http_modsecurity_module.so
-%{__install} -p -D -m 0644 %{SOURCE4} %{buildroot}%{_datadir}/nginx/modules/mod-modsecurity.conf
+%{__install} -p -D -m 0644 %{_builddir}/mod-modsecurity.conf %{buildroot}%{_datadir}/nginx/modules/mod-modsecurity.conf
 
 %files
 %{_libdir}/nginx/modules/ngx_http_modsecurity_module.so
