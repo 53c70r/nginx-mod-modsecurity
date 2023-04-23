@@ -2,7 +2,7 @@
 %global nginx_user nginx
 %global debug_package %{nil}
 %global with_aio 1
-%global nginx_version 1.22.1
+%global nginx_version 1.24.0
 
 %if 0%{?fedora} > 22
 %global with_mailcap_mimetypes 1
@@ -17,7 +17,7 @@
 
 Name:           modsecurity-nginx
 Version:        1.0.3
-Release:        10%{?dist}
+Release:        11%{?dist}
 Summary:        ModSecurity v3 Nginx Connector
 License:        ASL 2.0
 URL:            https://www.modsecurity.org/
